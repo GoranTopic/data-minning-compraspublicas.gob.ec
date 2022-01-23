@@ -1,19 +1,33 @@
 import scrapy
 
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+def authentication_failed(response):
+    print("\nPRINTING RESPONSE")
+    print(response)
+    # TODO: Check the contents of the response and return True if it failed
+    # or False if it succeeded.
+    pass
+
+class LoginSpider(scrapy.Spider):
+    name = 'example.com'
 
     def start_requests(self):
-        urls = [
-            'http://quotes.toscrape.com/page/1/',
-            'http://quotes.toscrape.com/page/2/',
-        ]
+        #urls = ['http://www.example.com/users/login.php']
+        urls = ['http://www.compraspublicas.gob.ec/ProcesoContratacion/compras/index.php']
         for url in urls:
+            print(f"\n{url}")
             yield scrapy.Request(url=url, callback=self.parse)
 
+
     def parse(self, response):
-        page = response.url.split("/")[-2]
-        filename = f'quotes-{page}.html'
-        with open(filename, 'wb') as f:
-            f.write(response.body)
-        self.log(f'Saved file {filename}')
+        return scrapy.FormRequest.from_response(
+            response,
+            formdata={'username': 'john', 'password': 'secret'},
+            callback=self.after_login
+        )
+
+    def after_login(self, response):
+        if authentication_failed(response):
+            self.logger.error("Login failed")
+            return
+
+        # continue scraping with authenticated session...

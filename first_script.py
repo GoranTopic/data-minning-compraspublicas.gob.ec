@@ -1,4 +1,3 @@
-from dotenv import load_dotenv
 from dotenv import dotenv_values
 
 
