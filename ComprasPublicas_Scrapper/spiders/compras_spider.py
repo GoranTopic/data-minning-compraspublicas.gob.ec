@@ -1,26 +1,5 @@
-import scrapy 
-from scrapy_splash import SplashRequest 
+import scrapy
 
-class MySpider(scrapy.Spider): 
-    name = 'login'
-    start_urls = ['http://www.compraspublicas.gob.ec/ProcesoContratacion/compras/index.php'] 
-    
-    def start_requests(self): 
-        for url in self.start_urls: 
-            yield SplashRequest(url, self.parse, 
-                endpoint='render.html', 
-                args={'wait': 0.5}, 
-           ) 
-
-    def parse(self, response): 
-        # response.body is a result of render.html call; it 
-        # contains HTML processed by a browser. 
-        # …
-        print("\nPRINTING RESPONSE")
-        print(response.body)
-        print("\n")
-
-"""
 def authentication_failed(response):
     print("\nPRINTING RESPONSE")
     print(response)
@@ -43,7 +22,7 @@ class LoginSpider(scrapy.Spider):
         #return response
         return scrapy.FormRequest.from_response(
             response,
-            formdata={'username': 'john', 'password': 'secret'},
+            #formdata={'username': 'john', 'password': 'secret'},
             callback=self.after_login)
 
     def after_login(self, response):
@@ -52,4 +31,3 @@ class LoginSpider(scrapy.Spider):
             return
 
         # continue scraping with authenticated session...
-"""
