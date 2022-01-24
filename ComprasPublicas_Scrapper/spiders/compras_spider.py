@@ -1,4 +1,6 @@
 import scrapy
+from scrapy_selenium import SeleniumRequest
+
 
 def authentication_failed(response):
     print("\nPRINTING RESPONSE")
@@ -14,7 +16,8 @@ class LoginSpider(scrapy.Spider):
         #urls = ['http://www.example.com/users/login.php']
         urls = ['http://www.compraspublicas.gob.ec/ProcesoContratacion/compras/index.php']
         for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+            yield SeleniumRequest(url=url, callback=self.parse_result)
+            #yield scrapy.Request(url=url, callback=self.parse)
 
 
     def parse(self, response):

@@ -12,10 +12,6 @@ BOT_NAME = 'ComprasPublicas_Scrapper'
 SPIDER_MODULES = ['ComprasPublicas_Scrapper.spiders']
 NEWSPIDER_MODULE = 'ComprasPublicas_Scrapper.spiders'
 
-SPLASH_URL = 'http://localhost:8050/'
-
-DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter' 
-HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'ComprasPublicas_Scrapper (+http://www.yourdomain.com)'
@@ -49,7 +45,6 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100, 
     'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperSpiderMiddleware': 543,
 }
 
@@ -57,10 +52,15 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperDownloaderMiddleware': 543,
-    'scrapy_splash.SplashCookiesMiddleware': 723, 
-    'scrapy_splash.SplashMiddleware': 725, 
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
+
 }
+
+from shutil import which
+
+SELENIUM_DRIVER_NAME = 'firefox'
+SELENIUM_DRIVER_EXECUTABLE_PATH = which('geckodriver')
+SELENIUM_DRIVER_ARGUMENTS=['-headless']  # '--headless' if using chrome instead of firefox
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
