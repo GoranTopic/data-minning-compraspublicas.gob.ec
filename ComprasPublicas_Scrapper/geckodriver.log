@@ -1,0 +1,35 @@
+1643060527513	geckodriver	INFO	Listening on 127.0.0.1:38281
+1643060527516	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuoC3LU"
+1643060527958	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileuoC3LU/search.json.mozlz4", (void 0)))
+1643060528949	Marionette	INFO	Listening on port 43051
+1643060529034	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643060539204	Marionette	INFO	Stopped listening on port 43051
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643060658946	geckodriver	INFO	Listening on 127.0.0.1:50597
+1643060658950	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRFSnxR"
+1643060659383	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileRFSnxR/search.json.mozlz4", (void 0)))
+1643060660531	Marionette	INFO	Listening on port 33631
+1643060660564	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643060663900	Marionette	INFO	Stopped listening on port 33631
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643061019003	geckodriver	INFO	Listening on 127.0.0.1:34503
+1643061019008	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYytK9o"
+*** You are running in headless mode.
+1643061019383	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYytK9o/search.json.mozlz4", (void 0)))
+1643061020343	Marionette	INFO	Listening on port 43389
+1643061020429	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643061021649	Marionette	INFO	Stopped listening on port 43389
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
