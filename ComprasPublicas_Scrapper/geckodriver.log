@@ -33,3 +33,24 @@ JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691:
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1643061312785	geckodriver	INFO	Listening on 127.0.0.1:45807
+1643061312789	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileOgpIwL"
+*** You are running in headless mode.
+1643061313172	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOgpIwL/search.json.mozlz4", (void 0)))
+1643061313991	Marionette	INFO	Listening on port 42121
+1643061314002	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643062391854	geckodriver	INFO	Listening on 127.0.0.1:51027
+1643062391857	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuJldSo"
+*** You are running in headless mode.
+1643062392228	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileuJldSo/search.json.mozlz4", (void 0)))
+1643062393191	Marionette	INFO	Listening on port 34031
+1643062393271	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643062397907	Marionette	INFO	Stopped listening on port 34031
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

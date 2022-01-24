@@ -9,12 +9,12 @@ from logzero import logfile, logger
     
 class LoginSpider(scrapy.Spider):
     name = 'login'
+    login_url = 'https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/'
 
     def start_requests(self):
-        url = "http://quotes.toscrape.com"
-        yield scrapy.Request(url=url, callback=self.parse_countries)
+        yield scrapy.Request(url=self.login_url, callback=self.login)
 
-    def parse_countries(self, response):
+    def login(self, response):
         # dfine options for firefox
         firefoxOptions = webdriver.FirefoxOptions()
         # firefox set headless option
@@ -22,7 +22,7 @@ class LoginSpider(scrapy.Spider):
         # open firefox driver with options
         brower = webdriver.Firefox(firefox_options=firefoxOptions)
         # get webpage 
-        brower.get('https://pythonbasics.org')
+        brower.get(self.login_url)
         # print source code
         print(brower.page_source)
         brower.quit()
@@ -31,7 +31,6 @@ class LoginSpider(scrapy.Spider):
     def login_parser(self, response):
         # use selenium driver to log in to compras
         print(response.body)
-        
         
 
     def parse(self, response):
