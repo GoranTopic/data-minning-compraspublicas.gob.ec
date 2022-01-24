@@ -3,7 +3,7 @@ from scrapy_splash import SplashRequest
 
 class MySpider(scrapy.Spider): 
     name = 'login'
-    start_urls = ["http://example.com", "http://example.com/foo"] 
+    start_urls = ["http://example.com", "http://example.com/foo", "http://dictographo.com"] 
     
     def start_requests(self): 
         for url in self.start_urls: 
