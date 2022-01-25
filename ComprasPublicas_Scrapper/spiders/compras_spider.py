@@ -16,7 +16,7 @@ class LoginSpider(scrapy.Spider):
     def start_requests(self):
         yield scrapy.Request(url=self.login_url, callback=self.login)
 
-    def login(self, response):
+    def login_parser(self, response):
         # define options for firefox
         firefoxOptions = webdriver.FirefoxOptions()
         # firefox set headless option
@@ -37,25 +37,25 @@ class LoginSpider(scrapy.Spider):
         submit_button = driver.find_element(By.ID, "btnEntrar")
         submit_button.click()
         driver.save_screenshot("test1.png")
+        # driver get Url
+
+        #home_url = driver.current url
+
+        # send to scrapy 
+        request = Request(
+                home_url,
+                cookies=driver.get_cookies(),
+                callback=self.parse_landing_page)
+        # get the home landing url
         driver.quit()
 
-
-    def login_parser(self, response):
-        # use selenium driver to log in to compras
-        print(response.body)
-        
-
-    def parse(self, response):
+    def parse_landing_page(self, response):
         #print(f"\n{response}\n")
         #return response
-        return scrapy.FormRequest.from_response(
-            response,
-            #formdata={'username': 'john', 'password': 'secret'},
-            callback=self.after_login)
+        # go to page with 
+        # for project in project
+            # for request( url, callback=pares_project)
 
-    def after_login(self, response):
-        if authentication_failed(response):
-            self.logger.error("Login failed")
-            return
+    def parse_project(self, response):
+        return None
 
-        # continue scraping with authenticated session...
