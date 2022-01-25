@@ -1,4 +1,5 @@
 import scrapy
+from dotenv import dotenv_values
 from scrapy_selenium import SeleniumRequest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -9,23 +10,34 @@ from logzero import logfile, logger
     
 class LoginSpider(scrapy.Spider):
     name = 'login'
-    login_url = 'https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/'
+    login_url = self.login_handle['DOMAIN']
+    login_handle = dotenv_values('../.env')  
 
     def start_requests(self):
         yield scrapy.Request(url=self.login_url, callback=self.login)
 
     def login(self, response):
-        # dfine options for firefox
+        # define options for firefox
         firefoxOptions = webdriver.FirefoxOptions()
         # firefox set headless option
         firefoxOptions.set_headless()
         # open firefox driver with options
-        brower = webdriver.Firefox(firefox_options=firefoxOptions)
+        driver = webdriver.Firefox(firefox_options=firefoxOptions)
         # get webpage 
-        brower.get(self.login_url)
-        # print source code
-        print(brower.page_source)
-        brower.quit()
+        driver.get(self.login_url)
+        # get elements for login
+        RUC_element = driver.find_element(By.ID, "txtRUCRecordatorio")
+        username_element = driver.find_element(By.ID, "txtLogin")
+        pass_element = driver.find_element(By.ID, "txtPassword") 
+        # send keys to elements
+        RUC_element.send_keys(self.login_handle['RUC'])
+        username_element.send_keys(self.login_handle['USER'])
+        pass_element.send_keys(self.login_handle['PASS'])
+        # press the submit button
+        submit_button = driver.find_element(By.ID, "btnEntrar")
+        submit_button.click()
+        driver.save_screenshot("test1.png")
+        driver.quit()
 
 
     def login_parser(self, response):
