@@ -12,13 +12,6 @@ BOT_NAME = 'ComprasPublicas_Scrapper'
 SPIDER_MODULES = ['ComprasPublicas_Scrapper.spiders']
 NEWSPIDER_MODULE = 'ComprasPublicas_Scrapper.spiders'
 
-# Selenium settings
-SELENIUM_DRIVER_NAME = 'firefox'
-SELENIUM_DRIVER_EXECUTABLE_PATH = '../geckodriver'
-# '--headless' if using chrome instead of firefox
-SELENIUM_DRIVER_ARGUMENTS=['-headless']  
-
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'ComprasPublicas_Scrapper (+http://www.yourdomain.com)'
 
@@ -50,17 +43,17 @@ COOKIES_ENABLED = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-SPIDER_MIDDLEWARES = {
-    'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperSpiderMiddleware': 543,
-}
+#SPIDER_MIDDLEWARES = {
+    #'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperSpiderMiddleware': 543,
+#}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-    'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperDownloaderMiddleware': 543,
-    'scrapy_selenium.SeleniumMiddleware': 800
-    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperDownloaderMiddleware': 543,
+#    'scrapy_selenium.SeleniumMiddleware': 800,
+#    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
+#}
 
 
 # Enable or disable extensions

@@ -1,4 +1,5 @@
 import scrapy
+import time
 from dotenv import dotenv_values
 from scrapy_selenium import SeleniumRequest
 from selenium import webdriver
@@ -15,18 +16,17 @@ class LoginSpider(scrapy.Spider):
 
     def start_requests(self):
         login_url = self.login_handle['LOGIN_URL']
-        yield scrapy.SeleniumRequest(url=login_url, callback=self.login_parser)
+        yield scrapy.Request(url=login_url, callback=self.login_parser)
 
     def login_parser(self, response):
         # define options for firefox
-        #firefoxOptions = webdriver.FirefoxOptions()
+        firefoxOptions = webdriver.FirefoxOptions()
         # set to headless driver
-        #firefoxOptions.headless = False
+        firefoxOptions.headless = False
         # open firefox driver with options
-        driver = response.request.meta['driver']
-        #driver = webdriver.Firefox(
-                #executable_path='./geckodriver', 
-                #options=firefoxOptions)
+        driver = webdriver.Firefox(
+                executable_path='./geckodriver', 
+                options=firefoxOptions)
         # get webpage 
         driver.get(response.url)
         # get elements for login
@@ -42,17 +42,18 @@ class LoginSpider(scrapy.Spider):
         submit_button.click()
 
         # wait
+        time.sleep(2000000000)
         el = WebDriverWait(driver, 2000000).until(
                 lambda d: d.find_element_by_tag_name("p")
                 )
-        #wait = WebDriverWait(driver, 1000)
-        #element = wait.until(EC.element_to_be_clickable((By.ID, 'mensaje')))
+        wait = WebDriverWait(driver, 1000)
+        element = wait.until(EC.element_to_be_clickable((By.ID, 'mensaje')))
         print("wait ended")
         print("element:")
-        print(el)
+        rint(el)
 
         # take screen shot
-        driver.save_screenshot("screenshot.png")
+        #driver.save_screenshot("screenshot.png")
 
 
         #try:
@@ -81,6 +82,7 @@ class LoginSpider(scrapy.Spider):
         # get the home landing url
 
         #driver.quit()
+        pass
 
     def Authentification_response_parser(driver):
         pass
