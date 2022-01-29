@@ -11,3 +11,250 @@ console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkErr
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+./geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+1643414308197	geckodriver	INFO	Listening on 127.0.0.1:38853
+1643414308199	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "33957" "-no-remote" "-profile" "/tmp/rust_mozprofile1CRD4Q"
+*** You are running in headless mode.
+1643414308517	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1CRD4Q/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:33957/devtools/browser/21b8f8b1-7e47-45ca-837e-e7e2c42875c9
+1643414309645	Marionette	INFO	Listening on port 43055
+1643414309715	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643414346862	geckodriver	INFO	Listening on 127.0.0.1:52785
+1643414346867	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "37049" "-no-remote" "-profile" "/tmp/rust_mozprofile4732JS"
+*** You are running in headless mode.
+1643414347166	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4732JS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:37049/devtools/browser/95d8ed4c-7bbd-49ab-a984-e3eeb8fb4acd
+1643414348225	Marionette	INFO	Listening on port 38947
+1643414348282	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643414416163	geckodriver	INFO	Listening on 127.0.0.1:41369
+1643414416167	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "44323" "-no-remote" "-profile" "/tmp/rust_mozprofileIQAWnQ"
+*** You are running in headless mode.
+1643414416477	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileIQAWnQ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:44323/devtools/browser/2a39b7c1-672c-4b12-9780-4c91206e0b9c
+1643414417597	Marionette	INFO	Listening on port 39841
+1643414417684	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643414449742	geckodriver	INFO	Listening on 127.0.0.1:35819
+1643414449746	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52057" "-no-remote" "-profile" "/tmp/rust_mozprofilePnOdXi"
+*** You are running in headless mode.
+1643414450032	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePnOdXi/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52057/devtools/browser/73d511e7-392f-482e-98e7-aaf7e65fac60
+1643414451045	Marionette	INFO	Listening on port 38495
+1643414451069	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643414471299	geckodriver	INFO	Listening on 127.0.0.1:33507
+1643414471302	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "49747" "-no-remote" "-profile" "/tmp/rust_mozprofiler7aYm1"
+*** You are running in headless mode.
+1643414471576	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiler7aYm1/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49747/devtools/browser/b19304fb-eefc-4f89-b3a9-79ac05753d9e
+1643414472575	Marionette	INFO	Listening on port 33321
+1643414472619	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643414855111	geckodriver	INFO	Listening on 127.0.0.1:49087
+1643414855117	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "43845" "-no-remote" "-profile" "/tmp/rust_mozprofileoRqitK"
+*** You are running in headless mode.
+1643414855425	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileoRqitK/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43845/devtools/browser/98c8a76b-2d6f-44bd-9695-d6cda2da0d46
+1643414856401	Marionette	INFO	Listening on port 44661
+1643414856431	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643414861121	Marionette	INFO	Stopped listening on port 44661
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643416606527	geckodriver	INFO	Listening on 127.0.0.1:51317
+1643416606536	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "41931" "-no-remote" "-profile" "/tmp/rust_mozprofile9QaMKC"
+*** You are running in headless mode.
+1643416606923	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile9QaMKC/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:41931/devtools/browser/5a2dcbaf-b923-43af-9223-4c73adaa991c
+1643416608084	Marionette	INFO	Listening on port 40455
+1643416608156	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643416612524	Marionette	INFO	Stopped listening on port 40455
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643416642609	geckodriver	INFO	Listening on 127.0.0.1:60439
+1643416642619	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "57159" "-no-remote" "-profile" "/tmp/rust_mozprofileuXfQWn"
+*** You are running in headless mode.
+1643416642969	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileuXfQWn/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57159/devtools/browser/e109518f-c3ab-4d4e-9a30-ae6ee7378afd
+1643416644103	Marionette	INFO	Listening on port 41291
+1643416644136	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643416658422	Marionette	INFO	Stopped listening on port 41291
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643417024917	geckodriver	INFO	Listening on 127.0.0.1:49167
+1643417024922	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "60087" "-no-remote" "-profile" "/tmp/rust_mozprofile03oAV1"
+*** You are running in headless mode.
+1643417025221	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile03oAV1/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60087/devtools/browser/d9574353-01f4-4ba9-ac1e-94c9126153cd
+1643417026375	Marionette	INFO	Listening on port 34531
+1643417026439	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643417041247	Marionette	INFO	Stopped listening on port 34531
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643417069298	geckodriver	INFO	Listening on 127.0.0.1:40307
+1643417069304	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59573" "-no-remote" "-profile" "/tmp/rust_mozprofileFASWnv"
+1643417070031	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileFASWnv/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59573/devtools/browser/46ce1824-b6ec-4926-a883-91ac45609e53
+1643417071729	Marionette	INFO	Listening on port 44985
+1643417071824	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643417086194	Marionette	INFO	Stopped listening on port 44985
+1643417494000	geckodriver	INFO	Listening on 127.0.0.1:44251
+1643417494006	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "54659" "-no-remote" "-profile" "/tmp/rust_mozprofile2XBR4g"
+1643417494627	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile2XBR4g/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54659/devtools/browser/74dec1ce-ad89-4443-a82b-77c90793a761
+1643417495959	Marionette	INFO	Listening on port 44649
+1643417496025	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1643417521604	Marionette	INFO	Stopped listening on port 44649
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643418725841	geckodriver	INFO	Listening on 127.0.0.1:34125
+1643418725843	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "35157" "-no-remote" "-profile" "/tmp/rust_mozprofileZiJFyg"
+1643418726537	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileZiJFyg/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:35157/devtools/browser/df820e65-a0bd-4c25-81a1-27f9bd015b41
+1643418727788	Marionette	INFO	Listening on port 44105
+1643418727865	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643418732100	Marionette	INFO	Stopped listening on port 44105
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643420974241	geckodriver	INFO	Listening on 127.0.0.1:41987
+1643420974248	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "36743" "-no-remote" "-profile" "/tmp/rust_mozprofileKRQX1J"
+1643420974971	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileKRQX1J/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36743/devtools/browser/47476c10-a741-46ff-8ca8-fd111d7c2775
+1643420976217	Marionette	INFO	Listening on port 40265
+1643420976281	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643420981305	Marionette	INFO	Stopped listening on port 40265
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643421109895	geckodriver	INFO	Listening on 127.0.0.1:37769
+1643421109900	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "49559" "-no-remote" "-profile" "/tmp/rust_mozprofilexQEKkb"
+1643421110608	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexQEKkb/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49559/devtools/browser/5d925afb-d0af-4ee1-927d-d3f8eb428396
+1643421111821	Marionette	INFO	Listening on port 41177
+1643421111921	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643421124545	Marionette	INFO	Stopped listening on port 41177
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643421709781	geckodriver	INFO	Listening on 127.0.0.1:39013
+1643421709785	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46481" "-no-remote" "-profile" "/tmp/rust_mozprofile4W33vN"
+1643421710485	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4W33vN/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46481/devtools/browser/3bc6d444-e9b8-42f2-9087-1b1ff47afd6b
+1643421711939	Marionette	INFO	Listening on port 40583
+1643421712004	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643421716253	Marionette	INFO	Stopped listening on port 40583
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643421864138	geckodriver	INFO	Listening on 127.0.0.1:46249
+1643421864145	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "48021" "-no-remote" "-profile" "/tmp/rust_mozprofileJDeOHk"
+1643421864819	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJDeOHk/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48021/devtools/browser/f34046d2-6c31-47ab-89e8-84b1799fcf2a
+1643421866089	Marionette	INFO	Listening on port 41345
+1643421866169	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643423051562	Marionette	INFO	Stopped listening on port 41345
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643423812148	geckodriver	INFO	Listening on 127.0.0.1:47707
+1643423812155	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "52331" "-no-remote" "-profile" "/tmp/rust_mozprofileEwFkr0"
+1643423812999	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileEwFkr0/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52331/devtools/browser/563924c5-847b-4fc3-ad6d-d5b5c6631aec
+1643423814159	Marionette	INFO	Listening on port 37767
+1643423814181	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643423896574	geckodriver	INFO	Listening on 127.0.0.1:47835
+1643423896581	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47589" "-no-remote" "-profile" "/tmp/rust_mozprofileqJij0L"
+1643423897429	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqJij0L/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47589/devtools/browser/0822e5a0-0ed3-42d8-8af0-637270cb22be
+1643423898939	Marionette	INFO	Listening on port 44683
+1643423899003	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643423908234	Marionette	INFO	Stopped listening on port 44683
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/prototype.js, line 932: TypeError: element is null
+1643423912580	Marionette	INFO	Stopped listening on port 37767
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643424109666	geckodriver	INFO	Listening on 127.0.0.1:54411
+1643424109673	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "33495" "-no-remote" "-profile" "/tmp/rust_mozprofileGuV3lq"
+1643424110524	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileGuV3lq/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:33495/devtools/browser/cbad227a-b551-4e5a-acba-37e9813b87b2
+1643424111871	Marionette	INFO	Listening on port 40051
+1643424111904	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643424127634	Marionette	INFO	Stopped listening on port 40051
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

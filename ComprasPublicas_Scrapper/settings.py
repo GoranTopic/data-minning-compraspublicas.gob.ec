@@ -12,6 +12,12 @@ BOT_NAME = 'ComprasPublicas_Scrapper'
 SPIDER_MODULES = ['ComprasPublicas_Scrapper.spiders']
 NEWSPIDER_MODULE = 'ComprasPublicas_Scrapper.spiders'
 
+# Selenium settings
+SELENIUM_DRIVER_NAME = 'firefox'
+SELENIUM_DRIVER_EXECUTABLE_PATH = '../geckodriver'
+# '--headless' if using chrome instead of firefox
+SELENIUM_DRIVER_ARGUMENTS=['-headless']  
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'ComprasPublicas_Scrapper (+http://www.yourdomain.com)'
@@ -52,15 +58,10 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperDownloaderMiddleware': 543,
+    'scrapy_selenium.SeleniumMiddleware': 800
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
-
 }
 
-from shutil import which
-
-SELENIUM_DRIVER_NAME = 'firefox'
-SELENIUM_DRIVER_EXECUTABLE_PATH = which('geckodriver')
-SELENIUM_DRIVER_ARGUMENTS=['-headless']  # '--headless' if using chrome instead of firefox
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
