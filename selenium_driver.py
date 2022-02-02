@@ -7,7 +7,7 @@ from dotenv import dotenv_values
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-login_handle = dotenv_values('.env')  
+env = dotenv_values('.env')  
   
 
 def is_redirect_to_home_page(driver):
@@ -132,59 +132,77 @@ def get_projects(driver, offset):
     IDs = list(map(lambda l : l.split('=')[1], relative_urls))
     return list(map(lambda ID, code  : { 'ID': ID, 'code': code }, IDs, codes))
 
-def login_parser(response):
+def create_driver(headless=True)
     # define options for firefox
     firefoxOptions = webdriver.FirefoxOptions()
     # set to headless driver
-    firefoxOptions.headless = False
+    firefoxOptions.headless = headless
     # open firefox driver with options
     driver = webdriver.Firefox(
-            executable_path='./geckodriver', 
-            options=firefoxOptions)
-    # get webpage 
-    driver.get(response.url)
-    # get elements for login
+    executable_path='./geckodriver', 
+    options=firefoxOptions)
+    return driver
+
+def submit_login_handle(driver):
+    # write ruc in input
     RUC_element = driver.find_element(By.ID, "txtRUCRecordatorio")
+    RUC_element.send_keys(env['RUC'])
+    # write username in input
     username_element = driver.find_element(By.ID, "txtLogin")
+    username_element.send_keys(env['USER'])
+    # write password
     pass_element = driver.find_element(By.ID, "txtPassword") 
-    # send keys to elements
-    RUC_element.send_keys(self.login_handle['RUC'])
-    username_element.send_keys(self.login_handle['USER'])
-    pass_element.send_keys(self.login_handle['PASS'])
-    # find sumbit button
+    pass_element.send_keys(env['PASS'])
+    # press sumbit button
     submit_button = driver.find_element(By.ID, "btnEntrar")
-    # press the submit button
     submit_button.click()
-    # handle the authetication
-    self.authentication_handler(driver)
-    # for some reason the server oly gives us a user After we load the 'Procesos' page
-    driver.get('https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#') 
-    driver.execute_script('botonBuscar()')
-    # get user data from the selenium driver
-    (cookies, user_data) = self.get_driver_user_data(driver)
-    request_body = self.organize_body(user_data)
 
-    current_count = 0
-    total_count = 100
-    offset = 20
 
-    filepath = "/ProcesoContratacion/compras/ProcesoContratacion/" 
-    baseurl = self.login_handle['DOMAIN'] + filepath
+offset = 20 # number of projects we get from a page
+current_project_count = 0 # start at zero
+total_project_count = None # must define late on
 
-    while( current_count <= total_count ):
-        # search for procesos
-        # get the ID's for every procesos in the page
-        projects = self.get_projects(driver, current_count)
-        print(f"\n\n{projects}")
-        print(f"RESPONSE from {current_count}/{current_count + offset}:\n\n")
-        for project in projects: # for every id run scrapy requests
-            for i in range(1,6): # total of six tabs
-                url=baseurl + f"tab.php?tab={i}&id={project['ID']}"
-                yield scrapy.Request(url=url, 
-                        callback=self.parse_project, 
-                        meta={'project': project, 'tab_num': i})
+# create driver   
+driver = create_driver(env['HEADLESS'])
+
+# load login page
+driver.get(env['LOGIN_PAGE'])
+
+# handle the login 
+sumbit_loing_handle(driver)
+
+# handle authentication result
+self.authentication_handler(driver)
+
+# for some reason the server only gives us a user After we load the 'Procesos' page
+driver.get('https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#') 
+driver.execute_script('botonBuscar()')
+
+# get user data from the selenium driver
+(cookies, user_data) = get_driver_user_data(driver)
+request_body = organize_body(user_data)
+
+# get the total number of projects
+total_project_count = get_total_project_count(driver)
+
+filepath = "/ProcesoContratacion/compras/ProcesoContratacion/" 
+baseurl = env['DOMAIN'] + filepath
+
+
+while( current_count <= total_count ):
+    # search for procesos
+    # get the ID's for every procesos in the page
+    projects = self.get_projects(driver, current_count)
+    print(f"\n\n{projects}")
+    print(f"RESPONSE from {current_count}/{current_count + offset}:\n\n")
+    for project in projects: # for every id run scrapy requests
+        for i in range(1,6): # total of six tabs
+            url=baseurl + f"tab.php?tab={i}&id={project['ID']}"
+            yield scrapy.Request(url=url, 
+                    callback=self.parse_project, 
+                    meta={'project': project, 'tab_num': i})
         current_count += offset
-    
-            
 
-            
+
+
+
