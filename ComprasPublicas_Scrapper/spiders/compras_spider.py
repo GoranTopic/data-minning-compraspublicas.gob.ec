@@ -1,19 +1,29 @@
 import scrapy
 import time
 import json
+from bs4 import BeautifulSoup
+from lxml import etree
 from dotenv import dotenv_values
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 class LoginSpider(scrapy.Spider):
-    name = 'login'
+    name = 'compras-publicas'
     login_handle = dotenv_values('.env')  
   
     def start_requests(self):
         login_url = self.login_handle['LOGIN_URL']
-        yield scrapy.Request(
-                url=login_url, 
-                callback=self.login_parser)
+        baseurl = self.login_handle['DOMAIN'] + "/ProcesoContratacion/compras/ProcesoContratacion/" 
+
+        projects = [{'ID': 'hRTRnQMt7SqlFqzkcVcogy6qqTsACQO7TWDkh75rurs,', 'code': 'CDC-ATV-002-2022'}, {'ID': 'q44KKDIQsHpoAbHsfRCaOZXPzzs42Q3cAlfqr2oNgls,', 'code': 'CDC-EEASA-003-2022'}, {'ID': '-EfVvsHB7CO-vjWTGR7lM4wpVOC6MqVkXNILqTkaDbc,', 'code': 'CDC-GADPRJLT-01-2022'}, {'ID': 'FgBH4VO31yqFx3gLXndYcQlRZ9GUaR219N4Ucl6cVkA,', 'code': 'CDC-GADPRJLT-02-2022'}, {'ID': 'jJWCG5s6RNt4ge1UwS8eLoLjbEvkbxJ30t67iMahr84,', 'code': 'COTS-GPM-001-2022'}, {'ID': 'moMEbG0EJYqwbLKF5uoN2vHcsbUFQY5pzWsobZRHUSc,', 'code': 'COTS-GPM-002-2022'}, {'ID': 'isuwrj8bLCR-8N-heF2yI0qAWTIspDY-ZPDtSyE4hAw,', 'code': 'EP-DUP-2021-013-056'}, {'ID': 'Ig3o_nFk-QX19N5qRHG3vQQzkdv-FomMMkoabHszhMo,', 'code': 'LICO-GADIMCD-01-2022'}, {'ID': 'SPJ8iWev2LhwvYxLPpprmwlTiCcbDA94Z2C8yYoz3Gw,', 'code': 'MCO-GADPPC-001-2022'}, {'ID': 'gZ7I5Hu7-3xJloJEn4xkNK1fbhP62Wx2vaC2gtzt3KA,', 'code': 'MCO-GADPRT-2022-001'}, {'ID': 'UyvbH-HnoVeA8X7GgMA6NVx8IMQHZMNiuOlsbQdv-WQ,', 'code': 'MCS-EEASA-005-2022'}, {'ID': 'ie3TVGw0ioe3zos7hfO3QJebi9OjZn5WIjvxlVXi-ic,', 'code': 'MCS-INEC-CZ8L-1-2022'}, {'ID': 'XBOTG79oP5-GVvwu1QuuDvSyEAoOZbN7YOBjTnyh_W0,', 'code': 'SIE-08D06RE-01-2022'}, {'ID': 'Vxt3SJCIdDwbQLCTh-EITH_vS2CbpN7nOoULDFNj-EI,', 'code': 'SIE-CCQAHNT-001-2022'}, {'ID': 'JT2Y2N-ERMTE2oQkVC0nJg8qkmPwIUV4r3r34FvE58o,', 'code': 'SIE-CENL-002-2022'}, {'ID': 'eQW6Uqyf2mMOUe3QNa0fobIHTytZ1LQqXFW8vRBDaQI,', 'code': 'SIE-CRIE-001-2022'}, {'ID': 'jO6b6shdUe59zKq3B84z4facBhcn4zKj2k_qOgEG2IM,', 'code': 'SIE-EPMMOP-001-2022'}, {'ID': '2L2i9UOdO_DvmxWLjMKcu1q5nlAImTEN3pROYgqdD1Y,', 'code': 'SIE-EPMSA-0001-2022'}, {'ID': 'wnjeB-rvagAnDa03j9-M1pVEExk_SwRRP7-qAFrsdI0,', 'code': 'SIE-GAD-MB-001-2022'}, {'ID': 'EvZFOh6HlydD-OtSCVA8fFaA0zjw1UlHNUW1NXFFXOE,', 'code': 'SIE-GADPRZ-05-2022'}]
+
+        #for project in projects: 
+        #     for i in range(1,6): # total of six tabs
+        #        url=baseurl + f"tab.php?tab={i}&id={project['ID']}"
+        #        yield scrapy.Request(url=url, 
+        #               callback=self.parse_project, 
+        #               meta={'project': project, "tab_num": i})
+        yield scrapy.Request( url=login_url, callback=self.login_parser)
 
     def is_redirect_to_home_page(self, driver):
         # Check whether the current url is the homepage
@@ -62,7 +72,7 @@ class LoginSpider(scrapy.Spider):
         loading_page = True
         loading_popup = True
         while(loading_popup):
-            time.sleep(5)
+            time.sleep(3)
             try:
                 popup_el = driver.find_element(By.ID, "mensaje")
                 state = self.popup_handler(popup_el)
@@ -107,28 +117,10 @@ class LoginSpider(scrapy.Spider):
         for order in cookie_order:
             for cookie in cookies:
                 if order == cookie['name']:
-                    print(f"order:{order}")
-                    print(f'cookie:{cookie["name"]}')
                     cookie_string += cookie['name'] + "=" + cookie['value'] + "; "
                     break
             print(f"could not loacte {order}")
         return cookie_string
-
-
-    def parse_procesos_IDs(driver, offset):
-        # loads the next 20 'procesos'
-        driver.execute_script(f"presentarProcesos({offset})")
-        # get the inner tables data
-        innerHTML = driver.execute_script('return $("frmDatos").innerHTML')
-        # parse the html string
-        soup = BeautifulSoup(innerHTML, "html.parser")
-        # create dom from parsed html 
-        dom = etree.HTML(str(soup))
-        # get urls with xpath there are only 20 links per page
-        relative_urls =  dom.xpath('//a/@href')[4:24]
-        # make absolute urls
-        urls = list(map(lambda l : domain + l, relative_urls))
-        return urls
 
     def organize_body(self, request):
         body_string = ''
@@ -140,12 +132,21 @@ class LoginSpider(scrapy.Spider):
                 print(f"could not get value: {order}")
         return body_string[:-1]
 
-
-    def clean_formdata(self, data):
-        for key, value in data.items():
-            if value == '':
-                data[key] = '';
-        return data
+    def get_projects(self, driver, offset):
+        # loads the next 20 'procesos'
+        driver.execute_script(f"presentarProcesos({offset})")
+        # get the inner tables data
+        innerHTML = driver.execute_script('return $("frmDatos").innerHTML')
+        # parse the html string
+        soup = BeautifulSoup(innerHTML, "html.parser")
+        # create dom from parsed html 
+        dom = etree.HTML(str(soup))
+        # get urls with xpath there are only 20 links per page
+        relative_urls = dom.xpath('//a/@href')[4:24]
+        codes = [ e.text for e in dom.xpath('//a')[4:24] ]
+        # make absolute urls
+        IDs = list(map(lambda l : l.split('=')[1], relative_urls))
+        return list(map(lambda ID, code  : { 'ID': ID, 'code': code }, IDs, codes))
 
     def login_parser(self, response):
         # define options for firefox
@@ -174,65 +175,52 @@ class LoginSpider(scrapy.Spider):
         self.authentication_handler(driver)
         # for some reason the server oly gives us a user After we load the 'Procesos' page
         driver.get('https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#') 
-        #driver.execute_script('botonBuscar()')
+        driver.execute_script('botonBuscar()')
         # get user data from the selenium driver
         (cookies, user_data) = self.get_driver_user_data(driver)
-        # add page we want to get
-        user_data["__class"] = "SolicitudCompra"
-        user_data["__action"] = "buscarProcesoxEntidad"
-        user_data["paginaActual"] = "20"
-        user_data["count"] = "25509"
-        request_body = self.clean_formdata(user_data)
-        headers={
-                'Accept': 'text/javascript, text/html, application/xml, text/xml, */*',
-                'Accept-Encoding': 'gzip, deflate, br',
-                'Accept-Language': 'en-US,en;q=0.5',
-                'Connection': 'keep-alive',
-                'Content-Length': '8',
-                'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                'Cookie': self.organize_cookies(cookies),
-                'Host': 'www.compraspublicas.gob.ec',
-                'Origin': 'https://www.compraspublicas.gob.ec',
-                'Sec-Fetch-Dest': 'empty',
-                'Sec-Fetch-Mode': 'cors',
-                'Sec-Fetch-Site': 'same-origin',
-                'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0',  
-                'X-Prototype-Version': '1.6.0',
-                'X-Requested-With': 'XMLHttpRequest',
-                }
+        request_body = self.organize_body(user_data)
 
-        print(f"\n\ncookies:\n {cookies}\n\n")
-        print(f"\n\nuser_data:\n {user_data}\n\n")
-        print(f"\n\nrequest_body:\n {request_body}\n\n")
-        print(f"\n\nheaders:\n {headers}\n\n")
+        current_count = 0
+        total_count = 100
+        offset = 20
+
+        filepath = "/ProcesoContratacion/compras/ProcesoContratacion/" 
+        baseurl = self.login_handle['DOMAIN'] + filepath
         
-        yield scrapy.FormRequest(
-                url="https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/servicio/interfazWeb.php",
-                method='POST',
-                cookies=cookies,
-                headers=headers,
-                formdata=request_body,
-                callback=self.proceso_parser)
+        #os.chdir(project.code)
+        #cwd = os.getcwd()
+        #os.mkdir(project.code)
+        #os.chdir(project.code)
 
+        while( current_count <= total_count ):
+            # search for procesos
+            # get the ID's for every procesos in the page
+            projects = self.get_projects(driver, current_count)
+            print(f"\n\n{projects}")
+            print(f"RESPONSE from {current_count}/{current_count + offset}:\n\n")
+            for project in projects: # for every id run scrapy requests
+                for i in range(1,6): # total of six tabs
+                    url=baseurl + f"tab.php?tab={i}&id={project['ID']}"
+                    yield scrapy.Request(url=url, 
+                            callback=self.parse_project, 
+                            meta={'project': project, 'tab_num': i})
+            current_count += offset
         
-    def proceso_parser(self, response):
-        print("\n\nPrint reponse from api call: ")
-        print(response.status)
-        print(response.headers)
-        print(response.body)
-        print(response.request)
-        print("\n\n")
-
-
-    def contest_list_parser(self, response):
-        #print(f"\n{response}\n")
-        #return response
-        # go to page with 
-        # for project in project
-            # for request( url, callback=pares_project)
-        pass
-        return None
-
+            
     def parse_project(self, response):
-        return None
+        project = response.meta.get('project')
+        tab_num = response.meta.get('tab_num')
+        #if(tab_type == 6) 
+        #   get for files 
+        #   for url in urls:
+        #       add data to meta
+        #       yield scrapy.Request(url=url, 
+        #               callback=parse_project, 
+        #               meta={'project': project, "type": i})
+        return {'response': response, 
+                'body': response.body,
+                'project': project, 
+                'tab_num': tab_num }
 
+
+            
