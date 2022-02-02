@@ -115,6 +115,21 @@ class LoginSpider(scrapy.Spider):
         return cookie_string
 
 
+    def parse_procesos_IDs(driver, offset):
+        # loads the next 20 'procesos'
+        driver.execute_script(f"presentarProcesos({offset})")
+        # get the inner tables data
+        innerHTML = driver.execute_script('return $("frmDatos").innerHTML')
+        # parse the html string
+        soup = BeautifulSoup(innerHTML, "html.parser")
+        # create dom from parsed html 
+        dom = etree.HTML(str(soup))
+        # get urls with xpath there are only 20 links per page
+        relative_urls =  dom.xpath('//a/@href')[4:24]
+        # make absolute urls
+        urls = list(map(lambda l : domain + l, relative_urls))
+        return urls
+
     def organize_body(self, request):
         body_string = ''
         body_order = ['__class', '__action', 'csrf_token', 'idus', 'UsuarioID', 'captccc2', 'txtPalabrasClaves', 'Entidadbuscar', 'txtEntidadContratante', 'cmbEntidad', 'txtCodigoTipoCompra', 'txtCodigoProceso', 'f_inicio f_fin', 'count', 'paginaActual20', 'estado', 'trx']

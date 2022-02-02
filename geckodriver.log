@@ -2290,3 +2290,18 @@ instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameC
 handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:650:12
 
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/prototype.js, line 3937: TypeError: element.dispatchEvent is not a function
+1643800322740	geckodriver	INFO	Listening on 127.0.0.1:37813
+1643800322743	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "32981" "-no-remote" "-profile" "/tmp/rust_mozprofileQHJjGH"
+1643800325556	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQHJjGH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:32981/devtools/browser/069bbf80-f854-4230-8ad4-2ed6bbae8370
+1643800326790	Marionette	INFO	Listening on port 46203
+1643800326864	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643800335423	Marionette	INFO	Stopped listening on port 46203
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643800336148	geckodriver::marionette	ERROR	Failed to close browser connection: Socket not connected (os error 107)
