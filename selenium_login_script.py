@@ -1,10 +1,9 @@
 import time
-import json
+from bs4 import BeautifulSoup
+from lxml import etree
 from dotenv import dotenv_values
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-
 
 def is_redirect_to_home_page(driver):
     # Check whether the current url is the homepage
@@ -42,7 +41,6 @@ def handle_home_page(driver):
         #scroll to view
         driver.execute_script("arguments[0].scrollIntoView(true);", btn);
         # click button
-        #btn.click()
     except:
         return None
 
@@ -78,22 +76,22 @@ def authentication_handler(driver):
             print("something when worng, popup did not appear")
             return False
 
-def get_driver_user_data(driver):
-    # get session Data
-    cookies = driver.get_cookies()
-    user_data = {} #m make empty obj
-    user_dat['UsuarioID'] = driver.execute_script('UsuarioID.value')
-    for i in range(1, 16):
-        try: # get the values in the selenium session, from the form data
-            name = driver.execute_script(f'return $("paginaActual").form[{i}].name')
-            value = driver.execute_script(f'return $("paginaActual").form[{i}].value')
-            user_data[name] = value
-        except: 
-            print("could not get data")
-    user_data["__class"] = "SolicitudCompra"
-    user_data["__action"] = "buscarProcesoxEntidad"
-    request_body = json.dumps(user_data)
-    return (cookies, request_body)
+def parse_procesos_urls(driver, offset):
+    domain= 'https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/'
+    # loads the next 20 'procesos'
+    driver.execute_script(f"presentarProcesos({offset})")
+    # get the inner tables data
+    innerHTML = driver.execute_script('return $("frmDatos").innerHTML')
+    # parse the html string
+    soup = BeautifulSoup(innerHTML, "html.parser")
+    # create dom from parsed html 
+    dom = etree.HTML(str(soup))
+    # get urls with xpath there are only 20 links per page
+    relative_urls =  dom.xpath('//a/@href')[4:24]
+    # make absolute urls
+    urls = list(map(lambda l : domain + l, relative_urls))
+    return urls
+
 
 
 login_handle = dotenv_values('.env')  
@@ -124,47 +122,24 @@ submit_button.click()
 # handle the authetication
 authentication_handler(driver)
 
+# got to the look up process page
 driver.get('https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#') 
+
+# run a empty search to get initial values and the total 
 driver.execute_script('botonBuscar()')
+
 not_reached_end = False
 current_count = 0
-total_count = 100
+total_count = 200
 offset = 20
-# get session Data
-cookies = driver.get_cookies()
-user_data = {} 
-user_data['UsuarioID'] = driver.execute_script('UsuarioID.value')
 
-for i in range(1, 16):
-    try: # get the values in the selenium session, from the form data
-        name = driver.execute_script(f'return $("paginaActual").form[{i}].name')
-        value = driver.execute_script(f'return $("paginaActual").form[{i}].value')
-        user_data[name] = value
-    except: 
-        print("could not get data")
-
-user_data["__class"] = "SolicitudCompra"
-user_data["__action"] = "buscarProcesoxEntidad"
-
-post_request_data = user_data
-post_request_data["paginaActual"] = 60
-
-request_body = json.dumps(post_request_data)
-
-print(f"\nrequest body:")
-print(request_body)
-
-# get user data from selenium 
-request_data = get_driver_user_data()
-# set data 
-request_data["paginaActual"] = 0
 
 while( current_count <= total_count ):
     # search for procesos
     #run empty seach
-    response = driver.execute_script(f"presentarProcesos({current_count})")
+    urls = parse_procesos_urls(driver, current_count)
     print(f"RESPONSE for {current_count} - {current_count + offset}:")
-    print(response)
+    print(urls)
     current_count += offset
 
 
