@@ -125,6 +125,7 @@ submit_button.click()
 authentication_handler(driver)
 
 driver.get('https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#') 
+driver.execute_script('botonBuscar()')
 not_reached_end = False
 current_count = 0
 total_count = 100
@@ -132,7 +133,7 @@ offset = 20
 # get session Data
 cookies = driver.get_cookies()
 user_data = {} 
-user_dat['UsuarioID'] = driver.execute_script('UsuarioID.value')
+user_data['UsuarioID'] = driver.execute_script('UsuarioID.value')
 
 for i in range(1, 16):
     try: # get the values in the selenium session, from the form data

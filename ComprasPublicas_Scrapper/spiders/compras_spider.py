@@ -5,8 +5,6 @@ from dotenv import dotenv_values
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
-    
 class LoginSpider(scrapy.Spider):
     name = 'login'
     login_handle = dotenv_values('.env')  
@@ -94,9 +92,7 @@ class LoginSpider(scrapy.Spider):
         cookies = driver.get_cookies()
         user_data = {} #m make empty obj
         user_data['UsuarioID'] = driver.execute_script('return UsuarioID.value')
-        user_data["__class"] = "SolicitudCompra"
-        user_data["__action"] = "buscarProcesoxEntidad"
-        for i in range(1, 16):
+        for i in range(0, 16):
             try: # get the values in the selenium session, from the form data
                 name = driver.execute_script(f'return $("paginaActual").form[{i}].name')
                 value = driver.execute_script(f'return $("paginaActual").form[{i}].value')
@@ -104,6 +100,37 @@ class LoginSpider(scrapy.Spider):
             except: 
                 print("could not get data")
         return (cookies, user_data)
+
+    def organize_cookies(self, cookies):
+        cookie_string = ""
+        cookie_order = ['WRTCorrelator', 'NSC_IUUQT_wTfswfs_TPDF_DOU', 'incop_fw_.compraspublicas.gob.ec_%2F_wlf', 'incop_fw_.compraspublicas.gob.ec_%2F_wat', 'mySESSIONID', 'incop_fw_www.compraspublicas.gob.ec_%2F_wat', 'vssck', '_ga', '_gid']
+        for order in cookie_order:
+            for cookie in cookies:
+                if order == cookie['name']:
+                    print(f"order:{order}")
+                    print(f'cookie:{cookie["name"]}')
+                    cookie_string += cookie['name'] + "=" + cookie['value'] + "; "
+                    break
+            print(f"could not loacte {order}")
+        return cookie_string
+
+
+    def organize_body(self, request):
+        body_string = ''
+        body_order = ['__class', '__action', 'csrf_token', 'idus', 'UsuarioID', 'captccc2', 'txtPalabrasClaves', 'Entidadbuscar', 'txtEntidadContratante', 'cmbEntidad', 'txtCodigoTipoCompra', 'txtCodigoProceso', 'f_inicio f_fin', 'count', 'paginaActual20', 'estado', 'trx']
+        for order in body_order:
+            try:
+                body_string += order + "=" + request[order] + '&' 
+            except:
+                print(f"could not get value: {order}")
+        return body_string[:-1]
+
+
+    def clean_formdata(self, data):
+        for key, value in data.items():
+            if value == '':
+                data[key] = '';
+        return data
 
     def login_parser(self, response):
         # define options for firefox
@@ -132,90 +159,55 @@ class LoginSpider(scrapy.Spider):
         self.authentication_handler(driver)
         # for some reason the server oly gives us a user After we load the 'Procesos' page
         driver.get('https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#') 
+        #driver.execute_script('botonBuscar()')
         # get user data from the selenium driver
-        (cookie_jar, user_data) = self.get_driver_user_data(driver)
+        (cookies, user_data) = self.get_driver_user_data(driver)
         # add page we want to get
-        user_data["paginaActual"] = 0
-        request_body = json.dumps(user_data)
-        print(f"request body:{request_body}")
+        user_data["__class"] = "SolicitudCompra"
+        user_data["__action"] = "buscarProcesoxEntidad"
+        user_data["paginaActual"] = "20"
+        user_data["count"] = "25509"
+        request_body = self.clean_formdata(user_data)
+        headers={
+                'Accept': 'text/javascript, text/html, application/xml, text/xml, */*',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Connection': 'keep-alive',
+                'Content-Length': '8',
+                'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Cookie': self.organize_cookies(cookies),
+                'Host': 'www.compraspublicas.gob.ec',
+                'Origin': 'https://www.compraspublicas.gob.ec',
+                'Sec-Fetch-Dest': 'empty',
+                'Sec-Fetch-Mode': 'cors',
+                'Sec-Fetch-Site': 'same-origin',
+                'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0',  
+                'X-Prototype-Version': '1.6.0',
+                'X-Requested-With': 'XMLHttpRequest',
+                }
+
+        print(f"\n\ncookies:\n {cookies}\n\n")
+        print(f"\n\nuser_data:\n {user_data}\n\n")
+        print(f"\n\nrequest_body:\n {request_body}\n\n")
+        print(f"\n\nheaders:\n {headers}\n\n")
         
-        yield scrapy.Request(
+        yield scrapy.FormRequest(
                 url="https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/servicio/interfazWeb.php",
                 method='POST',
-                #body=request_body,
-                cookies=cookie_jar,
-                headers={
-                    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0'
-                    },
+                cookies=cookies,
+                headers=headers,
+                formdata=request_body,
                 callback=self.proceso_parser)
 
         
     def proceso_parser(self, response):
         print("\n\nPrint reponse from api call: ")
-        print(response)
+        print(response.status)
+        print(response.headers)
+        print(response.body)
+        print(response.request)
         print("\n\n")
 
-
-
-                
-
-        
-        #yield scrapy.Request(
-                #url="https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/servicio/interfazWeb.php",
-                #method='POST',
-                #body=request_body,
-                #cookies=cookie_jar,
-                #headers={
-                #    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                #    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0'
-                #    },
-                #callback=self.proceso_parser)
-
-
-        #wait = WebDriverWait(driver, 1000)
-        #Loading = False 
-        #while`(True):
-        #    print("\nended")
-        #    print("element:")
-
-        #    element = WebDriverWait(driver, 100000).until( 
-        #            EC.presence_of_element_located((By.ID, 'mensaje'))
-        #            )
-        #    print(element)
-        #    print("\n")
-            
-        #time.sleep(2000000000)
-        # take screen shot
-        #driver.save_screenshot("screenshot.png")
-
-
-        #try:
-            #element = WebDriverWait(driver, 1000).until(
-                    #EC.presence_of_element_located((By.ID, "mensaje")) 
-                    #or
-                    #EC.url_to_be(self.login_handle['HOME_URL'])
-                    #)
-            #print("endeed the wait")
-        #finally:
-            # was not redirected to home page
-            # login failed posibly
-            #print("could not get home page")
-            #driver.quit()
-
-        #print(f"element: {element}")
-        # driver get Url
-
-        #home_url = driver.current url
-
-        # send to scrapy 
-        #request = Request(
-                #home_url,
-                #cookies=driver.get_cookies(),
-                #callback=self.parse_landing_page)
-        # get the home landing url
-
-        #driver.quit()
 
     def contest_list_parser(self, response):
         #print(f"\n{response}\n")
