@@ -64,7 +64,10 @@ COOKIES_ENABLED = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+FILES_STORE = '/home/telix/ComprasPublicas_Scrapper/files'
+
 ITEM_PIPELINES = {
+    #'ComprasPublicas_Scrapper.pipelines.FilesPipeline': 1,
     'ComprasPublicas_Scrapper.pipelines.CompraspublicasScrapperPipeline': 300,
 }
 

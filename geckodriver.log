@@ -3182,3 +3182,348 @@ JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compr
 JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643829612, line 418: TypeError: $(...) is null
+1643835294578	geckodriver	INFO	Listening on 127.0.0.1:50801
+1643835294582	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59397" "-no-remote" "-profile" "/tmp/rust_mozprofileGoUwXE"
+1643835297362	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileGoUwXE/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59397/devtools/browser/97ea9342-ef59-49f8-9808-61d125beb65b
+1643835298860	Marionette	INFO	Listening on port 42679
+1643835298905	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643835305628	Marionette	INFO	Stopped listening on port 36177
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643835338, line 418: TypeError: $(...) is null
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+[GFX1-]: GFX: RenderThread detected a device reset in PostUpdate
+1643858405258	Marionette	INFO	Stopped listening on port 42679
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643858476332	geckodriver	INFO	Listening on 127.0.0.1:43341
+1643858476335	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "40761" "-no-remote" "-profile" "/tmp/rust_mozprofileRsxyDo"
+*** You are running in headless mode.
+1643858478011	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileRsxyDo/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40761/devtools/browser/a2fe5dfb-9e9f-4033-bf4a-50064c1d6523
+1643858479123	Marionette	INFO	Listening on port 44753
+1643858479156	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643858555327	geckodriver	INFO	Listening on 127.0.0.1:46227
+1643858555332	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "40063" "-no-remote" "-profile" "/tmp/rust_mozprofileKypiKq"
+*** You are running in headless mode.
+1643858557007	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileKypiKq/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40063/devtools/browser/4812ef19-51b8-4dc1-9709-78ff0a94f6d2
+1643858557987	Marionette	INFO	Listening on port 34779
+1643858558051	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643858668132	geckodriver	INFO	Listening on 127.0.0.1:37341
+1643858668135	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "41741" "-no-remote" "-profile" "/tmp/rust_mozprofileM7iVrP"
+*** You are running in headless mode.
+1643858669805	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileM7iVrP/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:41741/devtools/browser/b8ed1a47-6fd5-4883-9e0b-378bf3beb164
+1643858670812	Marionette	INFO	Listening on port 36877
+1643858670856	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643858743028	geckodriver	INFO	Listening on 127.0.0.1:47113
+1643858743030	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "36407" "-no-remote" "-profile" "/tmp/rust_mozprofileRhmv5C"
+*** You are running in headless mode.
+1643858744694	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileRhmv5C/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36407/devtools/browser/690f2fc5-4c67-48ff-a1d3-3969ed2f1f89
+1643858745714	Marionette	INFO	Listening on port 43399
+1643858745749	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643858821229	geckodriver	INFO	Listening on 127.0.0.1:58303
+1643858821233	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52619" "-no-remote" "-profile" "/tmp/rust_mozprofileUeBVpC"
+*** You are running in headless mode.
+1643858822896	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileUeBVpC/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52619/devtools/browser/b4d5fb19-cd59-4d2f-bde0-41e3bc9ed009
+1643858824020	Marionette	INFO	Listening on port 37181
+1643858824051	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643858850, line 418: TypeError: $(...) is null
+1643859178357	geckodriver	INFO	Listening on 127.0.0.1:59161
+1643859178361	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "41215" "-no-remote" "-profile" "/tmp/rust_mozprofilekRYWmH"
+*** You are running in headless mode.
+1643859180005	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilekRYWmH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:41215/devtools/browser/a82b05c3-a374-4081-8959-bcfb4ce031ff
+1643859181177	Marionette	INFO	Listening on port 43573
+1643859181283	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643859206, line 418: TypeError: $(...) is null
+1643859359545	geckodriver	INFO	Listening on 127.0.0.1:54129
+1643859359548	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "48985" "-no-remote" "-profile" "/tmp/rust_mozprofilehadvMI"
+*** You are running in headless mode.
+1643859361207	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehadvMI/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48985/devtools/browser/9e497fa7-48f4-4963-ac8a-caf1484ae6f0
+1643859362327	Marionette	INFO	Listening on port 38167
+1643859362367	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643859386, line 418: TypeError: $(...) is null
+1643859442058	geckodriver	INFO	Listening on 127.0.0.1:35141
+1643859442062	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52577" "-no-remote" "-profile" "/tmp/rust_mozprofileYMdJkK"
+*** You are running in headless mode.
+1643859443715	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYMdJkK/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52577/devtools/browser/93f5cc5c-213f-484f-b5b8-b7cf4a875463
+1643859444689	Marionette	INFO	Listening on port 37951
+1643859444788	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643859450388	geckodriver	INFO	Listening on 127.0.0.1:48431
+1643859450893	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "36703" "-no-remote" "-profile" "/tmp/rust_mozprofilePKYJNp"
+*** You are running in headless mode.
+1643859452551	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePKYJNp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36703/devtools/browser/3c356168-ef26-48e8-b691-e4e3edd00b98
+1643859453560	Marionette	INFO	Listening on port 39893
+1643859453613	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643859487987	geckodriver	INFO	Listening on 127.0.0.1:41019
+1643859487990	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "57397" "-no-remote" "-profile" "/tmp/rust_mozprofile6GOkJU"
+*** You are running in headless mode.
+1643859489663	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile6GOkJU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57397/devtools/browser/00dd3250-6c39-49f0-9bf8-0e2caf05c099
+1643859490769	Marionette	INFO	Listening on port 43199
+1643859490809	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643859513, line 418: TypeError: $(...) is null
+1643859592888	geckodriver	INFO	Listening on 127.0.0.1:37011
+1643859592891	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "58697" "-no-remote" "-profile" "/tmp/rust_mozprofileITQuD5"
+*** You are running in headless mode.
+1643859594548	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileITQuD5/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58697/devtools/browser/af02297c-c760-432f-a427-df5ad2899378
+1643859595556	Marionette	INFO	Listening on port 38189
+1643859595610	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643859626518	geckodriver	INFO	Listening on 127.0.0.1:40245
+1643859626522	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "55171" "-no-remote" "-profile" "/tmp/rust_mozprofile4HJkR5"
+*** You are running in headless mode.
+1643859628171	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4HJkR5/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55171/devtools/browser/66f1d9f2-457e-40ec-b39e-e626c3722d62
+1643859629180	Marionette	INFO	Listening on port 43395
+1643859629241	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643859642413	geckodriver	INFO	Listening on 127.0.0.1:45825
+1643859642416	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "38279" "-no-remote" "-profile" "/tmp/rust_mozprofileJRFwUs"
+1643859645196	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJRFwUs/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38279/devtools/browser/196472cd-9c37-4176-a9ff-1f93d7265712
+1643859646349	Marionette	INFO	Listening on port 35387
+1643859646436	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643859670, line 418: TypeError: $(...) is null
+1643859967300	geckodriver	INFO	Listening on 127.0.0.1:34161
+1643859967302	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "36687" "-no-remote" "-profile" "/tmp/rust_mozprofileNsMo8I"
+1643859969872	Marionette	INFO	Stopped listening on port 35387
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1643859970095	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileNsMo8I/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36687/devtools/browser/5c388e4e-63d4-4f36-ab1f-9e9ec352cf52
+1643859971252	Marionette	INFO	Listening on port 46747
+1643859971323	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643860050673	geckodriver	INFO	Listening on 127.0.0.1:43419
+1643860050676	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43451" "-no-remote" "-profile" "/tmp/rust_mozprofileL7MKwI"
+1643860053455	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileL7MKwI/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43451/devtools/browser/befd3a26-e98c-4ee8-baf6-3f40e1975818
+1643860054607	Marionette	INFO	Listening on port 43783
+1643860054697	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643860220209	geckodriver	INFO	Listening on 127.0.0.1:36959
+1643860220712	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "53793" "-no-remote" "-profile" "/tmp/rust_mozprofilefSfgAz"
+1643860223540	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefSfgAz/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53793/devtools/browser/c403995c-ed3f-4dfa-8429-637631f58379
+1643860224727	Marionette	INFO	Listening on port 35999
+1643860224844	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643860413636	geckodriver	INFO	Listening on 127.0.0.1:56955
+1643860413639	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "48029" "-no-remote" "-profile" "/tmp/rust_mozprofile4KPY7w"
+1643860416453	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4KPY7w/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48029/devtools/browser/12c6ebf0-22e6-4608-8981-19428c3ecb8f
+1643860417568	Marionette	INFO	Listening on port 38891
+1643860417659	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643860971340	geckodriver	INFO	Listening on 127.0.0.1:55471
+1643860971342	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "58401" "-no-remote" "-profile" "/tmp/rust_mozprofilejcQoey"
+1643860974133	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilejcQoey/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58401/devtools/browser/02f1c891-a967-4096-8dc4-8016618c0b8b
+1643860975270	Marionette	INFO	Listening on port 41699
+1643860975363	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643861083923	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643861122312	geckodriver	INFO	Listening on 127.0.0.1:43155
+1643861122319	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "53019" "-no-remote" "-profile" "/tmp/rust_mozprofileMJSWLT"
+1643861125147	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileMJSWLT/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53019/devtools/browser/388214c8-ef84-498c-8153-1afdfa64bb95
+1643861126507	Marionette	INFO	Listening on port 45863
+1643861126544	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+1643861205792	geckodriver	INFO	Listening on 127.0.0.1:38499
+1643861205798	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "56653" "-no-remote" "-profile" "/tmp/rust_mozprofilesUcSER"
+1643861207631	Marionette	INFO	Stopped listening on port 45863
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643861208637	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilesUcSER/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56653/devtools/browser/328499e2-45c9-44f7-8b0e-8e6b04f505a8
+1643861209771	Marionette	INFO	Listening on port 43111
+1643861209822	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1643861422878	geckodriver	INFO	Listening on 127.0.0.1:58769
+1643861422881	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "55687" "-no-remote" "-profile" "/tmp/rust_mozprofileES0EmC"
+1643861425706	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileES0EmC/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55687/devtools/browser/a03c757b-d7e8-420e-a022-591d11c2c0ac
+1643861426832	Marionette	INFO	Listening on port 39305
+1643861426903	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643861449, line 418: TypeError: $(...) is null
+1643861630898	geckodriver	INFO	Listening on 127.0.0.1:55145
+1643861630902	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "57887" "-no-remote" "-profile" "/tmp/rust_mozprofilem5sqHg"
+1643861633731	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilem5sqHg/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57887/devtools/browser/66fc1e05-2977-4d97-a45c-da5591e4c513
+1643861634921	Marionette	INFO	Listening on port 32951
+1643861635025	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643861646138	Marionette	INFO	Stopped listening on port 39305
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1643861657, line 418: TypeError: $(...) is null
+1643861760947	Marionette	INFO	Stopped listening on port 32951
+1643862242860	geckodriver	INFO	Listening on 127.0.0.1:40393
+1643862242863	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "39981" "-no-remote" "-profile" "/tmp/rust_mozprofileQ5xFh4"
+1643862245674	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQ5xFh4/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:39981/devtools/browser/3a96ea93-fede-4fa9-b7c9-9c626cb9d811
+1643862246894	Marionette	INFO	Listening on port 40371
+1643862246996	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1643862292076	Marionette	INFO	Stopped listening on port 40371
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
