@@ -64,10 +64,19 @@ COOKIES_ENABLED = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-FILES_STORE = '/home/telix/ComprasPublicas_Scrapper/files'
+
+from dotenv import dotenv_values
+import os
+env = dotenv_values('.env')
+if env['DEST_FOLDER'] is not None:
+    dest = os.path.join( env['DEST_FOLDER'], env['DOMAIN'])
+else:
+    dest = env['DOMAIN']
+
+FILES_STORE = dest
 
 ITEM_PIPELINES = {
-    #'ComprasPublicas_Scrapper.pipelines.FilesPipeline': 1,
+    'ComprasPublicas_Scrapper.pipelines.CompraspublicasFilePipeline': 1,
     'ComprasPublicas_Scrapper.pipelines.CompraspublicasScrapperPipeline': 300,
 }
 

@@ -65,12 +65,12 @@ class LoginSpider(scrapy.Spider):
             # search for procesos
             # get the ID's for every procesos in the page
             projects = self.get_projects(driver, current_count)
-            print(f"\n\n{projects}")
-            print(f"RESPONSE from {current_count}/{current_count + offset}:\n")
+            #print(f"\n\n{projects}")
+            #print(f"RESPONSE from {current_count}/{current_count + offset}:\n")
             for project in projects: # for every id run scrapy requests
                 for i in range(1,7): # total of six tabs, but the 5th is hidden?
                     url = baseurl + f"tab.php?tab={i}&id={project['ID']}"
-                    print(f"\n\ni:{i}\n\n")
+                    #print(f"\n\ni:{i}\n\n")
                     yield scrapy.Request(url=url, 
                             cookies=cookies,
                             callback=self.parse_project, 
@@ -84,12 +84,11 @@ class LoginSpider(scrapy.Spider):
                 'project': response.meta.get('project'),
                 'tab_num': response.meta.get('tab_num'),
                 'response': response,
-                'body': response.body,
                 }
         if(item['tab_num'] == 6): 
             baseurl = env['PROJECT_URL'] 
             # get the rows of every file
-            print("\n\ngot donwloads tabs")
+            #print("\n\ngot donwloads tabs")
             table_rows = response.xpath('//a[@href]/ancestor::tr[1]')
             item['files_meta'] = [ {
                 'url': baseurl + row.xpath('.//a/@href').get(), 
