@@ -1,0 +1,6 @@
+DOMAIN=www.compraspublicas.gob.ec
+LOGIN_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras
+HOME_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe
+QUERY_PROJ_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#
+PROJECT_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/
+PROCESOS_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=
