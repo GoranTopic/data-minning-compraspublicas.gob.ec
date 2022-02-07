@@ -18,13 +18,13 @@ Selenium, on the other hand, uses the engine of a web-browser and thus it is abl
 
 Also, Selenium interaction with the server is very high-level; any changes made to the front-end code would 'break' the Selenium script, prompting the need to rewrite them. 
 
- 
+
 
 There is no perfect implementation, but leveraging the two framework strengths and weaknesses we can have a solution where we have the compatibility of Selenium with the speed, parallelism and efficiency of Scrapy. 
 
- 
 
- Selenium is able to handle the login an authentication of the website. It is able to talk with the server with the dynamic generated content, and catch any hidden authorization, techniques such as hidden cookies.  
+
+Selenium is able to handle the login an authentication of the website. It is able to talk with the server with the dynamic generated content, and catch any hidden authorization, techniques such as hidden cookies.  
 
 While Scrappy is able to follow up those request making Requests directly to the Backend API for the statis values in the database.  
 
@@ -34,7 +34,7 @@ The target server orders it database with a unique primary key ID value for ever
 
 Once we have a list of the ID’s there is no need for dynamic content to be requested or generated. I pass on all the headers, cookies and tokens to Scrapy so that the server would be none the wiser. Then we can query the backend API directly using the Project ID to extract the Projects information. We get the information and save it in a tree structure of the projects.  
 
-While it took painstaking about to calibration to recreate the same types of requests between the two frame works, I was able to make this work in the end. I have added a docker file along with the Firefox Gecko driver, for greater compatibility between operating systems.  
+While it took painstaking amount of calibration to recreate the same types of requests between the two frame works, I was able to make this work in the end. I have added a docker file along with the Firefox Gecko-driver, for greater compatibility between operating systems.  
 
   
 
@@ -58,12 +58,10 @@ This will download a copy of this repository to your working directory.
 
   
 
-You can alternately download a zip copy with the Download button on this repository: 
+You can also download a zip copy with the Download button on this repository: 
 
   
-
-  
-
+![](https://github.com/GoranTopic/compras_publicas_scrapper/assets/github_download.png)
   
 
   
@@ -118,7 +116,7 @@ Note that the values for DEST_FOLDER and HEADLESS must be `output` and `1` respe
 
 ## Running on Linux 
 
-After you have the file ‘.evn’ in the 'compras_publicas_scrapper' directory you can run it on Linux with the start.py script.  
+After you have the file ‘.env’ in the 'compras_publicas_scrapper' directory you can run it on Linux with the start.py script.  
 
  
 
@@ -148,21 +146,21 @@ Head over to the official Docker [website](https://www.docker.com/products/docke
 
 Once installed open the CMD line and go the project home directory. 
 
-  
+
 
 run the command `Docker build -t compras .` 
 
-  
+![](https://github.com/GoranTopic/compras_publicas_scrapper/assets/build_docker_image.png)
 
-after that you must open the docker app and go to images 
+after that you must open the docker app and go to images, where you will be able to see the image you have just build.  
 
-  
+![](https://github.com/GoranTopic/compras_publicas_scrapper/assets/docker_image.png)
 
 Click on the run button ‘run’ on the image 
 
-  
+ 
 
-Add more information and fill in with: 
+In optionall setting fill in:
 
 1.- The container name. This can anything you want, expect that it must not contain spaces.  
 
@@ -170,18 +168,17 @@ Add more information and fill in with:
 
 3.- The directory inside the container where the file will be written to. This MUST be '/output'. 
 
-  
+![](https://github.com/GoranTopic/compras_publicas_scrapper/assets/host_continer_path.png)
 
 Then run the container. 
 
-  
 
 You can inspect the standard output of the scraper on the Docker app.  
 
-  
+  ![](https://github.com/GoranTopic/compras_publicas_scrapper/assets/container_inspecting.png)
 
 And be able to see it file in the directory you have chosen. 
 
- 
+ ![](https://github.com/GoranTopic/compras_publicas_scrapper/assets/files_in_desktop.png)
 
 If you have encountered any problems do not heisted to contact me.  
