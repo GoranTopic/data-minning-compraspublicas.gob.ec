@@ -1,90 +1,187 @@
-# Compras Publicas Scrapper
+# Compras Publicas Scrapper 
 
-Hello there. 
+  
 
-This proect is a exmaple of Selenium and scrapy working together. 
+Hello there.  
 
-Becust of the ajax and XML nature of the taget website, Scrapy alone would not be able to access the DOM being create by Javascript.
-Selenium uses the engeing of a webbroser and thus it is able to run the JavaScript and render all the dynamic value being generated.
-However the downside to selenium is that is it slow, and scrapping lage about of page and data becomes unfeasable and time consuming.
-Also any change to the fronot end code woudld 'break' the selerium script and be in need of fixing. 
+  
 
-Levergain the two frameowrk we can have a solution where, Selenium handles the authetifucation and Srapy does the, well, scrapping.
+This project is an example of the [Selenium](https://www.selenium.dev/)  and [Scrapy](https://scrapy.org/) framework working together.  
 
-once we have made a script fo Selenium to autheticate, we can pass on the cookies, headers, csrf token to scrapy.
+  
 
-every get request scrappy makes to the backend api woudd autheticated and accepted, thus allowing us to use scrappies paralleismin to quic
-
-## Downloading the project
-
-You can download this git repositoy by eighterusing the command line or by using the github website. 
-
-To download with the comand line you must run have github installed and run:
-
-`git clone git@github.com:GoranTopic/compras_publicas_scrapper.git`
-
-this will donwload a copy of this repository to working directory.
- 
-you can alternatibly download a zip copy with the Download button on this repository:
-
-
-
-
-## Running the Scrapper
-Run 
-
-`cd compras_publicas_scrapper`
-
-or click on the foldercompras_publicas_scrapper'
-
-to enter thr home directory of this folder
-
-
-To run this scrapper you will need a file called ".env" in the home directory for this project.
-
-".env" must have the following format: 
-
-```
-DEST_FOLDER=output
-HEADLESS=1
-RUC=ruc_number
-USER=username
-PASS=password
-```
-
-Where you must fill in the ruc number, username and password.
-Note that the values for DEST_FOLDER and HEADLESS must be `oputput` and `1` for the script to work in a Docker container on in Windows machine.
-
-## Running on Linux
-After you have the file .evn in the 'compras_publicas_scrapper' you can run it on linux by running the start.py script. 
-
-`python3 start.py'
-
-and then running: 
-
-`scrapy crawl compras`
+Because the target website uses Ajax and XML to render dynamic HTML content, Scrapy alone is not able to extract the data rendered and presented dynamically by the JavaScript library.  
 
  
-## Running on Windows
 
-To run this script on Windows you must set up a Docker container first. Head over to the docker [website](https://www.docker.com/products/docker-desktop) to donwload th latest version of docker fo windows.
+Selenium, on the other hand, uses the engine of a web-browser and thus it is able to run the JavaScript code rending all the generated dynamic values. However, the downside to Selenium is that is it slow. When it comes to scrapping lager amounts of pages and data it becomes unfeasible and time consuming to render every response. 
 
-Once installed open the CMD line and go the the project home directoy.
+Also, Selenium interaction with the server is very high-level; any changes made to the front-end code would 'break' the Selenium script, prompting the need to rewrite them. 
 
-run the command `Docker build -t compras .`
+ 
 
-after that you must open the docker app and go to images
+There is no perfect implementation, but leveraging the two framework strengths and weaknesses we can have a solution where we have the compatibility of Selenium with the speed, parallelism and efficiency of Scrapy. 
 
-Click on the run 'button' ont he image
+ 
 
-the fill in the filed:
-1.- the container name, this cna anything you want, cannot have spaces. 
-2.- the destination where you want to the scrapped file to be written in you computer.
-3.- the directory inside the container where the file will be written to. This MUST be '/output'
+ Selenium is able to handle the login an authentication of the website. It is able to talk with the server with the dynamic generated content, and catch any hidden authorization, techniques such as hidden cookies.  
 
-the run the contatin. 
+While Scrappy is able to follow up those request making Requests directly to the Backend API for the statis values in the database.  
 
-should be able to inspect it progress
+I am able to get Selenium to login in and capture the user session, cookies, CSRF tokens and headers. Once Selenium has been able to authenticated, it is able to use the website’s front-end framework dynamic functions to ask the server for a list of all the project's ID. 
 
-and be able to see it file in the directory you have choosen
+The target server orders it database with a unique primary key ID value for every project it has. 
 
+Once we have a list of the ID’s there is no need for dynamic content to be requested or generated. I pass on all the headers, cookies and tokens to Scrapy so that the server would be none the wiser. Then we can query the backend API directly using the Project ID to extract the Projects information. We get the information and save it in a tree structure of the projects.  
+
+While it took painstaking about to calibration to recreate the same types of requests between the two frame works, I was able to make this work in the end. I have added a docker file along with the Firefox Gecko driver, for greater compatibility between operating systems.  
+
+  
+
+## How to Download this Project 
+
+  
+
+You can download this GitHub repository by either using the command line or by using the GitHub website.  
+
+  
+
+To download with the command line, you must run have Git installed and run: 
+
+  
+
+`git clone git@github.com:GoranTopic/compras_publicas_scrapper.git` 
+
+  
+
+This will download a copy of this repository to your working directory. 
+
+  
+
+You can alternately download a zip copy with the Download button on this repository: 
+
+  
+
+  
+
+  
+
+  
+
+## How to Running this Project 
+
+ Write 
+
+`cd compras_publicas_scrapper` 
+
+ On the command line  
+
+or click on the folder: ‘compras_publicas_scrapper' 
+
+to enter the home directory of this folder 
+
+  
+
+  
+
+To run this scraper, you have to create a file called ".env" in the home directory for this project. 
+
+Be careful to enable extensions in Windows, so that you don’t accidently create a file called “.env.txt” 
+
+  
+
+".env" must have the following format:  
+
+  
+
+``` 
+
+DEST_FOLDER=output 
+
+HEADLESS=1 
+
+RUC=ruc_number 
+
+USER=username 
+
+PASS=password 
+
+``` 
+
+ 
+
+Where you must fill in the RUC number, username and password with your information. 
+
+Note that the values for DEST_FOLDER and HEADLESS must be `output` and `1` respectably for the project to work in a Docker container on a Windows machine. 
+
+  
+
+## Running on Linux 
+
+After you have the file ‘.evn’ in the 'compras_publicas_scrapper' directory you can run it on Linux with the start.py script.  
+
+ 
+
+`python3 start.py' 
+
+  
+
+and then running:  
+
+  
+
+`scrapy crawl compras` 
+
+  
+
+  
+
+## Running on Windows 
+
+  
+
+To run this script on Windows you must first install Docker. 
+
+Head over to the official Docker [website](https://www.docker.com/products/docker-desktop) to download the latest version of docker of windows. 
+
+  
+
+Once installed open the CMD line and go the project home directory. 
+
+  
+
+run the command `Docker build -t compras .` 
+
+  
+
+after that you must open the docker app and go to images 
+
+  
+
+Click on the run button ‘run’ on the image 
+
+  
+
+Add more information and fill in with: 
+
+1.- The container name. This can anything you want, expect that it must not contain spaces.  
+
+2.- The destination where you want to the scrapped Data to be send to. This can be any folder most convent for you. 
+
+3.- The directory inside the container where the file will be written to. This MUST be '/output'. 
+
+  
+
+Then run the container. 
+
+  
+
+You can inspect the standard output of the scraper on the Docker app.  
+
+  
+
+And be able to see it file in the directory you have chosen. 
+
+ 
+
+If you have encountered any problems do not heisted to contact me.  
