@@ -11,13 +11,14 @@ current_project_count = 0 # start at zero
 total_project_count = None # must define late on
 
 env = dotenv_values('.env')  
+urls = dotenv_values('.urls')  
 
 headless = True if env['HEADLESS'] == 1 else False
 # create driver   
 driver = create_driver(headless)
 
 # load login page
-driver.get(env['LOGIN_URL'])
+driver.get(urls['LOGIN_URL'])
 
 # handle the login 
 submit_login_handler(driver)
@@ -26,7 +27,7 @@ submit_login_handler(driver)
 authentication_handler(driver)
 
 # for some reason the server only gives us a user After we load the 'Procesos' page
-driver.get(env['QUERY_PROJ_URL']) 
+driver.get(urls['QUERY_PROJ_URL']) 
 # run empty seach
 driver.execute_script('botonBuscar()')
 

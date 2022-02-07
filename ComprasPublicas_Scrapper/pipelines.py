@@ -4,25 +4,19 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 # useful for handling different item types with a single interface
-import magic
-from io import BytesIO
-from scrapy.utils.misc import md5sum
 from scrapy.pipelines.files import FilesPipeline
-from itemadapter import ItemAdapter
 from dotenv import dotenv_values
-import os
-import re
 import mimetypes
 import traceback
-
-
-mime = magic.Magic(mime=True)
+import os
+import re
 
 env = dotenv_values('.env')
+urls = dotenv_values('.urls')
 if env['DEST_FOLDER'] is not None:
-    dest = os.path.join( env['DEST_FOLDER'], env['DOMAIN'])
+    dest = os.path.join( env['DEST_FOLDER'], urls['DOMAIN'])
 else: 
-    dest = env['DOMAIN']
+    dest = urls['DOMAIN']
 
 tab_types = { 
         '1' : 'Descripción', 
@@ -33,7 +27,7 @@ tab_types = {
         '6' : 'Archivos', }
 
 class CompraspublicasScrapperPipeline:
-    env = env 
+    urls = urls 
     tab_types = tab_types
     dest = dest
 
@@ -51,7 +45,7 @@ class CompraspublicasScrapperPipeline:
 
     def create_url_file(self, item):
         # get url
-        base_url ='https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra='
+        base_url = urls['PROCESOS_URL']
         url = base_url + self.project['ID']
         # craft file path
         filename = os.path.join(
@@ -100,7 +94,6 @@ class CompraspublicasScrapperPipeline:
 
 class CompraspublicasFilePipeline(FilesPipeline):
     # if download folde is not specified, make folder with the domain's name
-    env = env 
     tab_types = tab_types
     dest = dest
 
@@ -117,12 +110,9 @@ class CompraspublicasFilePipeline(FilesPipeline):
                 if(request.url == meta['url']):
                     title = meta['title']
             # ge the filename
-            filename = os.path.join( code_folder, tab_folder, f"{title}") 
-            #print(filename)
             media_ext=''
+            filename = os.path.join( code_folder, tab_folder, f"{title}") 
             if response is not None:
-                #print(f"response: {response}")
-                print(f"\nheaders: {response.headers.get('Content-Disposition')}")
                 if 'Content-Type' in response.headers:
                     media_ext_guess = mimetypes.guess_extension(
                             str(response.headers.get('Content-Type'), 'UTF-8'))
@@ -137,7 +127,6 @@ class CompraspublicasFilePipeline(FilesPipeline):
         except Exception as e:
             print(f"\nsomething went wrong when downloading file:\n{request}\n{e}\n")
             traceback.print_exc()
-        print("{}{}\n".format(filename, media_ext))
         return "{}{}".format(filename, media_ext)
 
 

@@ -170,7 +170,7 @@ def create_driver(headless=True):
     firefoxOptions.headless = headless
     # open firefox driver with options
     driver = webdriver.Firefox(
-    executable_path='./geckodriver', 
+    #executable_path='/geckodriver',  must be in bin drive
     options=firefoxOptions)
     return driver
 
@@ -185,8 +185,11 @@ def submit_login_handler(driver):
     pass_element = driver.find_element(By.ID, "txtPassword") 
     pass_element.send_keys(env['PASS'])
     # press sumbit button
-    submit_button = driver.find_element(By.ID, "btnEntrar")
-    submit_button.click()
+    #submit_button = driver.find_element(By.ID, "btnEntrar")
+
+    # when button is not in view, (headless mode)
+    driver.execute_script("_lCominc()")
+    #submit_button.click()
 
 def get_total_project_count(driver):
     page_stats = driver.find_element(By.XPATH, 

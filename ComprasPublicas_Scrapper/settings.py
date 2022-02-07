@@ -68,10 +68,11 @@ COOKIES_ENABLED = True
 from dotenv import dotenv_values
 import os
 env = dotenv_values('.env')
+urls = dotenv_values('.urls')
 if env['DEST_FOLDER'] is not None:
-    dest = os.path.join( env['DEST_FOLDER'], env['DOMAIN'])
+    dest = os.path.join( env['DEST_FOLDER'], urls['DOMAIN'])
 else:
-    dest = env['DOMAIN']
+    dest = urls['DOMAIN']
 
 FILES_STORE = dest
 
