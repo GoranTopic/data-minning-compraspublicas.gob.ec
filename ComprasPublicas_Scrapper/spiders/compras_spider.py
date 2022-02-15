@@ -24,7 +24,7 @@ class LoginSpider(scrapy.Spider):
 
         headless = True if self.env['HEADLESS'] == 1 else False
         # create driver   
-        driver = create_driver(headless=True)
+        driver = create_driver(headless=headless)
 
         # load login page
         driver.get(self.urls['LOGIN_URL'])
@@ -70,7 +70,6 @@ class LoginSpider(scrapy.Spider):
         projects_file.write(f"]")
         #exit session
         driver.quit()
-        
             
     def parse_project(self, response):
         item = {

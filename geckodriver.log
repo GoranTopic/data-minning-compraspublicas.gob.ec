@@ -181,3 +181,79 @@ Exiting due to channel error.
 Exiting due to channel error.
 1644189668810	Marionette	INFO	Stopped listening on port 44695
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+geckodriver: error: Found argument '--websocket-port' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    geckodriver [FLAGS] [OPTIONS]
+
+For more information try --help
+
+1644886265715	geckodriver	INFO	Listening on 127.0.0.1:37113
+1644886265717	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "33863" "-no-remote" "-profile" "/tmp/rust_mozprofile8hDnph"
+*** You are running in headless mode.
+1644886265960	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8hDnph/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:33863/devtools/browser/0c34a539-e377-485c-8dd6-7140b27fc4fd
+1644886266815	Marionette	INFO	Listening on port 40177
+1644886266832	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1644886754369	geckodriver	INFO	Listening on 127.0.0.1:53565
+1644886754872	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "46949" "-no-remote" "-profile" "/tmp/rust_mozprofileAyxAEq"
+*** You are running in headless mode.
+1644886755122	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAyxAEq/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46949/devtools/browser/15b8a7bc-5dfa-4097-9f78-626d303f06e4
+1644886756049	Marionette	INFO	Listening on port 33157
+1644886756084	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1644886890224	geckodriver	INFO	Listening on 127.0.0.1:47389
+1644886890228	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "54069" "-no-remote" "-profile" "/tmp/rust_mozprofileXT91tc"
+1644886890673	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileXT91tc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54069/devtools/browser/3918f988-676b-47a6-9901-1121365c3779
+1644886891589	Marionette	INFO	Listening on port 36473
+1644886891640	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/prototype.js, line 932: TypeError: element is null
+1644886900931	Marionette	INFO	Stopped listening on port 36473
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

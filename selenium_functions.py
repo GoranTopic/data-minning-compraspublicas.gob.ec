@@ -1,6 +1,7 @@
 import scrapy
 import time
 import json
+from os import path
 from bs4 import BeautifulSoup
 from lxml import etree
 from dotenv import dotenv_values
@@ -164,13 +165,18 @@ def get_projects(driver, offset):
     return list(map(lambda ID, code  : { 'ID': ID, 'code': code }, IDs, codes))
 
 def create_driver(headless=True):
-    # define options for firefox
+    if(path.exists('./geckodriver')):
+        geckodriver_path = './geckodriver'
+    else:
+        geckodriver_path = None
+
+    # define options for firefoxa
     firefoxOptions = webdriver.FirefoxOptions()
     # set to headless driver
     firefoxOptions.headless = headless
     # open firefox driver with options
     driver = webdriver.Firefox(
-    #executable_path='/geckodriver',  must be in bin drive
+    executable_path=geckodriver_path,  #must be in bin drive
     options=firefoxOptions)
     return driver
 
