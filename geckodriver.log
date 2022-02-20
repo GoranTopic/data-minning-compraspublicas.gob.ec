@@ -314,3 +314,13 @@ DevTools listening on ws://localhost:59329/devtools/browser/13dc0dda-81d1-4abe-9
 1645358168431	Marionette	INFO	Listening on port 37827
 1645358168477	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1645361609799	geckodriver	INFO	Listening on 127.0.0.1:32785
+1645361610306	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "40301" "-no-remote" "-profile" "/tmp/rust_mozprofilepcKzqz"
+*** You are running in headless mode.
+1645361610599	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilepcKzqz/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40301/devtools/browser/cfe6ad75-6fff-4219-b23a-2e312d7cab69
+1645361611578	Marionette	INFO	Listening on port 44125
+1645361611622	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
