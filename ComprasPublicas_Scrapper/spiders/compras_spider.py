@@ -21,8 +21,11 @@ class LoginSpider(scrapy.Spider):
         offset = 20 # number of projects we get from a page
         current_count = 0 # start at zero
         total_count = None # must define late on
-
-        headless = True if self.env['HEADLESS'] == 1 else False
+        
+        headless = self.env['HEADLESS']
+        print(headless)
+        print(type(headless))
+        headless = True if self.env['HEADLESS'] == "1" else False
         # create driver   
         driver = create_driver(headless=headless)
 

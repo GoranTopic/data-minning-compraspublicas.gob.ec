@@ -176,8 +176,8 @@ def create_driver(headless=True):
     firefoxOptions.headless = headless
     # open firefox driver with options
     driver = webdriver.Firefox(
-    executable_path=geckodriver_path,  #must be in bin drive
-    options=firefoxOptions)
+            executable_path=geckodriver_path,  # must be in bin drive
+            options=firefoxOptions)
     return driver
 
 def submit_login_handler(driver):
