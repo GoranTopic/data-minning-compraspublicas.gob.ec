@@ -29,7 +29,7 @@ def login_script():
     # read headless option
     is_headless = env['HEADLESS']
     print(f"Headless mode is set to: {is_headless}")
-    if(is_headless == "true"):
+    if(is_headless == "true" or is_headless == "True"):
         headless = True
     else:
         headless = False
@@ -151,10 +151,12 @@ def test_script():
 
     # create driver   
     driver = create_driver(headless=headless)
-
+    
+    # input parameter into search 
     input_seach_parameters(driver)
 
     # exit session
     driver.quit()
 
 test_script()
+

@@ -44,14 +44,28 @@ def popup_handler(popup_element):
 
 def input_seach_parameters(driver):
     # get seach parameters inputed 
-    print(f'PALABRAS_CLAVES:      {search_parameters["PALABRAS_CLAVES"]}')
-    print(f'ENTIDAD_CONTRATANTE:  {search_parameters["ENTIDAD_CONTRATANTE"]}')
-    print(f'TIPO_DE_CONTRATACION: {search_parameters["TIPO_DE_CONTRATACION"]}')
-    print(f'TIPO_DE_COMPRA:       {search_parameters["TIPO_DE_COMPRA"]}')
-    print(f'CODIGO_DEL_PROCESO:   {search_parameters["CODIGO_DEL_PROCESO"]}')
-    print(f'FECHA_ASTA:           {search_parameters["FECHA_ASTA"]}')
-    print(f'FECHA_DESDE:          {search_parameters["FECHA_DESDE"]}')
+    if(search_parameters["PALABRAS_CLAVES"]):
+        print(f'PALABRAS_CLAVES:      {search_parameters["PALABRAS_CLAVES"]}')
 
+    if(search_parameters["ENTIDAD_CONTRATANTE"]):
+        print(f'ENTIDAD_CONTRATANTE:  {search_parameters["ENTIDAD_CONTRATANTE"]}')
+
+    if(search_parameters["TIPO_DE_CONTRATACION"]):
+        print(f'TIPO_DE_CONTRATACION: {search_parameters["TIPO_DE_CONTRATACION"]}')
+
+    if(search_parameters["TIPO_DE_COMPRA"]):
+        print(f'TIPO_DE_COMPRA:       {search_parameters["TIPO_DE_COMPRA"]}')
+
+    if(search_parameters["CODIGO_DEL_PROCESO"]):
+        print(f'CODIGO_DEL_PROCESO:   {search_parameters["CODIGO_DEL_PROCESO"]}')
+
+    if(search_parameters["FECHA_ASTA"]):
+        print(f'FECHA_ASTA:           {search_parameters["FECHA_ASTA"]}')
+
+    if(search_parameters["FECHA_DESDE"]):
+        print(f'FECHA_DESDE:          {search_parameters["FECHA_DESDE"]}')
+
+    #popup_el = driver.find_element(By.ID, "mensaje")
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login

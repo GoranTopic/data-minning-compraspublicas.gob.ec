@@ -726,3 +726,42 @@ DevTools listening on ws://localhost:37541/devtools/browser/9135b09b-de2f-4d3d-a
 1645507418007	Marionette	INFO	Stopped listening on port 41121
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
 JavaScript warning: https://pagead2.googlesyndication.com/bg/RTAFWjK1oaY5MR175eart5uncqyuFBD5-f7_3Cl3Idw.js line 1 > eval line 1758 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1645508908853	geckodriver	INFO	Listening on 127.0.0.1:37769
+1645508908856	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "40829" "-no-remote" "-profile" "/tmp/rust_mozprofiler2k606"
+*** You are running in headless mode.
+1645508909096	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiler2k606/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40829/devtools/browser/3c675169-0fd7-4ccd-9081-75628f9fe36f
+1645508909976	Marionette	INFO	Listening on port 46407
+1645508910073	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1645508910086	Marionette	INFO	Stopped listening on port 46407
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+console.error: services.settings: 
+  main/quicksuggest Signature failed  TypeError: NetworkError: Network request failed
+mesa: for the --simplifycfg-sink-common option: may only occur zero or one times!
+mesa: for the --global-isel-abort option: may only occur zero or one times!
+mesa: for the --amdgpu-atomic-optimizations option: may only occur zero or one times!
+JavaScript warning: https://cdn.js7k.com/rq/iv/inside-20.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1645509415794	geckodriver	INFO	Listening on 127.0.0.1:39819
+1645509415797	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "55473" "-no-remote" "-profile" "/tmp/rust_mozprofilek0FLk7"
+*** You are running in headless mode.
+1645509416075	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilek0FLk7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55473/devtools/browser/ea05d4bf-8f2b-4094-8016-bfd713b5ba59
+1645509416889	Marionette	INFO	Listening on port 41497
+1645509416911	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1645509416918	Marionette	INFO	Stopped listening on port 41497
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
