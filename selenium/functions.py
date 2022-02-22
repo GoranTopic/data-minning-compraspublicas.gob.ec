@@ -79,9 +79,9 @@ def input_seach_parameters(driver):
     # remove the readonly atribute to be able to write date
     driver.execute_script('document.getElementsByName("f_fin")[0].removeAttribute("readonly")')
     if(search_parameters["FECHA_HASTA"]):
-        print(f'FECHA_ASTA:           {search_parameters["FECHA_ASTA"]}')
+        print(f'FECHA_HASTA:           {search_parameters["FECHA_HASTA"]}')
         element = driver.find_element(By.ID, "f_fin")
-        element.send_keys(search_parameters['FECHA_ASTA'])
+        element.send_keys(search_parameters['FECHA_HASTA'])
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login
