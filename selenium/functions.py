@@ -1,11 +1,13 @@
-import scrapy
 import time
 import json
+import scrapy
 from os import path
 from lxml import etree
+from datetime import date
+from datetime import timedelta
 from bs4 import BeautifulSoup
-from dotenv import dotenv_values
 from selenium import webdriver
+from dotenv import dotenv_values
 from selenium.webdriver.common.by import By
 
 env = dotenv_values('.env')  
@@ -42,8 +44,39 @@ def popup_handler(popup_element):
         return None
     return "loading"
 
-def input_seach_parameters(driver):
+
+def divide_dates(start, end):
+    """ this functioins take a range of two date and divindes into batches of 200 days """
+    date_batches = [] # batches of data
+    batch_size = 150
+    start_date = date.fromisoformat(start) # first date of the range
+    end_date = date.fromisoformat(end) # last date of the range
+    date_range = end_date - start_date
+    # if start data is earlier than end date
+    if(date_range.days < 0):
+        print("start date is earlier end date")
+        exit() 
+    # get dates
+    num_batches = int(date_range.days / batch_size)
+    for i in range(num_batches):
+        date_batches.append({
+            'start': start_date + timedelta(days=(batch_size * (i))),
+            'end': start_date + timedelta(days=(batch_size * (i + 1))),
+            })
+    # get last days in the batch
+    last_batch = date_range.days % batch_size
+    last = start_date + timedelta(days=(batch_size * num_batches))
+    date_batches.append({
+        'start': last,
+        'end': last + timedelta(days=last_batch),
+        })
+    return date_batches
+
+def input_seach_parameters(date_batch, driver):
     # get seach parameters inputed 
+    fecha_desde = date_batch['start'].strftime("%Y-%m-%d")
+    fecha_hasta = date_batch['end'].strftime("%Y-%m-%d")
+
     if(search_parameters["PALABRAS_CLAVES"]):
         print(f'PALABRAS_CLAVES:      {search_parameters["PALABRAS_CLAVES"]}')
         element = driver.find_element(By.ID, "txtPalabrasClaves")
@@ -71,17 +104,17 @@ def input_seach_parameters(driver):
 
     # remove the readonly atribute to be able to write date
     driver.execute_script('document.getElementsByName("f_inicio")[0].removeAttribute("readonly")')
-    if(search_parameters["FECHA_DESDE"]):
-        print(f'FECHA_DESDE:          {search_parameters["FECHA_DESDE"]}')
+    if(fecha_desde):
+        print(f'FECHA_DESDE:          {fecha_desde}')
         element = driver.find_element(By.ID, "f_inicio")
-        element.send_keys(search_parameters['FECHA_DESDE'])
+        element.send_keys(fecha_desde)
 
     # remove the readonly atribute to be able to write date
     driver.execute_script('document.getElementsByName("f_fin")[0].removeAttribute("readonly")')
-    if(search_parameters["FECHA_HASTA"]):
-        print(f'FECHA_HASTA:           {search_parameters["FECHA_HASTA"]}')
+    if(fecha_hasta):
+        print(f'FECHA_HASTA:           {fecha_hasta}')
         element = driver.find_element(By.ID, "f_fin")
-        element.send_keys(search_parameters['FECHA_HASTA'])
+        element.send_keys(fecha_hasta)
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login
@@ -248,9 +281,13 @@ def submit_login_handler(driver):
     #submit_button.click()
 
 def get_total_project_count(driver):
-    page_stats = driver.find_element(By.XPATH, 
-            '//table/tbody/tr/td[@colspan="4"][@align="left"]').text
-    total_projects = page_stats.split(' ')[-1]
-    return int(total_projects)
+    try:
+        page_stats = driver.find_element(By.XPATH, 
+                '//table/tbody/tr/td[@colspan="4"][@align="left"]').text
+        total_projects = page_stats.split(' ')[-1]
+        return int(total_projects)
+    except Exception as e:
+        print("ERROR : "+str(e))
+        return 0
 
 
