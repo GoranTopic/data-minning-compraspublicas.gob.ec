@@ -2,8 +2,9 @@ import scrapy
 import time
 import json
 from os import path
-from bs4 import BeautifulSoup
 from lxml import etree
+from bs4 import BeautifulSoup
+from ../search_parameters import *
 from dotenv import dotenv_values
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -39,7 +40,11 @@ def popup_handler(popup_element):
         # write catch all function 
         #print("something whent wrong. Could not Identify the popup element")
         #return None
-        return "loading"
+    return "loading"
+
+def input_seach_parameters(driver):
+    # 
+
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login
@@ -161,16 +166,20 @@ def get_projects(driver, offset):
     relative_urls = dom.xpath('//a/@href')[4:24]
     codes = [ e.text for e in dom.xpath('//a')[4:24] ]
     # make absolute urls
+    def if_empty_link(x): # remove any 'javascript:void(0);'
+        return False if(x == "javascript:void(0);") else True;
+    relative_urls = list(filter(if_empty_link, relative_urls))
+    # retrive project id 
     IDs = list(map(lambda l : l.split('=')[1], relative_urls))
-    return list(map(lambda ID, code  : { 'ID': ID, 'code': code }, IDs, codes))
+    # retun object of ID
+    return list(map(lambda ID, code : { 'ID': ID, 'code': code }, IDs, codes))
 
-def create_driver(headless=True):
+def create_driver(headless=False):
     if(path.exists('./geckodriver')):
         geckodriver_path = './geckodriver'
     else:
         geckodriver_path = None
-
-    # define options for firefoxa
+    # define options for firefox
     firefoxOptions = webdriver.FirefoxOptions()
     # set to headless driver
     firefoxOptions.headless = headless
@@ -182,7 +191,6 @@ def create_driver(headless=True):
     else:
         driver = webdriver.Firefox(
                 options=firefoxOptions)
-
     return driver
 
 def submit_login_handler(driver):

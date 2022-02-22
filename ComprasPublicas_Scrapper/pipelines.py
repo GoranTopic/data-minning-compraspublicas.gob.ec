@@ -31,7 +31,6 @@ class CompraspublicasScrapperPipeline:
     tab_types = tab_types
     dest = dest
 
-
     def open_spider(self, spider):
         self.make_folder(self.dest)
 

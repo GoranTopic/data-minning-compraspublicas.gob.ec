@@ -67,7 +67,7 @@ class LoginSpider(scrapy.Spider):
                             cookies=cookies,
                             callback=self.parse_project, 
                             meta={'project': project, 'tab_num': i})
-                    projects_file.write(f"{project},\n ")
+                projects_file.write(f"{project},\n ")
                 current_count += offset
                 print(f"\nproject: {current_count} out of {total_count}\n")
         projects_file.write(f"]")
