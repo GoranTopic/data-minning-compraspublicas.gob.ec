@@ -691,3 +691,38 @@ JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645502665, line 418: TypeError: $(...) is null
 JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645502922, line 418: TypeError: $(...) is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 327))
+InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment: _createTargetActor/<@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:327:12
+newListener@resource://devtools/shared/event-emitter.js:173:27
+_emit@resource://devtools/shared/event-emitter.js:244:34
+emit@resource://devtools/shared/event-emitter.js:190:18
+emit@resource://devtools/shared/event-emitter.js:342:18
+destroy@resource://devtools/server/actors/targets/window-global.js:743:10
+module.exports/proto.destroy@resource://devtools/server/actors/targets/target-actor-mixin.js:244:30
+instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:242:26
+handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:651:12
+
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 327))
+InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment: _createTargetActor/<@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:327:12
+newListener@resource://devtools/shared/event-emitter.js:173:27
+_emit@resource://devtools/shared/event-emitter.js:244:34
+emit@resource://devtools/shared/event-emitter.js:190:18
+emit@resource://devtools/shared/event-emitter.js:342:18
+destroy@resource://devtools/server/actors/targets/window-global.js:743:10
+module.exports/proto.destroy@resource://devtools/server/actors/targets/target-actor-mixin.js:244:30
+instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:242:26
+handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:651:12
+
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645504730, line 418: TypeError: $(...) is null
+1645507403523	geckodriver	INFO	Listening on 127.0.0.1:37725
+1645507403526	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "37541" "-no-remote" "-profile" "/tmp/rust_mozprofileayelXz"
+1645507403955	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileayelXz/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:37541/devtools/browser/9135b09b-de2f-4d3d-a803-f93eda6163a2
+1645507404754	Marionette	INFO	Listening on port 41121
+1645507404838	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1645507418007	Marionette	INFO	Stopped listening on port 41121
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/RTAFWjK1oaY5MR175eart5uncqyuFBD5-f7_3Cl3Idw.js line 1 > eval line 1758 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.

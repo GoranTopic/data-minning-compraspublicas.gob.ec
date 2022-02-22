@@ -4,12 +4,12 @@ import json
 from os import path
 from lxml import etree
 from bs4 import BeautifulSoup
-from ../search_parameters import *
 from dotenv import dotenv_values
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 env = dotenv_values('.env')  
+search_parameters = dotenv_values('search_parameters.txt')
 
 def is_redirect_to_home_page(driver):
     # Check whether the current url is the homepage
@@ -38,20 +38,27 @@ def popup_handler(popup_element):
     #   return "loading"
     else:
         # write catch all function 
-        #print("something whent wrong. Could not Identify the popup element")
-        #return None
+        print("something whent wrong. Could not Identify the popup element")
+        return None
     return "loading"
 
 def input_seach_parameters(driver):
-    # 
+    # get seach parameters inputed 
+    print(f'PALABRAS_CLAVES:      {search_parameters["PALABRAS_CLAVES"]}')
+    print(f'ENTIDAD_CONTRATANTE:  {search_parameters["ENTIDAD_CONTRATANTE"]}')
+    print(f'TIPO_DE_CONTRATACION: {search_parameters["TIPO_DE_CONTRATACION"]}')
+    print(f'TIPO_DE_COMPRA:       {search_parameters["TIPO_DE_COMPRA"]}')
+    print(f'CODIGO_DEL_PROCESO:   {search_parameters["CODIGO_DEL_PROCESO"]}')
+    print(f'FECHA_ASTA:           {search_parameters["FECHA_ASTA"]}')
+    print(f'FECHA_DESDE:          {search_parameters["FECHA_DESDE"]}')
 
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login
-    #wait until popup it apprears 
+    # wait until popup it apprears 
     loading_page = True
-    loading_popup = True
-    while(loading_popup):
+    loading_popup = True 
+    while(loading_popup): 
         time.sleep(3)
         try:
             popup_el = driver.find_element(By.ID, "mensaje")
