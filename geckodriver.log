@@ -765,3 +765,118 @@ console.warn: services.settings: main/query-stripping sync interrupted by shutdo
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
 console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
 console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+1645509681636	geckodriver	INFO	Listening on 127.0.0.1:50641
+1645509681638	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "46769" "-no-remote" "-profile" "/tmp/rust_mozprofileSAOPE3"
+*** You are running in headless mode.
+1645509681885	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSAOPE3/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46769/devtools/browser/8340ea1d-1b87-4b51-b374-9d3e3db2010d
+1645509682701	Marionette	INFO	Listening on port 41565
+1645509682750	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1645509682758	Marionette	INFO	Stopped listening on port 41565
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 327))
+InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment: _createTargetActor/<@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:327:12
+newListener@resource://devtools/shared/event-emitter.js:173:27
+_emit@resource://devtools/shared/event-emitter.js:244:34
+emit@resource://devtools/shared/event-emitter.js:190:18
+emit@resource://devtools/shared/event-emitter.js:342:18
+destroy@resource://devtools/server/actors/targets/window-global.js:743:10
+module.exports/proto.destroy@resource://devtools/server/actors/targets/target-actor-mixin.js:244:30
+instantiate@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:242:26
+handleEvent@resource://devtools/server/connectors/js-window-actor/DevToolsFrameChild.jsm:651:12
+
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645509811, line 418: TypeError: $(...) is null
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1645521600354	Marionette	INFO	Stopped listening on port 34033
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1645521613422	geckodriver	INFO	Listening on 127.0.0.1:51797
+1645521613424	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "54699" "-no-remote" "-profile" "/tmp/rust_mozprofileAsfWPj"
+*** You are running in headless mode.
+1645521613649	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAsfWPj/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54699/devtools/browser/e00d7674-b50b-4a71-ace7-a1a0e6a840fa
+1645521614325	Marionette	INFO	Listening on port 39547
+1645521614336	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645521616, line 418: TypeError: $(...) is null
+1645521646718	geckodriver	INFO	Listening on 127.0.0.1:42919
+1645521646720	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46909" "-no-remote" "-profile" "/tmp/rust_mozprofilefCTW4T"
+1645521647141	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefCTW4T/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46909/devtools/browser/fd4de024-e9d0-4f7d-bf2c-34bba15f590b
+1645521647916	Marionette	INFO	Listening on port 40897
+1645521647933	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645521648, line 418: TypeError: $(...) is null
+JavaScript warning: https://pagead2.googlesyndication.com/bg/k5pT0KbHUu3hEt9efW2jJzl2Td-_ix6W4xkPXjNBIu0.js line 1 > eval line 5525 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/k5pT0KbHUu3hEt9efW2jJzl2Td-_ix6W4xkPXjNBIu0.js line 1 > eval line 3913 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/k5pT0KbHUu3hEt9efW2jJzl2Td-_ix6W4xkPXjNBIu0.js line 1 > eval line 894 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1645522453714	Marionette	INFO	Stopped listening on port 40897
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1645522459418	geckodriver	INFO	Listening on 127.0.0.1:53039
+1645522459421	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "34653" "-no-remote" "-profile" "/tmp/rust_mozprofilexAOWeU"
+1645522459856	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexAOWeU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:34653/devtools/browser/9a8c6662-28ee-42e0-bc85-717fc02e7eed
+1645522460672	Marionette	INFO	Listening on port 39689
+1645522460732	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645522461, line 418: TypeError: $(...) is null
+1645522637244	geckodriver	INFO	Listening on 127.0.0.1:42107
+1645522637247	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47117" "-no-remote" "-profile" "/tmp/rust_mozprofilehZnV1v"
+1645522637657	Marionette	INFO	Marionette enabled
+1645522637986	Marionette	INFO	Stopped listening on port 39689
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehZnV1v/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47117/devtools/browser/aaeae910-1c33-4226-8b8f-7c5a382d1c1b
+1645522638502	Marionette	INFO	Listening on port 42231
+1645522638558	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645522639, line 418: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645522639, line 418: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+1645522810096	geckodriver	INFO	Listening on 127.0.0.1:43455
+1645522810098	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "52669" "-no-remote" "-profile" "/tmp/rust_mozprofileM6B3a8"
+1645522810533	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileM6B3a8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52669/devtools/browser/9608cd9e-f2ee-4c47-8a5e-3d306ce040bd
+1645522811405	Marionette	INFO	Listening on port 41115
+1645522811512	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645522812, line 418: TypeError: $(...) is null
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#, line 2: SyntaxError: expected expression, got '}'
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645522937, line 418: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645523368, line 418: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1645523491, line 418: TypeError: $(...) is null

@@ -147,16 +147,20 @@ def test_script():
     projects_file = open(filename, 'w')
     projects_file.write(f"projects_ids = [\n")
 
-    """ ---- start script process ----"""
+    """-----start script process-----"""
 
     # create driver   
     driver = create_driver(headless=headless)
+
+    # For some reason the server only gives us user_data,
+    # after we load the 'Procesos' page
+    driver.get(urls['QUERY_PROJ_URL']) 
     
     # input parameter into search 
     input_seach_parameters(driver)
 
     # exit session
-    driver.quit()
+    #driver.quit()
 
 test_script()
 

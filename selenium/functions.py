@@ -46,26 +46,42 @@ def input_seach_parameters(driver):
     # get seach parameters inputed 
     if(search_parameters["PALABRAS_CLAVES"]):
         print(f'PALABRAS_CLAVES:      {search_parameters["PALABRAS_CLAVES"]}')
+        element = driver.find_element(By.ID, "txtPalabrasClaves")
+        element.send_keys(search_parameters['PALABRAS_CLAVES'])
 
     if(search_parameters["ENTIDAD_CONTRATANTE"]):
         print(f'ENTIDAD_CONTRATANTE:  {search_parameters["ENTIDAD_CONTRATANTE"]}')
+        element = driver.find_element(By.ID, "txtEntidadContratante")
+        element.send_keys(search_parameters['PALABRAS_CLAVES'])
 
     if(search_parameters["TIPO_DE_CONTRATACION"]):
         print(f'TIPO_DE_CONTRATACION: {search_parameters["TIPO_DE_CONTRATACION"]}')
+        element = driver.find_element(By.ID, "txtCodigoTipoCompra")
+        element.send_keys(search_parameters['TIPO_DE_CONTRATACION'])
 
-    if(search_parameters["TIPO_DE_COMPRA"]):
-        print(f'TIPO_DE_COMPRA:       {search_parameters["TIPO_DE_COMPRA"]}')
+     # if(search_parameters["TIPO_DE_COMPRA"]):
+        # print(f'TIPO_DE_COMPRA:       {search_parameters["TIPO_DE_COMPRA"]}')
+        # element = driver.find_element(By.ID, "txtCodigoTipoCompra")
+        # element.send_keys(search_parameters['TIPO_DE_CONTRATACION'])
 
     if(search_parameters["CODIGO_DEL_PROCESO"]):
         print(f'CODIGO_DEL_PROCESO:   {search_parameters["CODIGO_DEL_PROCESO"]}')
+        element = driver.find_element(By.ID, "txtCodigoProceso")
+        element.send_keys(search_parameters['CODIGO_DEL_PROCESO'])
 
-    if(search_parameters["FECHA_ASTA"]):
-        print(f'FECHA_ASTA:           {search_parameters["FECHA_ASTA"]}')
-
+    # remove the readonly atribute to be able to write date
+    driver.execute_script('document.getElementsByName("f_inicio")[0].removeAttribute("readonly")')
     if(search_parameters["FECHA_DESDE"]):
         print(f'FECHA_DESDE:          {search_parameters["FECHA_DESDE"]}')
+        element = driver.find_element(By.ID, "f_inicio")
+        element.send_keys(search_parameters['FECHA_DESDE'])
 
-    #popup_el = driver.find_element(By.ID, "mensaje")
+    # remove the readonly atribute to be able to write date
+    driver.execute_script('document.getElementsByName("f_fin")[0].removeAttribute("readonly")')
+    if(search_parameters["FECHA_HASTA"]):
+        print(f'FECHA_ASTA:           {search_parameters["FECHA_ASTA"]}')
+        element = driver.find_element(By.ID, "f_fin")
+        element.send_keys(search_parameters['FECHA_ASTA'])
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login
