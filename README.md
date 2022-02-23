@@ -36,13 +36,17 @@ To run this scraper, you have to create a file called ".env" in the home directo
 
 ``` 
 DEST_FOLDER=output 
-HEADLESS=1 
+HEADLESS=true
+STEALTH_MODE=false
 RUC=ruc_number 
 USER=username 
 PASS=password 
 ``` 
 
 Where you must fill in the RUC number, username and password with your information. 
+
+STEALTH_MODE adds a delay to the driver so that too many request are not fired at once. 
+The deay is a random value between 0 to 3 seconds
 
 **Note** that the values for DEST_FOLDER and HEADLESS **must** be `output` and `1` respectably for the project to work in a Docker container on a Windows machine. 
 

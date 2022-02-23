@@ -30,10 +30,12 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 
-if env['STEALTH_MODE'] is not None:
-    DOWNLOAD_DELAY = 3
-else:
-    DOWNLOAD_DELAY = 0
+
+DOWNLOAD_DELAY = 0
+is_stealthy = env['STEALTH_MODE'] 
+if is_stealthy is not None:
+    if(is_stealthy == "true" or is_stealthy == "True"):
+        DOWNLOAD_DELAY = 3
 
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
