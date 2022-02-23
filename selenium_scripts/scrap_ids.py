@@ -57,7 +57,7 @@ def scrap_project_ids():
 
     # create file where to store all the donwloaded project ids
     # filename for the writing the project ids
-    filename = os.path.join(dest, 'project_found.txt')
+    filename = os.path.join(dest, 'extracted_poject_ids.txt')
     # open ids
     projects_file = open(filename, 'w')
     projects_file.write(f"projects_ids = [\n")
@@ -121,7 +121,7 @@ def scrap_project_ids():
                 # add offset to get new projects
                 current_project_count += offset
                 #current_project_count += 5000
-                print(f"\nprojects: {current_project_count} out of {total_project_count}")
+                print(f"\nextracted project id: {current_project_count} out of {total_project_count}\n")
         except Exception as e:
 	        print("ERROR : "+str(e))
 
@@ -143,5 +143,5 @@ def scrap_project_ids():
     # return bothe the usre data and the projects_ids, in memory
     return (user_data, projects_ids)
 
-scrap_project_ids()
+#scrap_project_ids()
 
