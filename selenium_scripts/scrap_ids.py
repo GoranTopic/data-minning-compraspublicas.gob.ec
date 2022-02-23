@@ -2,17 +2,17 @@ import os
 import time
 import random
 from lxml import etree
-from functions import *
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from dotenv import dotenv_values
+from selenium_scripts.functions import *
 from selenium.webdriver.common.by import By
 
 def make_folder(folder):
     if not os.path.exists(folder):
         os.makedirs(folder)
 
-def scrapy_IDs(): 
+def scrap_project_ids(): 
     """ This Script handles the Selenium login script """
     # define constants for website
     offset = 20 # number of projects we get from a page
@@ -32,9 +32,17 @@ def scrapy_IDs():
     is_headless = env['HEADLESS']
     print(f"Headless mode is set to: {is_headless}")
     if(is_headless == "true" or is_headless == "True"):
-        headless = True
+        is_headless = True
     else:
-        headless = False
+        is_headless = False
+
+    # read is it is in steal mode
+    is_stealth = env['STEALTH_MODE']
+    if(is_stealth == "true" or is_stealth == "True"):
+        print(f"Running in stealth mode, this will take longer")
+        is_stealth = True
+    else:
+        is_stealth = False
 
     # read dest folder from .env file
     if env['DEST_FOLDER'] is not None:
@@ -57,7 +65,7 @@ def scrapy_IDs():
     """ ---- start script process ----"""
 
     # create driver   
-    driver = create_driver(headless=headless)
+    driver = create_driver(headless=is_headless) 
 
     # load login page
     driver.get(urls['LOGIN_URL'])
@@ -99,9 +107,9 @@ def scrapy_IDs():
             # base url for the 
             current_project_count = 0
             while(current_project_count <= total_project_count):
-                timeDelay = random.randrange(0, 3)
-                time.sleep(timeDelay)
-                    # search for procesos
+                if(is_stealth): # wait for a range of 0 to 3 second before any query
+                    time.sleep(random.randrange(0, 3))
+                # search for procesos
                 # get the ID's for every procesos in the page
                 current_projects = get_projects(driver, current_project_count)
                 # print(f"\n\n{projects}")
@@ -111,13 +119,14 @@ def scrapy_IDs():
                     # write project to disk
                     projects_file.write(f"{project},\n ")
                 # add offset to get new projects
-                #current_project_count += offset
-                current_project_count += 5000
+                current_project_count += offset
+                #current_project_count += 5000
                 print(f"\nprojects: {current_project_count} out of {total_project_count}")
-            projects_file.write(f"]")
-
         except Exception as e:
 	        print("ERROR : "+str(e))
+
+    # end file array
+    projects_file.write(f"]")
 
     # get user data from the selenium driver
     (cookies, data) = get_driver_user_data(driver)
@@ -134,63 +143,5 @@ def scrapy_IDs():
     # return bothe the usre data and the projects_ids, in memory
     return (user_data, projects_ids)
 
-def test_script(): 
-    """ This Script handles the Selenium login script """
-    # define constants for website
-    offset = 20 # number of projects we get from a page
-    current_project_count = 0 # start at zero
-    total_project_count = None # must define late on
-    projects_ids = [] # list to store ids in memory
-    
-    # read from config files
-    env = dotenv_values('.env')  
-    urls = dotenv_values('.urls')  
-
-    # get the baseurl make abosulte links
-    baseurl = urls['PROJECT_URL'] 
-
-    # read headless option
-    is_headless = env['HEADLESS']
-    print(f"Headless mode is set to: {is_headless}")
-    if(is_headless == "true"):
-        headless = True
-    else:
-        headless = False
-
-    # read dest folder from .env file
-    if env['DEST_FOLDER'] is not None:
-        dest = env['DEST_FOLDER']
-    else: 
-        print('could not get destination folder from .env file')
-        exit()
-
-    # make destination folder
-    # if it does not exits
-    make_folder(dest)
-
-    # create file where to store all the donwloaded project ids
-    # filename for the writing the project ids
-    filename = os.path.join(dest, 'project_found.txt')
-    # open ids
-    projects_file = open(filename, 'w')
-    projects_file.write(f"projects_ids = [\n")
-
-    """-----start script process-----"""
-
-    # create driver   
-    driver = create_driver(headless=headless)
-
-    # For some reason the server only gives us user_data,
-    # after we load the 'Procesos' page
-    driver.get(urls['QUERY_PROJ_URL']) 
-    
-    # input parameter into search 
-    input_seach_parameters(driver)
-
-    # exit session
-    #driver.quit()
-
-#test_script()
-
-scrapy_IDs()
+scrap_project_ids()
 

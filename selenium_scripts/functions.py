@@ -40,7 +40,7 @@ def popup_handler(popup_element):
     #   return "loading"
     else:
         # write catch all function 
-        print("something whent wrong. Could not Identify the popup element")
+        print("loading...")
         return None
     return "loading"
 
@@ -119,13 +119,16 @@ def input_seach_parameters(date_batch, driver):
 def authentication_handler(driver):
     # function which handles the pupup which apears after login
     # wait until popup it apprears 
-    loading_page = True
     loading_popup = True 
     while(loading_popup): 
         time.sleep(3)
         try:
             popup_el = driver.find_element(By.ID, "mensaje")
             state = popup_handler(popup_el)
+        except Exception as e: 
+            print("Alert Pop up not found")
+            state = None
+        if(state):
             if(state == 'acepted'): 
                 # click button
                 print("Acepted")
@@ -138,15 +141,10 @@ def authentication_handler(driver):
             elif(state == 'loading'): 
                 print("Loading...")
                 loading_popup = True
-            # if there are no Popup
-            if(is_redirect_to_home_page(driver)):
-                return True
-        except NoSuchElementException: 
-            loading_popup = True
-            print("popup Still loading")
-        except: 
-            print("something when worng, popup did not appear")
-            return False
+        # if there are no Popup
+        elif(is_redirect_to_home_page(driver)):
+            print("Acepted")
+            return True
 
 def handle_home_page(driver):
     # if there is a message #finish later
@@ -289,5 +287,3 @@ def get_total_project_count(driver):
     except Exception as e:
         print("ERROR : "+str(e))
         return 0
-
-

@@ -3,7 +3,7 @@ ENTIDAD_CONTRATANTE=""
 TIPO_DE_CONTRATACION=""
 TIPO_DE_COMPRA=""
 CODIGO_DEL_PROCESO=""
-# The date most be in the format year-month-day ex: 2012-03-12
+# The date most be in the format year-month-day ex 2012-03-12
 # note: it only accepts dates in a 203 days window
 FECHA_HASTA="2022-02-20"
-FECHA_DESDE="2018-08-03"
+FECHA_DESDE="2020-08-03"
