@@ -1,24 +1,24 @@
 import scrapy
 import time
-from selenium_scripts.scrap_ids import scrap_project_ids
+from selenium_scripts.scrap_ids_without_login import scrap_project_ids
 from dotenv import dotenv_values
 from test_data import test_projects
 
-class LoginSpider(scrapy.Spider):
-    name = 'compras'
+class RegimenesSpider(scrapy.Spider):
+    name = 'regimenes_especiales'
     env = dotenv_values('.env')  
     urls = dotenv_values('.urls')  
     baseurl = urls['PROJECT_URL'] 
   
     def start_requests(self):
-        login_url = self.urls['LOGIN_URL']
-        yield scrapy.Request( url=login_url, callback=self.compras_parser)
+        login_url = self.urls['REGIMEN_ESPECIALES']
+        yield scrapy.Request( url=login_url, callback=self.selenium_login_parser)
 
-    def compras_parser(self, response):
+    def selenium_login_parser(self, response):
         """ this function call the selenium login script to get al the IDs from each 
             project to scrap it when passed those projects to the scrapy """
-        # get data form slenuim scraper 
-        ( user_data, projects ) = scrap_project_ids()
+        # get data form selenium scraper 
+        ( user_data, projects ) = scrap_project_ids(response.url)
             #print(f"\n\n{projects}")
         for project in projects: # for every id run scrapy requests
             for i in range(1,7): # total of six tabs, but the 5th is hidden?

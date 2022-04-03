@@ -1813,3 +1813,53 @@ JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras
 
 ###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
 
+1649019431718	geckodriver	INFO	Listening on 127.0.0.1:47537
+1649019431721	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "40105" "-no-remote" "-profile" "/tmp/rust_mozprofileatXVoh"
+1649019432175	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileatXVoh/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40105/devtools/browser/7fe39f76-68d2-436b-b5c4-e770db0c997c
+1649019432917	Marionette	INFO	Listening on port 37947
+1649019432932	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649019461655	Marionette	INFO	Stopped listening on port 37947
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1649019461691	geckodriver::marionette	ERROR	Failed to close browser connection: Socket not connected (os error 107)
+[2022-04-03T20:57:41Z ERROR glean] Can't persist ping lifetime data: Error { kind: Rkv(IoError(Os { code: 2, kind: NotFound, message: "No such file or directory" })) }
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649020481869	geckodriver	INFO	Listening on 127.0.0.1:52645
+1649020482377	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "52679" "-no-remote" "-profile" "/tmp/rust_mozprofilePRx0z8"
+1649020482823	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePRx0z8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52679/devtools/browser/b5b17745-9080-408a-8f6e-2ad762ac26d2
+1649020483590	Marionette	INFO	Listening on port 41997
+1649020483696	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649020602351	Marionette	INFO	Stopped listening on port 41997
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649021507610	geckodriver	INFO	Listening on 127.0.0.1:36131
+1649021508117	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "56455" "-no-remote" "-profile" "/tmp/rust_mozprofileFIvs3Y"
+1649021508577	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileFIvs3Y/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56455/devtools/browser/d9e39d70-6fc4-441c-918b-7373986fdde1
+1649021509305	Marionette	INFO	Listening on port 35813
+1649021509330	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1649021741061	geckodriver	INFO	Listening on 127.0.0.1:57177
+1649021741569	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "36971" "-no-remote" "-profile" "/tmp/rust_mozprofileoGMw5R"
+1649021742013	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileoGMw5R/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36971/devtools/browser/2ee496b1-756f-4800-bf2a-7b0a8c6d80b3
+1649021742749	Marionette	INFO	Listening on port 37833
+1649021742782	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649021750247	Marionette	INFO	Stopped listening on port 37833
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1649021750276	geckodriver::marionette	ERROR	Failed to close browser connection: Socket not connected (os error 107)
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+

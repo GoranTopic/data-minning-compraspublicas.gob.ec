@@ -1,5 +1,7 @@
 DOMAIN=www.compraspublicas.gob.ec
 LOGIN_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras
+REGIMEN_ESPECIALES=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProcesoRE.cpe?op=R
+PROCESOS_ESPECIALES=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProcesoRE.cpe?op=P
 HOME_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe
 QUERY_PROJ_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#
 PROJECT_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/
