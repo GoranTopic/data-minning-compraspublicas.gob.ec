@@ -1,3 +1,0 @@
-[x] Fixed bug with sighed out normaly 
-[x] Add queries search 
-[x] Add downloaded list of projects ids
