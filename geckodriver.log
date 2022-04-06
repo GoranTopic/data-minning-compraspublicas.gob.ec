@@ -1863,3 +1863,162 @@ JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_
 
 ###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
 
+1649209695950	geckodriver	INFO	Listening on 127.0.0.1:59777
+1649209696452	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "45343" "-no-remote" "-profile" "/tmp/rust_mozprofileiHlLwY"
+1649209697071	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileiHlLwY/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:45343/devtools/browser/0c7a89f6-4380-41ec-9a62-e0a85ba85744
+1649209698063	Marionette	INFO	Listening on port 38131
+1649209698168	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/prototype.js, line 932: TypeError: element is null
+1649209719440	Marionette	INFO	Stopped listening on port 38131
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649223626896	geckodriver	INFO	Listening on 127.0.0.1:51745
+1649231014522	geckodriver	INFO	Listening on 127.0.0.1:36057
+1649231015031	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59573" "-no-remote" "-profile" "/tmp/rust_mozprofileOFgqli"
+1649231015547	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOFgqli/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59573/devtools/browser/b801e679-8dd3-437d-896c-3cae391b5533
+1649231016630	Marionette	INFO	Listening on port 45471
+1649231016648	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231021, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231021, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231021, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231021, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231021, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231023, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231023, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231023, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231023, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231023, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231025, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231025, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231025, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231025, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231025, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231027, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231027, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231027, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231027, line 64: TypeError: this.elements[i].setStyle is not a function
+1649231035891	Marionette	INFO	Stopped listening on port 45471
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649231489049	geckodriver	INFO	Listening on 127.0.0.1:55375
+1649231489557	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "37283" "-no-remote" "-profile" "/tmp/rust_mozprofileXOG8yx"
+1649231490086	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileXOG8yx/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:37283/devtools/browser/c4d62b93-ff28-4260-b412-e1c2a2696311
+1649231491252	Marionette	INFO	Listening on port 36981
+1649231491276	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231496, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231496, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231496, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231496, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/mootools.js?%201649231496, line 64: TypeError: this.elements[i].setStyle is not a function
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+1649231498410	Marionette	INFO	Stopped listening on port 36981
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649231628417	geckodriver	INFO	Listening on 127.0.0.1:41603
+1649231628927	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47945" "-no-remote" "-profile" "/tmp/rust_mozprofiledC8H1g"
+1649231629447	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiledC8H1g/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47945/devtools/browser/399857fa-b227-459f-b540-c1a4f10637ba
+1649231630600	Marionette	INFO	Listening on port 42993
+1649231630660	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649231654842	Marionette	INFO	Stopped listening on port 42993
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649231691910	geckodriver	INFO	Listening on 127.0.0.1:50733
+1649231692419	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "33893" "-no-remote" "-profile" "/tmp/rust_mozprofilevHp1Li"
+1649231692926	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevHp1Li/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:33893/devtools/browser/df8ca002-a102-4baf-b868-2f564dde1c35
+1649231694007	Marionette	INFO	Listening on port 40557
+1649231694040	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649231732901	Marionette	INFO	Stopped listening on port 40557
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649231796254	geckodriver	INFO	Listening on 127.0.0.1:56193
+1649231796761	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "48759" "-no-remote" "-profile" "/tmp/rust_mozprofileizmaxo"
+1649231797282	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileizmaxo/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48759/devtools/browser/e305bacf-63dd-4162-be0e-af419c1789d0
+1649231798404	Marionette	INFO	Listening on port 44093
+1649231798483	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1649231853385	geckodriver	INFO	Listening on 127.0.0.1:43591
+1649231853893	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "37605" "-no-remote" "-profile" "/tmp/rust_mozprofiley4ixgh"
+1649231854447	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiley4ixgh/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:37605/devtools/browser/49a1b698-51fe-4cf5-ae3f-d1830a196190
+1649231855642	Marionette	INFO	Listening on port 40943
+1649231855710	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649231881083	Marionette	INFO	Stopped listening on port 40943
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649231953334	geckodriver	INFO	Listening on 127.0.0.1:47601
+1649231953843	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "45109" "-no-remote" "-profile" "/tmp/rust_mozprofilelEGwzV"
+1649231954352	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilelEGwzV/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:45109/devtools/browser/0c04b0c1-f643-4304-bc37-300ed709ee0a
+1649231955459	Marionette	INFO	Listening on port 40449
+1649231955564	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649231963416	Marionette	INFO	Stopped listening on port 40449
+1649232010168	geckodriver	INFO	Listening on 127.0.0.1:42111
+1649232010676	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "34753" "-no-remote" "-profile" "/tmp/rust_mozprofileD5vBZd"
+1649232011202	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileD5vBZd/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:34753/devtools/browser/179878a3-13ac-4b5e-a279-78697c283fc1
+1649232012275	Marionette	INFO	Listening on port 33419
+1649232012295	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649232020443	Marionette	INFO	Stopped listening on port 33419
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649232235551	geckodriver	INFO	Listening on 127.0.0.1:47915
+1649232236058	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "56917" "-no-remote" "-profile" "/tmp/rust_mozprofilerQGl6z"
+1649232236586	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilerQGl6z/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56917/devtools/browser/292b2f5c-62bf-4a24-b0df-95f41c9cdb8e
+1649232237663	Marionette	INFO	Listening on port 37651
+1649232237784	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649232241410	Marionette	INFO	Stopped listening on port 37651
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649234090535	geckodriver	INFO	Listening on 127.0.0.1:54375
+1649234091043	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "44455" "-no-remote" "-profile" "/tmp/rust_mozprofileElaQyb"
+1649234091482	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileElaQyb/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:44455/devtools/browser/8e87e86a-1b51-47d7-995e-86d7af78062b
+1649234092317	Marionette	INFO	Listening on port 36907
+1649234092356	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649234097014	Marionette	INFO	Stopped listening on port 36907
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+

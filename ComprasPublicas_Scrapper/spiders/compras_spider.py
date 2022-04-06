@@ -9,6 +9,7 @@ class LoginSpider(scrapy.Spider):
     env = dotenv_values('.env')  
     urls = dotenv_values('.urls')  
     baseurl = urls['PROJECT_URL'] 
+    resumen_contractual_url= urls['RESUMEN_CONTRACTUAL']
   
     def start_requests(self):
         login_url = self.urls['LOGIN_URL']
@@ -21,7 +22,14 @@ class LoginSpider(scrapy.Spider):
         ( user_data, projects ) = scrap_project_ids()
             #print(f"\n\n{projects}")
         for project in projects: # for every id run scrapy requests
-            for i in range(1,7): # total of six tabs, but the 5th is hidden?
+            resumen_url = resumen_contractual_url + project['ID']
+            # request the resumen conttractuales
+            yield scrapy.Request(url=resumen_contractual_url, 
+                    cookies=user_data['cookies'],
+                    callback=self.parse_resumen_contractuales, 
+                    meta={'project': project, 'resumen': True, })
+            # get request
+            for i in range(1,8): # total of six tabs, but the 5th is hidden?
                 url = self.baseurl + f"tab.php?tab={i}&id={project['ID']}"
                 yield scrapy.Request(url=url, 
                         cookies=user_data['cookies'],
@@ -29,12 +37,16 @@ class LoginSpider(scrapy.Spider):
                         meta={'project': project, 'tab_num': i})
             
     def parse_project(self, response):
-        item = {
+        item = { # unpack meta data
                 'project': response.meta.get('project'),
                 'tab_num': response.meta.get('tab_num'),
+                'resumen': response.meta.get('resumen'),
                 'response': response,
                 }
-        if(item['tab_num'] == 6): 
+        if(item['resumen']):
+            print("--------- Got item resumen ---------")
+            print(response)
+        elif(item['tab_num'] == 6): 
             # get the rows of every file
             table_rows = response.xpath('//a[@href]/ancestor::tr[1]')
             item['files_meta'] = [ {

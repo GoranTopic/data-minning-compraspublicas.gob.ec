@@ -6,3 +6,4 @@ HOME_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.
 QUERY_PROJ_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#
 PROJECT_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/
 PROCESOS_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=
+RESUMEN_CONTRACTUAL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EC/resumenContractual1.cpe?idSoliCompra=

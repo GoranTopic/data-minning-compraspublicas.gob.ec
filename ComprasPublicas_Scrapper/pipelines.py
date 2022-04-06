@@ -56,10 +56,16 @@ class CompraspublicasScrapperPipeline:
 
     def create_html_file(self, item):
         # filename path
-        filename = os.path.join(self.dest, 
-                self.code_folder,
-                self.tab_folder,
-                f"{self.tab_folder}.html")
+        if(self.isResume):
+            filename = os.path.join(self.dest, 
+                    self.code_folder,
+                    self.tab_folder,
+                    'resumen_contractual')
+        else:
+            filename = os.path.join(self.dest, 
+                    self.code_folder,
+                    self.tab_folder,
+                    f"{self.tab_folder}.html")
         # create file 
         open(filename, "w").write(str(self.body, 'UTF-8'))
         
@@ -68,7 +74,10 @@ class CompraspublicasScrapperPipeline:
         # get code folder name
         self.code_folder = self.project["code"]
         # get tab folder name
-        self.tab_folder = self.tab_types[f'{self.tab_num}']
+        if(self.isResume):
+            self.tab_folder = 'resumen_contractual'
+        else:
+            self.tab_folder = self.tab_types[f'{self.tab_num}']
         # make folders
         self.make_folder(
                 os.path.join(self.dest, self.code_folder))
@@ -80,6 +89,7 @@ class CompraspublicasScrapperPipeline:
         # get the proects data passed
         self.body = item['response'].body
         self.project = item['project']
+        self.isResume = item['isResume']
         self.tab_num = item['tab_num']
 
         # make folders
