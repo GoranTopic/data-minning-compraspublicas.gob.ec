@@ -2022,3 +2022,25 @@ DevTools listening on ws://localhost:44455/devtools/browser/8e87e86a-1b51-47d7-9
 
 ###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
 
+1649234554095	geckodriver	INFO	Listening on 127.0.0.1:50771
+1649234554601	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43919" "-no-remote" "-profile" "/tmp/rust_mozprofileeFBeKE"
+1649234555083	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileeFBeKE/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43919/devtools/browser/7b29f585-50a0-411e-952a-66efa833ff1e
+1649234555985	Marionette	INFO	Listening on port 34511
+1649234556014	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649234561355	Marionette	INFO	Stopped listening on port 34511
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649234614108	geckodriver	INFO	Listening on 127.0.0.1:59319
+1649234614613	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "50415" "-no-remote" "-profile" "/tmp/rust_mozprofileaUKd8X"
+1649234615045	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileaUKd8X/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50415/devtools/browser/a6e1e5c7-e57a-40a0-9c8c-1d88b0c30de0
+1649234615980	Marionette	INFO	Listening on port 43619
+1649234616030	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649234619611	Marionette	INFO	Stopped listening on port 43619
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+

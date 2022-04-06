@@ -13,7 +13,7 @@ class RegimenesSpider(scrapy.Spider):
     resumen_contractual_url= urls['RESUMEN_CONTRACTUAL']
 
     def start_requests(self):
-        login_url = self.urls['LOGIN_URL']
+        login_url = self.urls['REGIMEN_ESPECIALES']
         yield scrapy.Request( url=login_url, callback=self.compras_parser)
 
     def compras_parser(self, response):
@@ -24,12 +24,12 @@ class RegimenesSpider(scrapy.Spider):
             #print(f"\n\n{projects}")
         for project in projects: # for every id run scrapy requests
             # request the resumen conttractuales
-            yield scrapy.Request(url=resumen_contractual_url + project['ID'],
+            yield scrapy.Request(url=self.resumen_contractual_url + project['ID'],
                     cookies=user_data['cookies'],
                     callback=self.parse_project, 
-                    meta={'project': project, 'resumen': True, })
+                    meta={'project': project, 'isResume': True, })
             # get request
-            for i in range(1,8): # total of six tabs, but the 5th is hidden?
+            for i in range(1,7): # total of six tabs, but the 5th is hidden?
                 url = self.baseurl + f"tab.php?tab={i}&id={project['ID']}"
                 yield scrapy.Request(url=url, 
                         cookies=user_data['cookies'],
@@ -40,10 +40,10 @@ class RegimenesSpider(scrapy.Spider):
         item = { # unpack meta data
                 'project': response.meta.get('project'),
                 'tab_num': response.meta.get('tab_num'),
-                'resumen': response.meta.get('resumen'),
+                'isResume': response.meta.get('isResume'),
                 'response': response,
                 }
-        if(item['resumen']):
+        if(item['isResume']):
             print("--------- Got item resumen ---------")
             print(response)
         elif(item['tab_num'] == 6): 
