@@ -12,11 +12,19 @@ import os
 import re
 
 env = dotenv_values('.env')
+options = dotenv_values('options.txt')
 urls = dotenv_values('.urls')
+
 if env['DEST_FOLDER'] is not None:
     dest = os.path.join( env['DEST_FOLDER'], urls['DOMAIN'])
 else: 
     dest = urls['DOMAIN']
+
+
+is_stealthy = env['STEALTH_MODE'] 
+if is_stealthy is not None:
+    if(is_stealthy == "true" or is_stealthy == "True"):
+        DOWNLOAD_DELAY = 3
 
 tab_types = { 
         '1' : 'Descripción', 

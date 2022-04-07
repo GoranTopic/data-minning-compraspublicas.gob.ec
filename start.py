@@ -2,7 +2,7 @@
 import subprocess
 import sys
 
-required = [ 'scrapy', 'python-dotenv', 'beautifulsoup4', 'selenium',  ]
+required = [ 'scrapy', 'python-dotenv', 'beautifulsoup4', 'selenium', "scrapy-rotating-proxies"  ]
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
