@@ -13,9 +13,9 @@ class RegimenesSpider(scrapy.Spider):
     baseurl = urls['PROJECT_URL'] 
     resumen_contractual_url= urls['RESUMEN_CONTRACTUAL']
 
-    is_donwloading_files = options['DOWNLOAD_FILES'] 
-    if is_donwloading_files is not None:
-        is_donwloading_files = is_donwloading_files == "true" or is_donwloading_files == "True"
+    is_downloading_files = options['DOWNLOAD_FILES'] 
+    if is_downloading_files is not None:
+        is_downloading_files = is_downloading_files == "true" or is_downloading_files == "True"
 
 
     def start_requests(self):
@@ -34,7 +34,7 @@ class RegimenesSpider(scrapy.Spider):
                     cookies=user_data['cookies'],
                     callback=self.parse_project, 
                     meta={'project': project, 'isResume': True, })
-            # get request
+            # this handle all the tabs of the project
             for i in range(1,7): # total of six tabs, but the 5th is hidden?
                 url = self.baseurl + f"tab.php?tab={i}&id={project['ID']}"
                 yield scrapy.Request(url=url, 
@@ -52,7 +52,7 @@ class RegimenesSpider(scrapy.Spider):
         if(item['isResume']):
             print("--------- Got item resumen ---------")
             print(response)
-        elif(item['tab_num'] == 6 and is_downloading_files): 
+        elif(item['tab_num'] == 6 and self.is_downloading_files): 
             # get the rows of every file
             table_rows = response.xpath('//a[@href]/ancestor::tr[1]')
             item['files_meta'] = [ {

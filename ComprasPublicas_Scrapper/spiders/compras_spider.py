@@ -12,9 +12,9 @@ class LoginSpider(scrapy.Spider):
     baseurl = urls['PROJECT_URL'] 
     resumen_contractual_url= urls['RESUMEN_CONTRACTUAL']
 
-    is_donwloading_files = options['DOWNLOAD_FILES'] 
-    if is_donwloading_files is not None:
-        is_donwloading_files = is_donwloading_files == "true" or is_donwloading_files == "True"
+    is_downloading_files = options['DOWNLOAD_FILES'] 
+    if is_downloading_files is not None:
+        is_downloading_files = is_downloading_files == "true" or is_downloading_files == "True"
 
   
     def start_requests(self):
@@ -52,7 +52,7 @@ class LoginSpider(scrapy.Spider):
         if(item['resumen']):
             print("--------- Got item resumen ---------")
             print(response)
-        elif(item['tab_num'] == 6 and is_downloading_files): 
+        elif(item['tab_num'] == 6 and self.is_downloading_files): 
             # get the rows of every file
             table_rows = response.xpath('//a[@href]/ancestor::tr[1]')
             item['files_meta'] = [ {
