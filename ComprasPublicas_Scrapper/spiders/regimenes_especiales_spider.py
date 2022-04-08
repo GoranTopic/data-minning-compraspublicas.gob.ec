@@ -5,7 +5,7 @@ from ComprasPublicas_Scrapper.spiders.compras_spider import LoginSpider
 from dotenv import dotenv_values
 from test_data import test_projects
 
-class RegimenesSpider(scrapy.Spider):
+class RegimenesSpider(LoginSpider):
     name = 'regimenes_especiales'
     env = dotenv_values('.env')  
     urls = dotenv_values('.urls')  

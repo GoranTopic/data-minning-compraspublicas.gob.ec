@@ -8,9 +8,50 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from dotenv import dotenv_values
+#from proxy_rotation import get_proxies
+
+proxy_list = [
+        "145.239.85.58:9300",
+        "46.4.96.137:1080",
+        "47.91.88.100:1080",
+        "45.77.56.114:30205",
+        "82.196.11.105:1080",
+        "51.254.69.243:3128",
+        "178.62.193.19:1080",
+        "188.226.141.127:1080",
+        "217.23.6.40:1080",
+        "185.153.198.226:32498",
+        "81.171.24.199:3128",
+        "5.189.224.84:10000",
+        "108.61.175.7:31802",
+        "176.31.200.104:3128",
+        "83.77.118.53:17171",
+        "173.192.21.89:80",
+        "163.172.182.164:3128",
+        "163.172.168.124:3128",
+        "164.68.105.235:3128",
+        "5.199.171.227:3128",
+        "93.171.164.251:8080",
+        "212.112.97.27:3128",
+        "51.68.207.81:80",
+        "91.211.245.176:8080",
+        "84.201.254.47:3128",
+        "95.156.82.35:3128",
+        "185.118.141.254:808",
+        "164.68.98.169:9300",
+        "217.113.122.142:3128",
+        "188.100.212.208:21129",
+        "83.77.118.53:17171",
+        "83.79.50.233:64527",
+        ]
+
 import os
 env = dotenv_values('.env')
+options = dotenv_values('options.txt')  
 urls = dotenv_values('.urls')
+
+
+
 
 BOT_NAME = 'ComprasPublicas_Scrapper'
 
@@ -37,6 +78,15 @@ if is_stealthy is not None:
     if(is_stealthy == "true" or is_stealthy == "True"):
         DOWNLOAD_DELAY = 3
 
+# get the option for downloading files
+is_downloading_files = options['DOWNLOAD_FILES'] 
+if is_downloading_files is not None:
+    is_downloading_files = is_downloading_files == "true" or is_downloading_files == "True"
+# get the options for using proxies
+is_proxy_mode = options['PROXY_MODE']
+if is_proxy_mode is not None:
+    is_proxy_mode = is_proxy_mode == "true" or is_proxy_mode == "True"
+
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -61,11 +111,14 @@ COOKIES_ENABLED = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperDownloaderMiddleware': 543,
-#    'scrapy_selenium.SeleniumMiddleware': 800,
-#    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'ComprasPublicas_Scrapper.middlewares.CompraspublicasScrapperDownloaderMiddleware': 543,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
+}
+
+if is_proxy_mode:
+    DOWNLOADER_MIDDLEWARES['rotating_proxies.middlewares.RotatingProxyMiddleware'] = 610
+    DOWNLOADER_MIDDLEWARES['rotating_proxies.middlewares.BanDetectionMiddleware'] = 620
 
 
 # Enable or disable extensions
@@ -83,12 +136,15 @@ if env['DEST_FOLDER'] is not None:
 else:
     dest = urls['DOMAIN']
 
+
 FILES_STORE = dest
 
 ITEM_PIPELINES = {
-    'ComprasPublicas_Scrapper.pipelines.CompraspublicasFilePipeline': 1,
     'ComprasPublicas_Scrapper.pipelines.CompraspublicasScrapperPipeline': 300,
 }
+
+if is_downloading_files:
+    ITEM_PIPELINES['ComprasPublicas_Scrapper.pipelines.CompraspublicasFilePipeline'] = 1
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

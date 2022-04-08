@@ -1,1 +1,5 @@
+DEST_FOLDER=output
+HEADLESS=true
 DOWNLOAD_FILES=false
+STEALTH_MODE=false
+PROXY_MODE=true
