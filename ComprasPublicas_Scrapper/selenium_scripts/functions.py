@@ -9,8 +9,7 @@ from datetime import timedelta
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import params 
-
+from ComprasPublicas_Scrapper import params 
 
 def is_redirect_to_home_page(driver):
     # Check whether the current url is the homepage

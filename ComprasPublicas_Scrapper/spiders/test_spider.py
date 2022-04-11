@@ -1,15 +1,25 @@
-import scrapy
 import time
+import scrapy
+from ComprasPublicas_Scrapper import params 
 from ComprasPublicas_Scrapper.test_data import test_projects
 from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_ids
-from ComprasPublicas_Scrapper import params 
+from ComprasPublicas_Scrapper.spiders.compras_spider import ComprasSpider
 
-class ComprasSpider(scrapy.Spider):
-    name = 'compras'
-    baseurl = params.project_url
-    resumen_contractual_url= params.resumen_contractual_url 
+class TestSpider(ComprasSpider):
+    name = 'test'
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.redis = Redis(host='redis', port=6379)
+
+    def start_requests(self):
+        login_url = params.login_url
+        yield scrapy.Request( url=login_url, callback=self.compras_parser)
+  
+class TestSpider(ComprasSpider):
+    name = 'test_selenium'
+    baseurl = params.project_url
+    resumen_contractual_url= params.resumen_contractual_url 
   
     def start_requests(self):
         login_url = params.login_url
@@ -52,5 +62,6 @@ class ComprasSpider(scrapy.Spider):
                 } for row in table_rows ]
             item['file_urls'] = [ meta['url'] for meta in item['files_meta'] ]
         return item 
+
 
 

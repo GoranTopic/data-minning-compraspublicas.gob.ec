@@ -1,17 +1,14 @@
 import sys
-sys.path.insert(0, '/home/telix/compras_publicas_scrapper/ComprasPublicas_Scrapper')
-
-import traceback
 import os
 import time
 import random
-import params
+import traceback
 from lxml import etree
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from dotenv import dotenv_values
-from selenium_scripts.functions import *
 from selenium.webdriver.common.by import By
+from ComprasPublicas_Scrapper import params 
+from ComprasPublicas_Scrapper.selenium_scripts.functions import *
 
 def make_folder(folder):
     if not os.path.exists(folder):
@@ -107,7 +104,7 @@ def scrap_project_ids(login=True, url=None):
                 # add offset to get new projects
                 current_project_count += offset
                 #current_project_count += 5000 # debug pourpouse
-                print(f"extracted project id: {current_project_count} out of {total_project_count}\n")
+                print(f"extracted project id: {current_project_count} out of {total_project_count}")
         except Exception as e:
             print("ERROR : "+str(e))
             traceback.print_exc()
@@ -131,7 +128,7 @@ def scrap_project_ids(login=True, url=None):
     return (user_data, projects_ids)
    
 # don't run script, for debugging only
-scrap_project_ids()
+#scrap_project_ids()
 #urls = dotenv_values('.urls')
 #scrap_project_ids(urls['REGIMEN_ESPECIALES'])
 

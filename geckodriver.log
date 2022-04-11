@@ -488,3 +488,239 @@ JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras
 
 ###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
 
+1649711941786	geckodriver	INFO	Listening on 127.0.0.1:58577
+1649711942289	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "55681" "-no-remote" "-profile" "/tmp/rust_mozprofileMMUaDX"
+*** You are running in headless mode.
+1649711942516	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileMMUaDX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55681/devtools/browser/92d3b77c-3694-48b1-a7ac-120d422ba201
+1649711943169	Marionette	INFO	Listening on port 46561
+1649711943201	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649711982, line 418: TypeError: $(...) is null
+1649712005462	Marionette	INFO	Stopped listening on port 46561
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649712009095	geckodriver	INFO	Listening on 127.0.0.1:52591
+1649712009598	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "34617" "-no-remote" "-profile" "/tmp/rust_mozprofileBY601k"
+*** You are running in headless mode.
+1649712009826	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileBY601k/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:34617/devtools/browser/bb3a08fd-1836-4d18-8973-b1f5dd7b36b5
+1649712010483	Marionette	INFO	Listening on port 39379
+1649712010509	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649712048, line 418: TypeError: $(...) is null
+1649712067743	Marionette	INFO	Stopped listening on port 39379
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649712643857	geckodriver	INFO	Listening on 127.0.0.1:37825
+1649712643859	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "57409" "-no-remote" "-profile" "/tmp/rust_mozprofileYo2Bii"
+*** You are running in headless mode.
+1649712644106	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYo2Bii/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57409/devtools/browser/4fd43c92-0b9a-4a67-a509-e759cc07b510
+1649712644814	Marionette	INFO	Listening on port 40403
+1649712644870	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649712672, line 418: TypeError: $(...) is null
+1649712696341	Marionette	INFO	Stopped listening on port 40403
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649712700023	geckodriver	INFO	Listening on 127.0.0.1:39891
+1649712700526	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52211" "-no-remote" "-profile" "/tmp/rust_mozprofilevsDtVg"
+*** You are running in headless mode.
+1649712700759	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevsDtVg/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52211/devtools/browser/fa0c1b9d-974f-4913-ab64-a5df10a45966
+1649712701375	Marionette	INFO	Listening on port 36989
+1649712701436	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649712739, line 418: TypeError: $(...) is null
+1649712753548	Marionette	INFO	Stopped listening on port 36989
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649712803597	geckodriver	INFO	Listening on 127.0.0.1:49771
+1649712803600	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "49313" "-no-remote" "-profile" "/tmp/rust_mozprofileQyrYPm"
+*** You are running in headless mode.
+1649712803817	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQyrYPm/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49313/devtools/browser/03d0c4f4-a72a-4811-9c24-c5b0ebad7887
+1649712804508	Marionette	INFO	Listening on port 37965
+1649712804622	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649712849, line 418: TypeError: $(...) is null
+1649712860352	Marionette	INFO	Stopped listening on port 37965
+JavaScript error: resource://gre/modules/CrashManager.jsm, line 898: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649712864273	geckodriver	INFO	Listening on 127.0.0.1:45359
+1649712864777	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "57933" "-no-remote" "-profile" "/tmp/rust_mozprofilepExJVp"
+*** You are running in headless mode.
+1649712865015	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilepExJVp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57933/devtools/browser/588b3e99-3f92-4319-9139-dd0b7dc969fe
+1649712865674	Marionette	INFO	Listening on port 46449
+1649712865691	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649712890, line 418: TypeError: $(...) is null
+1649712905315	Marionette	INFO	Stopped listening on port 46449
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649713036926	geckodriver	INFO	Listening on 127.0.0.1:36213
+1649713036929	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "41699" "-no-remote" "-profile" "/tmp/rust_mozprofile4Aa1pK"
+*** You are running in headless mode.
+1649713037152	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4Aa1pK/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:41699/devtools/browser/6dab8d4b-3a2d-4db8-b794-9860248c8cd0
+1649713037794	Marionette	INFO	Listening on port 38319
+1649713037841	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649713075, line 418: TypeError: $(...) is null
+1649713093477	Marionette	INFO	Stopped listening on port 38319
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649713096290	geckodriver	INFO	Listening on 127.0.0.1:60085
+1649713096795	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "50391" "-no-remote" "-profile" "/tmp/rust_mozprofile3GBEtB"
+*** You are running in headless mode.
+1649713097029	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile3GBEtB/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50391/devtools/browser/de641be3-7349-49dc-ac09-d8798b318867
+1649713097734	Marionette	INFO	Listening on port 40627
+1649713097816	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649713135, line 418: TypeError: $(...) is null
+1649713147415	Marionette	INFO	Stopped listening on port 40627
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649714074199	geckodriver	INFO	Listening on 127.0.0.1:49377
+1649714074202	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "39937" "-no-remote" "-profile" "/tmp/rust_mozprofileaSuzT4"
+*** You are running in headless mode.
+1649714074431	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileaSuzT4/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:39937/devtools/browser/af3e2982-cd60-4feb-b37e-cf7de9318614
+1649714075072	Marionette	INFO	Listening on port 38523
+1649714075113	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649714133, line 418: TypeError: $(...) is null
+1649714158346	Marionette	INFO	Stopped listening on port 38523
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649714341008	geckodriver	INFO	Listening on 127.0.0.1:43337
+1649714341010	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53267" "-no-remote" "-profile" "/tmp/rust_mozprofileDL6lJd"
+*** You are running in headless mode.
+1649714341234	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileDL6lJd/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53267/devtools/browser/632198b8-f086-48b3-bc5c-7d09caf00db2
+1649714341957	Marionette	INFO	Listening on port 43481
+1649714342023	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1649714378, line 418: TypeError: $(...) is null
+1649714390585	Marionette	INFO	Stopped listening on port 43481
+1649714904749	geckodriver	INFO	Listening on 127.0.0.1:39255
+1649714904751	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "47183" "-no-remote" "-profile" "/tmp/rust_mozprofiledxfR0w"
+*** You are running in headless mode.
+1649714905159	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiledxfR0w/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47183/devtools/browser/dadb108d-82ca-40f4-a8bf-c0e193259b08
+1649714905810	Marionette	INFO	Listening on port 37405
+1649714905863	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1649716704963	geckodriver	INFO	Listening on 127.0.0.1:54697
+1649716704966	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "41657" "-no-remote" "-profile" "/tmp/rust_mozprofileFWSWJC"
+*** You are running in headless mode.
+1649716705200	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileFWSWJC/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:41657/devtools/browser/81e8cd62-b971-4a46-a0d9-8bf3803c7231
+1649716705862	Marionette	INFO	Listening on port 33615
+1649716705877	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
