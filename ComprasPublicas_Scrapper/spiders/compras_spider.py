@@ -1,24 +1,16 @@
 import scrapy
 import time
-from selenium_scripts.scrap_ids import scrap_project_ids
-from dotenv import dotenv_values
 from test_data import test_projects
+from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_ids
+from ComprasPublicas_Scrapper import params 
 
 class LoginSpider(scrapy.Spider):
     name = 'compras'
-    env = dotenv_values('.env')  
-    options = dotenv_values('options.txt')  
-    urls = dotenv_values('.urls')  
-    baseurl = urls['PROJECT_URL'] 
-    resumen_contractual_url= urls['RESUMEN_CONTRACTUAL']
-
-    is_downloading_files = options['DOWNLOAD_FILES'] 
-    if is_downloading_files is not None:
-        is_downloading_files = is_downloading_files == "true" or is_downloading_files == "True"
-
+    baseurl = params.project_url
+    resumen_contractual_url= params.resumen_contractual_url 
   
     def start_requests(self):
-        login_url = self.urls['LOGIN_URL']
+        login_url = params.login_url
         yield scrapy.Request( url=login_url, callback=self.compras_parser)
 
     def compras_parser(self, response):
@@ -28,8 +20,8 @@ class LoginSpider(scrapy.Spider):
         ( user_data, projects ) = scrap_project_ids()
             #print(f"\n\n{projects}")
         for project in projects: # for every id run scrapy requests
-            resumen_url = resumen_contractual_url + project['ID']
-            # request the resumen conttractuales
+            resumen_url = params.resumen_contractual_url + project['ID']
+            # request the resumen contractuales
             yield scrapy.Request(url=resumen_contractual_url, 
                     cookies=user_data['cookies'],
                     callback=self.parse_resumen_contractuales, 
@@ -52,7 +44,7 @@ class LoginSpider(scrapy.Spider):
         if(item['resumen']):
             print("--------- Got item resumen ---------")
             print(response)
-        elif(item['tab_num'] == 6 and self.is_downloading_files): 
+        elif(item['tab_num'] == 6): 
             # get the rows of every file
             table_rows = response.xpath('//a[@href]/ancestor::tr[1]')
             item['files_meta'] = [ {

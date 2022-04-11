@@ -5,26 +5,16 @@
 
 # useful for handling different item types with a single interface
 from scrapy.pipelines.files import FilesPipeline
-from dotenv import dotenv_values
+from ComprasPublicas_Scrapper import params
 import mimetypes
 import traceback
 import os
 import re
 
-env = dotenv_values('.env')
-options = dotenv_values('options.txt')
-urls = dotenv_values('.urls')
-
-if env['DEST_FOLDER'] is not None:
-    dest = os.path.join( env['DEST_FOLDER'], urls['DOMAIN'])
+if params.dest_folder is not None:
+    dest = os.path.join( params.dest_folder, params.domain )
 else: 
-    dest = urls['DOMAIN']
-
-
-is_stealthy = env['STEALTH_MODE'] 
-if is_stealthy is not None:
-    if(is_stealthy == "true" or is_stealthy == "True"):
-        DOWNLOAD_DELAY = 3
+    dest = params.domain
 
 tab_types = { 
         '1' : 'Descripción', 
@@ -35,7 +25,6 @@ tab_types = {
         '6' : 'Archivos', }
 
 class CompraspublicasScrapperPipeline:
-    urls = urls 
     tab_types = tab_types
     dest = dest
 
@@ -52,7 +41,7 @@ class CompraspublicasScrapperPipeline:
 
     def create_url_file(self, item):
         # get url
-        base_url = urls['PROCESOS_URL']
+        base_url = params.procesos_url
         url = base_url + self.project['ID']
         # craft file path
         filename = os.path.join(
@@ -94,7 +83,7 @@ class CompraspublicasScrapperPipeline:
                 os.path.join(self.dest, self.code_folder, self.tab_folder))
 
     def process_item(self, item, spider):
-        # get the proects data passed
+        # get the project data passed
         self.body = item['response'].body
         self.project = item['project']
         self.isResume = item['isResume']

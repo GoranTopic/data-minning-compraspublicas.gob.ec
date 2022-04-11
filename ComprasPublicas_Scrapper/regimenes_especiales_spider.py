@@ -1,6 +1,6 @@
 import scrapy
 import time
-from selenium_scripts.scrap_ids_without_login import scrap_project_ids
+from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_ids
 from ComprasPublicas_Scrapper.spiders.compras_spider import LoginSpider
 from dotenv import dotenv_values
 from test_data import test_projects
@@ -16,7 +16,6 @@ class RegimenesSpider(LoginSpider):
     is_downloading_files = options['DOWNLOAD_FILES'] 
     if is_downloading_files is not None:
         is_downloading_files = is_downloading_files == "true" or is_downloading_files == "True"
-
 
     def start_requests(self):
         login_url = self.urls['REGIMEN_ESPECIALES']

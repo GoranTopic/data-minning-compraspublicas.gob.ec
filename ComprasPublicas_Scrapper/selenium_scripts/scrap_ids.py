@@ -1,77 +1,68 @@
+import sys
+sys.path.insert(0, '/home/telix/compras_publicas_scrapper/ComprasPublicas_Scrapper')
+
+import traceback
 import os
 import time
 import random
+import params
 from lxml import etree
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from dotenv import dotenv_values
-from selenium.webdriver.common.by import By
 from selenium_scripts.functions import *
+from selenium.webdriver.common.by import By
 
+def make_folder(folder):
+    if not os.path.exists(folder):
+        os.makedirs(folder)
 
-def scrap_project_ids(url): 
+def scrap_project_ids(login=True, url=None): 
     """ This Script handles the Selenium login script """
     # define constants for website
     offset = 20 # number of projects we get from a page
     current_project_count = 0 # start at zero
     total_project_count = None # must define late on
     projects_ids = [] # list to store ids in memory
-    
     # read from config files
-    env = dotenv_values('.env')  
-    urls = dotenv_values('.urls')  
-    search_parameters = dotenv_values('search_parameters.txt')
-
-    # get the baseurl make abosulte links
-    baseurl = urls['PROJECT_URL'] 
-
-    # read headless option
-    is_headless = env['HEADLESS']
-    print(f"Headless mode is set to: {is_headless}")
-    if(is_headless == "true" or is_headless == "True"):
-        is_headless = True
-    else:
-        is_headless = False
-
-    # read is it is in steal mode
-    is_stealth = env['STEALTH_MODE']
-    if(is_stealth == "true" or is_stealth == "True"):
-        print(f"Running in stealth mode, this will take longer")
-        is_stealth = True
-    else:
-        is_stealth = False
-
-    # read dest folder from .env file
-    if env['DEST_FOLDER'] is not None:
-        dest = env['DEST_FOLDER']
-    else: 
-        print('could not get destination folder from .env file')
-        exit()
 
     # make destination folder
     # if it does not exits
-    make_folder(dest)
+    make_folder(params.dest_folder)
 
     # create file where to store all the donwloaded project ids
     # filename for the writing the project ids
-    filename = os.path.join(dest, 'extracted_poject_ids.txt')
+    filename = os.path.join(params.dest_folder, 
+            'extracted_poject_ids.txt')
     # open ids
     projects_file = open(filename, 'w')
     projects_file.write(f"projects_ids = [\n")
 
-    """ ---- start script process ----"""
-    """ ---- Here we don't handle the authentification,
-    but go straight to the passed url ---- """
+    """ ---- start script process ---- """
 
     # create driver   
-    driver = create_driver(headless=is_headless) 
+    driver = create_driver(headless=params.is_headless) 
+
+    """ Here we don't handle the authentification, 
+    but go straight to the passed url  """
+
+    if login is True:
+        # load login page, it is set to login
+        driver.get(params.login_url)
+
+        # handle the login 
+        submit_login_handler(driver)
+
+        # handle authentication result
+        authentication_handler(driver)
 
     # remove the readonly atribute to be able to write date
     try: 
-        start_date = search_parameters["FECHA_DESDE"]
-        end_date = search_parameters["FECHA_HASTA"]
+        start_date = params.fecha_desde 
+        end_date = params.fecha_hasta
     except:
-        print(f"Could not get FECHA_DESDE or FECHA_HASTA\n Quiting")
+        print(f"Could not get FECHA_DESDE or FECHA_HASTA in the options file\n Quiting")
+        traceback.print_exc()
         exit()
 
     # divide the given date into batches of 200 days
@@ -83,7 +74,11 @@ def scrap_project_ids(url):
             print(f'starting with date: {date_batch}')
             # For some reason the server only gives us user_data,
             # after we load the 'Procesos' page
-            driver.get(url) 
+            if url is not None: 
+                # if url is passed
+                driver.get(url) 
+            else:
+                driver.get(params.query_project_url) 
 
             # input parameter into search 
             input_seach_parameters(date_batch, driver)
@@ -97,7 +92,8 @@ def scrap_project_ids(url):
             # base url for the 
             current_project_count = 0
             while(current_project_count <= total_project_count):
-                if(is_stealth): # wait for a range of 0 to 3 second before any query
+                if(params.is_stealthy): 
+                    # wait for a range of 0 to 3 second before any query
                     time.sleep(random.randrange(0, 3))
                 # search for procesos
                 # get the ID's for every procesos in the page
@@ -110,10 +106,11 @@ def scrap_project_ids(url):
                     projects_file.write(f"{project},\n ")
                 # add offset to get new projects
                 current_project_count += offset
-                #current_project_count += 5000
-                print(f"\nextracted project id: {current_project_count} out of {total_project_count}\n")
+                #current_project_count += 5000 # debug pourpouse
+                print(f"extracted project id: {current_project_count} out of {total_project_count}\n")
         except Exception as e:
-	        print("ERROR : "+str(e))
+            print("ERROR : "+str(e))
+            traceback.print_exc()
 
     # end file array
     projects_file.write(f"]")
@@ -132,12 +129,9 @@ def scrap_project_ids(url):
 
     # return bothe the usre data and the projects_ids, in memory
     return (user_data, projects_ids)
-
-def make_folder(folder):
-    if not os.path.exists(folder):
-        os.makedirs(folder)
-
+   
 # don't run script, for debugging only
+scrap_project_ids()
 #urls = dotenv_values('.urls')
 #scrap_project_ids(urls['REGIMEN_ESPECIALES'])
 

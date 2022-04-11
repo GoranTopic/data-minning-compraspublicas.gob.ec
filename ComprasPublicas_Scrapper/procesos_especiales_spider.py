@@ -1,6 +1,6 @@
 import scrapy
 import time
-from selenium_scripts.scrap_ids_without_login import scrap_project_ids
+from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_ids
 from ComprasPublicas_Scrapper.spiders.compras_spider import LoginSpider
 from dotenv import dotenv_values
 from test_data import test_projects

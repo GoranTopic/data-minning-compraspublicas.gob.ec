@@ -1,4 +1,5 @@
 **/.env
+**/.secret
 output
 output/*
 geckodriver.log

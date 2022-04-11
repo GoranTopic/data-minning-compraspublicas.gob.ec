@@ -7,8 +7,8 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-from dotenv import dotenv_values
 #from proxy_rotation import get_proxies
+from ComprasPublicas_Scrapper import params
 
 proxy_list = [
         "145.239.85.58:9300",
@@ -46,12 +46,6 @@ proxy_list = [
         ]
 
 import os
-env = dotenv_values('.env')
-options = dotenv_values('options.txt')  
-urls = dotenv_values('.urls')
-
-
-
 
 BOT_NAME = 'ComprasPublicas_Scrapper'
 
@@ -72,20 +66,10 @@ ROBOTSTXT_OBEY = False
 # See also autothrottle settings and docs
 
 
+# set the delay in scrapy
 DOWNLOAD_DELAY = 0
-is_stealthy = env['STEALTH_MODE'] 
-if is_stealthy is not None:
-    if(is_stealthy == "true" or is_stealthy == "True"):
+if params.is_stealthy:
         DOWNLOAD_DELAY = 3
-
-# get the option for downloading files
-is_downloading_files = options['DOWNLOAD_FILES'] 
-if is_downloading_files is not None:
-    is_downloading_files = is_downloading_files == "true" or is_downloading_files == "True"
-# get the options for using proxies
-is_proxy_mode = options['PROXY_MODE']
-if is_proxy_mode is not None:
-    is_proxy_mode = is_proxy_mode == "true" or is_proxy_mode == "True"
 
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
@@ -116,7 +100,8 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
 }
 
-if is_proxy_mode:
+if params.is_proxy_mode: 
+    # if proxy mode is enable, add middleware
     DOWNLOADER_MIDDLEWARES['rotating_proxies.middlewares.RotatingProxyMiddleware'] = 610
     DOWNLOADER_MIDDLEWARES['rotating_proxies.middlewares.BanDetectionMiddleware'] = 620
 
@@ -130,20 +115,18 @@ if is_proxy_mode:
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
-
-if env['DEST_FOLDER'] is not None:
-    dest = os.path.join( env['DEST_FOLDER'], urls['DOMAIN'])
+# set where the files will be download to 
+if params.dest_folder is not None:
+    FILES_STORE = os.path.join( params.dest_folder, params.domain )
 else:
-    dest = urls['DOMAIN']
-
-
-FILES_STORE = dest
+    FILES_STORE = params.domain
 
 ITEM_PIPELINES = {
     'ComprasPublicas_Scrapper.pipelines.CompraspublicasScrapperPipeline': 300,
 }
 
-if is_downloading_files:
+if params.is_downloading_files:
+    # if downloading file such pdf is enable, add middleware for it
     ITEM_PIPELINES['ComprasPublicas_Scrapper.pipelines.CompraspublicasFilePipeline'] = 1
 
 # Enable and configure the AutoThrottle extension (disabled by default)

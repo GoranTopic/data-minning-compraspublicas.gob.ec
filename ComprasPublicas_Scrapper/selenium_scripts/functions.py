@@ -1,4 +1,5 @@
 import time
+import traceback
 import json
 import scrapy
 from os import path
@@ -7,11 +8,9 @@ from datetime import date
 from datetime import timedelta
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from dotenv import dotenv_values
 from selenium.webdriver.common.by import By
+import params 
 
-env = dotenv_values('.env')  
-search_parameters = dotenv_values('search_parameters.txt')
 
 def is_redirect_to_home_page(driver):
     # Check whether the current url is the homepage
@@ -77,44 +76,44 @@ def input_seach_parameters(date_batch, driver):
     fecha_desde = date_batch['start'].strftime("%Y-%m-%d")
     fecha_hasta = date_batch['end'].strftime("%Y-%m-%d")
 
-    if(search_parameters["PALABRAS_CLAVES"]):
-        print(f'PALABRAS_CLAVES:      {search_parameters["PALABRAS_CLAVES"]}')
+    if(params.palabras_claves):
+        print(f'PALABRAS_CLAVES:      {params.palabras_claves}')
         element = driver.find_element(By.ID, "txtPalabrasClaves")
-        element.send_keys(search_parameters['PALABRAS_CLAVES'])
+        element.send_keys(params.palabras_claves)
 
-    if(search_parameters["ENTIDAD_CONTRATANTE"]):
-        print(f'ENTIDAD_CONTRATANTE:  {search_parameters["ENTIDAD_CONTRATANTE"]}')
+    if(params.entidad_contratante):
+        print(f'ENTIDAD_CONTRATANTE:  {params.entidad_contratante}')
         element = driver.find_element(By.ID, "txtEntidadContratante")
-        element.send_keys(search_parameters['PALABRAS_CLAVES'])
+        element.send_keys(params.entidad_contratante)
 
-    if(search_parameters["TIPO_DE_CONTRATACION"]):
-        print(f'TIPO_DE_CONTRATACION: {search_parameters["TIPO_DE_CONTRATACION"]}')
+    if(params.tipo_de_contratacion):
+        print(f'TIPO_DE_CONTRATACION: {parmas.tipo_de_contratacion}')
         element = driver.find_element(By.ID, "txtCodigoTipoCompra")
-        element.send_keys(search_parameters['TIPO_DE_CONTRATACION'])
+        element.send_keys(params.tipo_de_contratacion)
 
-     # if(search_parameters["TIPO_DE_COMPRA"]):
-        # print(f'TIPO_DE_COMPRA:       {search_parameters["TIPO_DE_COMPRA"]}')
+     # if(params.tipo_de_compra):
+        # print(f'TIPO_DE_COMPRA:       {params.tipo_de_compra}')
         # element = driver.find_element(By.ID, "txtCodigoTipoCompra")
-        # element.send_keys(search_parameters['TIPO_DE_CONTRATACION'])
+        # element.send_keys(params.tipo_de_compra)
 
-    if(search_parameters["CODIGO_DEL_PROCESO"]):
-        print(f'CODIGO_DEL_PROCESO:   {search_parameters["CODIGO_DEL_PROCESO"]}')
+    if(params.codigo_de_proceso):
+        print(f'CODIGO_DEL_PROCESO:   {params.codigo_de_proceso}')
         element = driver.find_element(By.ID, "txtCodigoProceso")
-        element.send_keys(search_parameters['CODIGO_DEL_PROCESO'])
+        element.send_keys(params.codigo_de_proceso)
 
     # remove the readonly atribute to be able to write date
     driver.execute_script('document.getElementsByName("f_inicio")[0].removeAttribute("readonly")')
-    if(fecha_desde):
-        print(f'FECHA_DESDE:          {fecha_desde}')
+    if(params.fecha_desde):
+        print(f'FECHA_DESDE:          {params.fecha_desde}')
         element = driver.find_element(By.ID, "f_inicio")
-        element.send_keys(fecha_desde)
+        element.send_keys(params.fecha_desde)
 
     # remove the readonly atribute to be able to write date
     driver.execute_script('document.getElementsByName("f_fin")[0].removeAttribute("readonly")')
-    if(fecha_hasta):
-        print(f'FECHA_HASTA:           {fecha_hasta}')
+    if(params.fecha_hasta):
+        print(f'FECHA_HASTA:           {params.fecha_hasta}')
         element = driver.find_element(By.ID, "f_fin")
-        element.send_keys(fecha_hasta)
+        element.send_keys(params.fecha_hasta)
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login
@@ -162,8 +161,8 @@ def handle_home_page(driver):
 def get_driver_user_data(driver):
     # get session Data
     cookies = driver.get_cookies()
-    user_data = {} #make empty obj
-    user_data['UsuarioID'] = driver.execute_script('return UsuarioID.value')
+    user_data = {} # make empty obj
+    #user_data['UsuarioID'] = driver.execute_script('return UsuarioID.value')
     for i in range(0, 16):
         try: # get the values in the selenium session, from the form data
             name = driver.execute_script(f'return $("paginaActual").form[{i}].name')
@@ -171,6 +170,7 @@ def get_driver_user_data(driver):
             user_data[name] = value
         except: 
             print("could not get data")
+            traceback.print_exc()
     return (cookies, user_data)
 
 def organize_cookies(cookies):
@@ -264,13 +264,13 @@ def create_driver(headless=False):
 def submit_login_handler(driver):
     # write ruc in input
     RUC_element = driver.find_element(By.ID, "txtRUCRecordatorio")
-    RUC_element.send_keys(env['RUC'])
+    RUC_element.send_keys(params.ruc)
     # write username in input
     username_element = driver.find_element(By.ID, "txtLogin")
-    username_element.send_keys(env['USER'])
+    username_element.send_keys(params.username)
     # write password
     pass_element = driver.find_element(By.ID, "txtPassword") 
-    pass_element.send_keys(env['PASS'])
+    pass_element.send_keys(params.password)
     # press sumbit button
     #submit_button = driver.find_element(By.ID, "btnEntrar")
 
@@ -286,4 +286,5 @@ def get_total_project_count(driver):
         return int(total_projects)
     except Exception as e:
         print("ERROR : "+str(e))
+        traceback.print_exc()
         return 0
