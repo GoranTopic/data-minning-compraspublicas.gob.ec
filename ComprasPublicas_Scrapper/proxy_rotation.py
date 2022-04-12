@@ -9,7 +9,9 @@ def get_proxies(count=10):
 
     if(len(proxies) < count):
         #'https://advanced.name/freeproxy'
-        proxies.update(advanced_free_proxy())
+        proxies.update(advanced_free_proxy(
+            count - len(proxies) 
+            ))
 
     if(len(proxies) < count):
         proxies.update(
@@ -48,7 +50,7 @@ def from_free_proxy_list(count):
                 proxies.add(proxy)
     return proxies
 
-def advanced_free_proxy():
+def advanced_free_proxy(count):
     url = 'https://advanced.name/freeproxy/6255013b47ba6'
     response = requests.get(url)
     proxies = set()
@@ -56,6 +58,8 @@ def advanced_free_proxy():
     print(type(response.text))
     for line in response.text.splitlines():
         proxies.add(line)
+        if len(proxies) < count:
+            break
     return proxies
 
 def read_proxi_from_file(filename, count):
