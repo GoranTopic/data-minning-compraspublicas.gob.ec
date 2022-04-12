@@ -104,7 +104,7 @@ def scrap_project_ids(login=True, url=None):
                 # add offset to get new projects
                 current_project_count += offset
                 #current_project_count += 5000 # debug pourpouse
-                print(f"extracted project id: {current_project_count} out of {total_project_count}")
+                print(f"\nExtracted project id: {current_project_count} out of {total_project_count}")
         except Exception as e:
             print("ERROR : "+str(e))
             traceback.print_exc()
@@ -128,7 +128,6 @@ def scrap_project_ids(login=True, url=None):
     return (user_data, projects_ids)
    
 # don't run script, for debugging only
-#scrap_project_ids()
-#urls = dotenv_values('.urls')
-#scrap_project_ids(urls['REGIMEN_ESPECIALES'])
+#url = params.resgimenes_especiales_url
+#scrap_project_ids(nologin=True, url)
 

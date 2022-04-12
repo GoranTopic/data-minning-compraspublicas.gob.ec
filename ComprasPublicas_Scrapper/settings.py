@@ -101,9 +101,12 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 if params.is_proxy_mode: 
+    print("\n\n---PROXY MODE IS ENABELD----\n\n")
     # if proxy mode is enable, add middleware
     DOWNLOADER_MIDDLEWARES['rotating_proxies.middlewares.RotatingProxyMiddleware'] = 610
     DOWNLOADER_MIDDLEWARES['rotating_proxies.middlewares.BanDetectionMiddleware'] = 620
+else: 
+    print("\n\n---PROXY MODE IS DISABELED----\n\n")
 
 
 # Enable or disable extensions

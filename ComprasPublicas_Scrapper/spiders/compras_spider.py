@@ -1,25 +1,27 @@
 import scrapy
-import time
+from ComprasPublicas_Scrapper import params 
 from ComprasPublicas_Scrapper.test_data import test_projects
 from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_ids
-from ComprasPublicas_Scrapper import params 
 
 class ComprasSpider(scrapy.Spider):
     name = 'compras'
     baseurl = params.project_url
     resumen_contractual_url= params.resumen_contractual_url 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    # if you are setting nologin to true one must provide 
+    # the target url in start_ulr at start_requests
+    nologin = False
   
     def start_requests(self):
-        login_url = params.login_url
-        yield scrapy.Request( url=login_url, callback=self.compras_parser)
+        start_url = params.login_url
+        yield scrapy.Request( url=start_url, callback=self.compras_parser)
 
     def compras_parser(self, response):
         """ this function call the selenium login script to get al the IDs from each 
             project to scrap it when passed those projects to the scrapy """
         # get data form slenuim scraper 
-        ( user_data, projects ) = scrap_project_ids()
+        # if a starget has been set
+        (user_data, projects) = scrap_project_ids(login=False, url=response.url) if self.nologin else scrap_project_ids()
+
             #print(f"\n\n{projects}")
         for project in projects: # for every id run scrapy requests
             # request the resumen contractuales
