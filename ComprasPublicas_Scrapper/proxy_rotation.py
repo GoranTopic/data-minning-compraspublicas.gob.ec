@@ -6,16 +6,36 @@ def get_proxies(count=10):
     proxies = set()
     #'https://free-proxy-list.net/'
     proxies.update(from_free_proxy_list(count))
+
     if(len(proxies) < count):
         #'https://advanced.name/freeproxy'
         proxies.update(advanced_free_proxy())
+
+    if(len(proxies) < count):
+        proxies.update(
+                read_proxi_from_file(
+                    'assets/proxy_list/Free proxies.txt', 
+                    count - len(proxies)))
+
+    if(len(proxies) < count):
+        proxies.update(
+                read_proxi_from_file(
+                    'assets/proxy_list/Free proxies for 05-04-2022.txt',
+                    count - len(proxies)))
+
+    if(len(proxies) < count):
+        proxies.update(
+                read_proxi_from_file(
+                    'assets/proxy_list/Free proxies for 2022-04-04.txt',
+                    count - len(proxies)))
+
     return proxies
 
 def from_free_proxy_list(count):
     # this website provides about 21 free proxies
     url = 'https://free-proxy-list.net/'
     max_proxies = 21
-    limit = max_proxies if count > proxies else count
+    limit = max_proxies if count > max_proxies else count
     proxies = set()
     while(len(proxies) < limit):
         response = requests.get(url)
@@ -38,6 +58,19 @@ def advanced_free_proxy():
         proxies.add(line)
     return proxies
 
+def read_proxi_from_file(filename, count):
+    # Using readlines()
+    file = open(filename, 'r')
+    lines = file.readlines();
+    proxies = set()
+    count = 0
+    # Strips the newline character
+    for line in lines:
+        proxies.add(line.strip())
+        if len(proxies) < count:
+            break
+    return proxies
 
-proxies = get_proxies(100)
-print(proxies)
+# debug
+#proxies = get_proxies(10000)
+#print(proxies)
