@@ -42,6 +42,8 @@ if options is not None:
     is_stealthy = is_true_value(is_stealthy)
     is_downloading_files = is_true_value(is_downloading_files)
     is_proxy_mode = is_true_value(is_proxy_mode)
+    if is_proxy_mode:
+        proxy_count = int(options['PROXY_COUNT'])
     # search paramters
     palabras_claves = options["PALABRAS_CLAVES"]
     entidad_contratante = options["ENTIDAD_CONTRATANTE"]

@@ -65,7 +65,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 if params.is_proxy_mode: 
-    number_of_proxies = 3677
+    number_of_proxies = params.proxy_count 
     ROTATING_PROXY_LIST = get_proxies(number_of_proxies)
     # if proxy mode is enable, add middleware
     DOWNLOADER_MIDDLEWARES['rotating_proxies.middlewares.RotatingProxyMiddleware'] = 610
