@@ -242,8 +242,8 @@ def get_projects(driver, offset):
     return list(map(lambda ID, code : { 'ID': ID, 'code': code }, IDs, codes))
 
 def create_driver(headless=False):
-    if(path.exists('./geckodriver')):
-        geckodriver_path = './geckodriver'
+    if(path.exists('./ComprasPublicas_Scrapper/geckodriver')):
+        geckodriver_path = './ComprasPublicas_Scrapper/geckodriver'
     else:
         geckodriver_path = None
     # define options for firefox
