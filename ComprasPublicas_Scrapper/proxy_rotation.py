@@ -1,12 +1,13 @@
 import requests
 from lxml.html import fromstring
 
-
 def get_proxies(count=10):
     proxies = set()
     #'https://free-proxy-list.net/'
     proxies.update(from_free_proxy_list(count))
+    return proxies
 
+"""
     if(len(proxies) < count):
         #'https://advanced.name/freeproxy'
         proxies.update(advanced_free_proxy(
@@ -30,16 +31,14 @@ def get_proxies(count=10):
                 read_proxi_from_file(
                     'assets/proxy_list/Free proxies for 2022-04-04.txt',
                     count - len(proxies)))
-
-    return proxies
+"""
 
 def from_free_proxy_list(count):
     # this website provides about 21 free proxies
     url = 'https://free-proxy-list.net/'
-    max_proxies = 21
-    limit = max_proxies if count > max_proxies else count
+    prev_proxy_len = -1
     proxies = set()
-    while(len(proxies) < limit):
+    while(prev_proxy_len < len(proxies)):
         response = requests.get(url)
         parser = fromstring(response.text)
         print(f"grabbing proxies: {len(proxies)} out of {count}");
@@ -48,6 +47,7 @@ def from_free_proxy_list(count):
                 # Grabbing IP and corresponding PORT
                 proxy = ":".join([i.xpath('.//td[1]/text()')[0], i.xpath('.//td[2]/text()')[0]])
                 proxies.add(proxy)
+        prev_proxy_len = len(proxies)
     return proxies
 
 def advanced_free_proxy(count):
