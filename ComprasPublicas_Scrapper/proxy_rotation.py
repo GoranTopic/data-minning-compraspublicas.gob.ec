@@ -5,9 +5,7 @@ def get_proxies(count=10):
     proxies = set()
     #'https://free-proxy-list.net/'
     proxies.update(from_free_proxy_list(count))
-    return proxies
 
-"""
     if(len(proxies) < count):
         #'https://advanced.name/freeproxy'
         proxies.update(advanced_free_proxy(
@@ -31,7 +29,7 @@ def get_proxies(count=10):
                 read_proxi_from_file(
                     'assets/proxy_list/Free proxies for 2022-04-04.txt',
                     count - len(proxies)))
-"""
+    return proxies
 
 def from_free_proxy_list(count):
     # this website provides about 21 free proxies
