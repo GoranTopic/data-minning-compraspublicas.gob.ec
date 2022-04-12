@@ -12,6 +12,8 @@ def get_proxies(count=10):
             count - len(proxies) 
             ))
 
+    return proxies
+    '''
     if(len(proxies) < count):
         proxies.update(
                 read_proxi_from_file(
@@ -29,7 +31,7 @@ def get_proxies(count=10):
                 read_proxi_from_file(
                     'assets/proxy_list/Free proxies for 2022-04-04.txt',
                     count - len(proxies)))
-    return proxies
+    '''
 
 def from_free_proxy_list(count):
     # this website provides about 21 free proxies
