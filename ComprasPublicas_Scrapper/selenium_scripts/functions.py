@@ -1,6 +1,7 @@
 import time
 import traceback
 import json
+import random
 import scrapy
 from os import path
 from lxml import etree
@@ -9,7 +10,10 @@ from datetime import timedelta
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.proxy import *
 from ComprasPublicas_Scrapper import params 
+from ComprasPublicas_Scrapper import proxy_rotation
+
 
 def is_redirect_to_home_page(driver):
     # Check whether the current url is the homepage
@@ -242,12 +246,16 @@ def get_projects(driver, offset):
     return list(map(lambda ID, code : { 'ID': ID, 'code': code }, IDs, codes))
 
 def create_driver(headless=False):
+    # if we have the driver in the project
     if(path.exists('./ComprasPublicas_Scrapper/geckodriver')):
         geckodriver_path = './ComprasPublicas_Scrapper/geckodriver'
     else:
         geckodriver_path = None
     # define options for firefox
     firefoxOptions = webdriver.FirefoxOptions()
+    # if proxies are enabled
+    if params.is_proxy_mode: # get proxy and add it to options
+        firefoxOptions.proxy = get_random_proxy()
     # set to headless driver
     firefoxOptions.headless = headless
     # open firefox driver with options
@@ -287,3 +295,18 @@ def get_total_project_count(driver):
         print("ERROR : "+str(e))
         traceback.print_exc()
         return 0
+
+def get_random_proxy():
+    # import proxies
+    proxies = proxy_rotation.proxies
+    # select one random proxy
+    randomProxy = random.choice(list(proxies))
+    # set it in a selenium proxy object
+    proxy = Proxy({
+        'proxyType': ProxyType.MANUAL,
+        'httpProxy': randomProxy,
+        'sslProxy': randomProxy,
+        'noProxy': ''})
+    return proxy
+
+

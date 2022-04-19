@@ -1,11 +1,13 @@
 import requests
 from lxml.html import fromstring
 
+proxies = set()
+
 def get_proxies(count=10):
-    proxies = set()
     #'https://free-proxy-list.net/'
     #proxies.update(from_free_proxy_list(count))
-    ''' get free proxies 
+    '''
+    #get free proxies from website
     if(len(proxies) < count):
         #'https://advanced.name/freeproxy'
         proxies.update(advanced_free_proxy(
@@ -13,12 +15,14 @@ def get_proxies(count=10):
             ))
     '''
     '''
+    # get proxies form free txt file
     if(len(proxies) < count):
         proxies.update(
                 read_proxi_from_file(
                     'assets/proxy_list/Free proxies.txt', 
                     count - len(proxies)))
         '''
+    # get proxies from paid proxy scrape
     if(len(proxies) < count):
         proxies.update(
                 read_proxi_from_file(
@@ -67,7 +71,3 @@ def read_proxi_from_file(filename, count):
         if len(proxies) < count:
             break
     return proxies
-
-# debug
-#proxies = get_proxies(10000)
-#print(proxies)
