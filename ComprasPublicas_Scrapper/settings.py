@@ -64,7 +64,7 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, 
 }
 
-if params.is_proxy_mode: 
+if params.is_proxy_mode:  # if proxy mode in enabled
     number_of_proxies = params.proxy_count 
     ROTATING_PROXY_LIST = get_proxies(number_of_proxies)
     # if proxy mode is enable, add middleware

@@ -9,7 +9,6 @@ secret  = dotenv_values('.secret')
 options = dotenv_values('options')  
 urls    = dotenv_values('urls')  
 
-
 # check is a value if has the string none
 def is_true_value(value):
     if value is not None:
@@ -19,9 +18,16 @@ def is_true_value(value):
 
 # load the screate files
 if secret is not None:
+
     ruc = secret['RUC']
     username = secret['USER']
     password = secret['PASS']
+    #proxy_key = secret['PROXY_KEY']
+    #proxy_url = secret['PROXY_URL']
+    #if proxy_key and proxy_url:
+        #proxy = proxy_url + proxy_key + '&url='
+    #else:
+        #proxy = None
 else:
     print('could not load .secret file')
     

@@ -1,6 +1,6 @@
 **/.env
 **/.secret
+**/geckodriver.log
 output
 output/*
-geckodriver.log
 */__pycache__/*

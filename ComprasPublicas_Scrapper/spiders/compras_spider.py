@@ -5,6 +5,7 @@ from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_id
 
 class ComprasSpider(scrapy.Spider):
     name = 'compras'
+    start_url = params.login_url
     baseurl = params.project_url
     resumen_contractual_url= params.resumen_contractual_url 
     # if you are setting nologin to true one must provide 
@@ -12,7 +13,7 @@ class ComprasSpider(scrapy.Spider):
     nologin = False
   
     def start_requests(self):
-        start_url = params.login_url
+        start_url = self.start_url
         yield scrapy.Request( url=start_url, callback=self.compras_parser)
 
     def compras_parser(self, response):
@@ -25,7 +26,7 @@ class ComprasSpider(scrapy.Spider):
             #print(f"\n\n{projects}")
         for project in projects: # for every id run scrapy requests
             # request the resumen contractuales
-            resumen_url = params.resumen_contractual_url + project['ID']
+            resumen_url = self.resumen_contractual_url + project['ID']
             yield scrapy.Request(url=resumen_url, 
                     cookies=user_data['cookies'],
                     callback=self.parse_project, 
