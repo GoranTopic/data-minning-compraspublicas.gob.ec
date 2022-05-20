@@ -1,12 +1,29 @@
-1650340075698	geckodriver	INFO	Listening on 127.0.0.1:42739
-1650340076199	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "60847" "-no-remote" "-profile" "/tmp/rust_mozprofilezJhWpw"
+1650391329049	geckodriver	INFO	Listening on 127.0.0.1:51421
+1650391329551	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "59561" "-no-remote" "-profile" "/tmp/rust_mozprofilem5i4XE"
 *** You are running in headless mode.
-1650340077543	Marionette	INFO	Marionette enabled
+1650391330887	Marionette	INFO	Marionette enabled
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilezJhWpw/search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:60847/devtools/browser/2649f67b-a320-4647-91c3-fe60592e8c9d
-1650340078262	Marionette	INFO	Listening on port 42459
-1650340078313	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilem5i4XE/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59561/devtools/browser/b27f2186-b308-41bd-8831-174f3917d2a6
+1650391331577	Marionette	INFO	Listening on port 37601
+1650391331665	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1650392584768	geckodriver	INFO	Listening on 127.0.0.1:53709
+1650392584771	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "52921" "-no-remote" "-profile" "/tmp/rust_mozprofilefHb6YG"
+*** You are running in headless mode.
+1650392586100	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefHb6YG/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52921/devtools/browser/280b27d0-892c-42ec-ab2b-913d97b62cef
+1650392586747	Marionette	INFO	Listening on port 42777
+1650392586785	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1650392586786	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"192.177.165.150:3128","sslProxy":"192.177.165.150:3128"}
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
@@ -14,24 +31,7 @@ JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeE
 JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
 JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
 JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
-JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1650340106, line 418: TypeError: $(...) is null
+JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1650392624, line 418: TypeError: $(...) is null
 Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
-1650341715932	geckodriver	INFO	Listening on 127.0.0.1:34657
-1650341715937	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "56063" "-no-remote" "-profile" "/tmp/rust_mozprofileg1L6w6"
-*** You are running in headless mode.
-1650341717276	Marionette	INFO	Marionette enabled
-[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileg1L6w6/search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:56063/devtools/browser/95046cb2-94e5-4508-bb78-b0c233c835d6
-1650341717924	Marionette	INFO	Listening on port 34403
-1650341717949	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/app/webroot/compras/js/lib/effects.js, line 229: TypeError: this.instances.get is not a function
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
-console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.compraspublicas.gob.ec"
-JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
-JavaScript warning: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/lib/jquery.js, line 19: unreachable code after return statement
-JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe, line 209: TypeError: $(...) is null
-JavaScript error: https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/js/ProcesoContratacion/buscarProceso.js?1650341743, line 418: TypeError: $(...) is null
