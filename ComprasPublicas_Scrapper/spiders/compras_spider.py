@@ -1,6 +1,6 @@
 import scrapy
 from ComprasPublicas_Scrapper import params 
-from ComprasPublicas_Scrapper.test_data import test_projects
+from ComprasPublicas_Scrapper.test_data import projects_ids
 from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_ids
 
 class ComprasSpider(scrapy.Spider):
@@ -22,7 +22,6 @@ class ComprasSpider(scrapy.Spider):
         # get data form slenuim scraper 
         # if a starget has been set
         (user_data, projects) = scrap_project_ids(login=False, url=response.url) if self.nologin else scrap_project_ids()
-
             #print(f"\n\n{projects}")
         for project in projects: # for every id run scrapy requests
             # request the resumen contractuales

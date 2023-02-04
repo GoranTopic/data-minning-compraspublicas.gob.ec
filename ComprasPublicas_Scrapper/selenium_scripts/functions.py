@@ -109,14 +109,14 @@ def input_seach_parameters(date_batch, driver):
     if(params.fecha_desde):
         print(f'FECHA_DESDE:          {params.fecha_desde}')
         element = driver.find_element(By.ID, "f_inicio")
-        element.send_keys(params.fecha_desde)
+        element.send_keys(fecha_desde)
 
     # remove the readonly atribute to be able to write date
     driver.execute_script('document.getElementsByName("f_fin")[0].removeAttribute("readonly")')
     if(params.fecha_hasta):
         print(f'FECHA_HASTA:           {params.fecha_hasta}')
         element = driver.find_element(By.ID, "f_fin")
-        element.send_keys(params.fecha_hasta)
+        element.send_keys(fecha_hasta)
 
 def authentication_handler(driver):
     # function which handles the pupup which apears after login

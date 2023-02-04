@@ -1,7 +1,7 @@
 import scrapy
 import json
 from ComprasPublicas_Scrapper import params 
-from ComprasPublicas_Scrapper.test_data import test_projects
+from ComprasPublicas_Scrapper.test_data import projects_ids
 from ComprasPublicas_Scrapper.spiders.compras_spider import ComprasSpider
 from ComprasPublicas_Scrapper.selenium_scripts.scrap_ids import scrap_project_ids
 
@@ -9,10 +9,10 @@ class TestScrapySpider(ComprasSpider):
     name = 'test_scrapy'
     # overwirte scrapy
     def compras_parser(self, response):
-        """ test the scrapy frame worky my downloading projects with the test 
+        """ test the scrapy framework by downloading projects with the test 
             data id project """
         # get the test data project ids 
-        projects = test_projects 
+        projects = projects_ids 
         # parse each project
         for project in projects: # for every id run scrapy requests
             # request the resumen contractuales

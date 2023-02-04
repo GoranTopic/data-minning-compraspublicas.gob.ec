@@ -48,8 +48,8 @@ class CompraspublicasScrapperPipeline:
                 self.dest, 
                 self.code_folder,
                 f"{self.code_folder}.url")
-        _file = open(filename, "w")
-        _file.write(f"[InternetShortcut]\nURL={url}")
+        with open(filename, "w") as file:
+            file.write(f"[InternetShortcut]\nURL={url}")
 
     def create_html_file(self, item):
         # filename path
@@ -64,7 +64,8 @@ class CompraspublicasScrapperPipeline:
                     self.tab_folder,
                     f"{self.tab_folder}.html")
         # create file 
-        open(filename, "w").write(str(self.body, 'UTF-8'))
+        with open(filename, "w") as file:
+            file.write(str(self.body, 'UTF-8'))
         
 
     def create_folders(self):

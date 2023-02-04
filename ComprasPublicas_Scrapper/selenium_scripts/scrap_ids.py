@@ -3,6 +3,7 @@ import os
 import time
 import random
 import traceback
+import numpy as np
 from lxml import etree
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -29,11 +30,21 @@ def scrap_project_ids(login=True, url=None):
 
     # create file where to store all the donwloaded project ids
     # filename for the writing the project ids
+
     filename = os.path.join(params.dest_folder, 
-            'extracted_poject_ids.txt')
-    # open ids
-    projects_file = open(filename, 'w')
-    projects_file.write(f"projects_ids = [\n")
+            'extracted_poject_ids')
+    npy_file = filename + '.npy'
+
+    does_projects_ids_exists = os.path.isfile(npy_file)
+
+    # check if the projects_id file exist  
+    if(does_projects_ids_exists): 
+            loaded_array = np.load(npy_file, allow_pickle=True)
+            # Converting the Numpy array to a normal Python list
+            projects_ids = loaded_array.tolist()
+            print('loaded_array legnth')
+            print(len(projects_ids))
+
 
     """ ---- start script process ---- """
 
@@ -65,6 +76,7 @@ def scrap_project_ids(login=True, url=None):
     # divide the given date into batches of 200 days
     date_batches = divide_dates(start_date, end_date)
     print(f"date_batches: {date_batches}")
+    print(date_batches)
 
     for date_batch in date_batches:
         try:
@@ -98,9 +110,12 @@ def scrap_project_ids(login=True, url=None):
                 # print(f"\n\n{projects}")
                 for project in current_projects: # for every id run scrapy requests
                     # save project to memory list
-                    projects_ids.append(project)
-                    # write project to disk
-                    projects_file.write(f"{project},\n ")
+                    if any(p for p in projects_ids if p['code'] == project['code']):
+                    #if project in projects_ids:
+                        # check if it is not already in array
+                        print('project already in list')
+                    else:
+                        projects_ids.append(project)
                 # add offset to get new projects
                 current_project_count += offset
                 #current_project_count += 5000 # debug pourpouse
@@ -109,7 +124,17 @@ def scrap_project_ids(login=True, url=None):
             print("ERROR : "+str(e))
             traceback.print_exc()
 
-    # end file array
+    # save file array
+    np.save(filename, np.array(projects_ids));
+
+    #save as plain text file
+    projects_file = open(filename + '.py', 'w')
+    projects_file.write(f"projects_ids = [\n")
+    print(len(projects_ids))
+    for project in projects_ids: # for every id run scrapy requests
+        # write project to disk
+        projects_file.write(f"{project},\n ")
+    #end array           
     projects_file.write(f"]")
 
     # get user data from the selenium driver
