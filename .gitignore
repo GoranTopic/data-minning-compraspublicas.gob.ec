@@ -1,0 +1,13 @@
+**/.env
+**/.secret
+**/geckodriver.log
+**/output
+**/output/*
+*/__pycache__/*
+
+.idea
+dist
+node_modules
+apify_storage
+crawlee_storage
+storage
