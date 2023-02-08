@@ -1,7 +1,7 @@
 import config from '../crawlee.json' assert { type: "json" };
 process.env["CRAWLEE_STORAGE_DIR"] =  config.storageDir
 // For more information, see https://crawlee.dev/
-import { PlaywrightCrawler, sleep } from 'crawlee';
+import { PlaywrightCrawler, sleep, Dataset } from 'crawlee';
 import { router } from './router.js';
 import proxyConfi from './proxies.js'
 import { buscarProcesoRE } from './urls.js'
@@ -21,3 +21,7 @@ const crawler = new PlaywrightCrawler(crawler_config);
 const startUrls = [ buscarProcesoRE ]
 // start on search processos page
 await crawler.run(startUrls);
+// create cvs database
+
+// a key-value store named "my-data" under the key "OUTPUT"
+//await Dataset.exportToCSV('OUTPUT', { toKVS: 'my-data' });

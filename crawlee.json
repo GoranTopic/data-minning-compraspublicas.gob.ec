@@ -1,6 +1,6 @@
 {
     "headless": true,
-    "logLevel": "INFO",
+    "logLevel": "DEBUG",
     "downloadFiles": true,
     "proxyMode": true,
     "defaultDatasetId": "compras_publicas",

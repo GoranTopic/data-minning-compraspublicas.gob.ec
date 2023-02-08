@@ -6,7 +6,7 @@ const write_json = (obj, path) => {
         fs.writeFileSync(path, str);
         return true
     }catch(e) {
-        debugging && console.error('could not write file');
+        console.error('could not write file');
         return false
     }
 }
@@ -16,7 +16,7 @@ const read_json = path => {
         let str = fs.readFileSync(path);
         return JSON.parse(str)
     }catch(e) {
-        debugging && console.error('could not read file ' + e);
+        console.error('could not read file ' + e);
         return null
     }
 }
@@ -25,7 +25,7 @@ const delete_json = path => {
     try{
         return fs.unlinkSync(path);
     }catch(e) {
-        debugging && console.error('could not delete json file ' + e);
+        console.error('could not delete json file ' + e);
         return null
     }
 }
@@ -34,7 +34,7 @@ const fileExists = path =>{
     try{
         return fs.existsSync(path)
     }catch(e) {
-        debugging && console.error('could not find file ' + e);
+        console.error('could not find file ' + e);
         return false
     }
 }

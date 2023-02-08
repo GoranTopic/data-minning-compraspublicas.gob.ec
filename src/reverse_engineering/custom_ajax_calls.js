@@ -90,7 +90,7 @@ const decode = compra => {
         g: 'Estado del Proceso',                                  
         p: 'Presupuesto Referencial Total(sin iva)',                              
         f: 'Fecha de Publicación',                       
-        i: 'url_id', // this is th hash the server uses to epose the compras page                                                  
+        i: 'idSoliCompra', // this is th hash the server uses to expose the compras page
         t: 't', //'7117' // unknown                                     
         u: 'u', // unknown
         z: 'z', // unknown                               
