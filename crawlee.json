@@ -4,7 +4,7 @@
     "downloadFiles": true,
     "proxyMode": true,
     "defaultDatasetId": "compras_publicas",
-    "storageDir": "./storage2",
+    "storageDir": "./storage",
     "sleepOnEnd": true,
     "comment1": "these are the search parametes",
     "palabrasClaves": "",
