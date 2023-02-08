@@ -1,9 +1,0 @@
-DOMAIN=www.compraspublicas.gob.ec
-LOGIN_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras
-REGIMEN_ESPECIALES=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProcesoRE.cpe?op=R
-PROCESOS_ESPECIALES=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProcesoRE.cpe?op=P
-HOME_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/home.cpe
-QUERY_PROJ_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/buscarProceso.cpe#
-PROJECT_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/
-PROCESOS_URL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=
-RESUMEN_CONTRACTUAL=https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EC/resumenContractual1.cpe?idSoliCompra=

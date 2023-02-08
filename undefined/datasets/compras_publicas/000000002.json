@@ -1,0 +1,82 @@
+{
+	"Descripción": {
+		"Entidad": "Municipio del Cantón El Empalme",
+		"Objeto de Proceso": "ALQUILER DE UN BIEN INMUEBLE PARA EL FUNCIONAMIENTO DE LAS OFICINAS DE REVISIÓN VEHICULAR",
+		"Código": "ARBI-GADMCEE-01-2022",
+		"Canon de arrendamiento total sin (IVA) (USD)": "USD 24,000.00",
+		"Tipo de Contratación": "Arrendamiento de Bienes Inmuebles - Entidades contratantes como ARRENDADORAS",
+		"Forma de Pago": "Anticipo: 0% Saldo: Otra - Revisar términos de referencia 100.00%",
+		"Tipo de Adjudicación": "Total",
+		"Plazo de arrendamiento": "365 dias",
+		"Vigencia de Oferta": "30 dias",
+		"Funcionario encargado del proceso": "vkarinaliss@hotmail.com",
+		"Estado del Proceso": "Adjudicada",
+		"Descripción": "ALQUILER DE UN BIEN INMUEBLE PARA EL FUNCIONAMIENTO DE LAS OFICINAS DE REVISIÓN VEHICULAR"
+	},
+	"Fechas": {
+		"Fecha de Publicación": {
+			"fecha": "2022-01-11 14:30:00",
+			"descrition": "Indicar la fecha real en la cual desea publicar el Proceso."
+		},
+		"Fecha límite de Audiencia de Preguntas y Aclaraciones": {
+			"fecha": "2022-01-11 17:00:00",
+			"descrition": "Fecha límite de Audiencia de Preguntas y Aclaraciones"
+		},
+		"Fecha Límite de Propuestas": {
+			"fecha": "2022-01-12 14:00:00",
+			"descrition": "Fecha máxima para la entrega de propuestas."
+		},
+		"Fecha Apertura Ofertas": {
+			"fecha": "2022-01-12 15:00:00",
+			"descrition": "Fecha de apertura de ofertas e inicio de Convalidación de Errores."
+		},
+		"Fecha Estimada de Adjudicación": {
+			"fecha": "2022-01-14 17:00:00",
+			"descrition": "Fecha estimada para la Adjudicación de la compra."
+		}
+	},
+	"Productos": {
+		"productos": [
+			{
+				"Categoría": "721120012",
+				"Bien/Obra/Servicio": "SERVICIOS DE ARRENDAMIENTO DE EDIFICIOSREVISAR LOS TDR",
+				"Cant.": "1",
+				"Unidad Medida": "Metro Cuadrado",
+				"Precio Ref. Unitario": "USD 24,000.00",
+				"SubTotal": "USD 24,000.00"
+			}
+		],
+		"total": "USD 24,000.00"
+	},
+	"Parámetros de Calificación": {
+		"Oferta Económica": "Oferta Económica",
+		"Cumplimiento de especificaciones técnicas": "Cumplimiento de especificaciones técnicas"
+	},
+	"Archivos": [
+		{
+			"title": "PLIEGOS",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=u_WdrgTeVc5A51QITZNRa5SBArmU-QwRkx1FxXkY4Z8,"
+		},
+		{
+			"title": "RESOLUCION DE INICIO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=RV0I2KI3fCvrqk-cg_6tNdoOVQTvLwe7V2W6DfdHJ0w,"
+		},
+		{
+			"title": "TDR",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=VTwQIH8agdAVontGYZLxWXNTNLGgLjkMTZOfzVtTCQg,"
+		},
+		{
+			"title": "CERTIFICACION PRESUPUESTATRIA",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=4iK4iNtagAO2SIWLXNk7vhOkkyQuDRmCmTD5uQTESv8,"
+		},
+		{
+			"title": "RESOLUCION DE ADJUDICACION",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=8eC-MouCIWoCB-cw8UW0qoPXlx2tV10aJ-7PZnxwYAY,"
+		},
+		{
+			"title": "Registro de contratosDescripción del ArchivoDescargar ArchivoCONTRATO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=_IVDUaEhmBlEPZdBhk67-rDsEDJV1w-SJU8fGGADQx8,"
+		}
+	],
+	"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=TWkYvJOlYMN2y-Iuvmj8CensV18TW8juq5lE51kvlAE,"
+}

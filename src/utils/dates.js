@@ -5,6 +5,8 @@ const formatDate = date => {
     return `${year}-${month}-${day}`;
 }
 
+const todaysDate = () => formatDate(new Date());
+
 function divideDatesIntoIntervals(startDate, endDate) {
     let currentDate = new Date(startDate);
     let nextDate = null;
@@ -12,13 +14,16 @@ function divideDatesIntoIntervals(startDate, endDate) {
     const end = new Date(endDate);
     const intervals = [];
 
+    if(currentDate.getTime() === end.getTime())
+        return [ [ formatDate(currentDate), formatDate(end) ] ]
+
     while(currentDate.getTime() < end.getTime()) {
         nextDate = new Date(currentDate);
         nextDate.setMonth(currentDate.getMonth() + monthInterval);
         //console.log(currentDate.toISOString() + " - " + nextDate.toISOString());
         //console.log(currentDate.getTime() + " - " + nextDate.getTime());
         //console.log(currentDate.getTime() < nextDate.getTime());
-        if (nextDate.getTime() >= end.getTime()) 
+        if(nextDate.getTime() >= end.getTime()) 
             nextDate = new Date(endDate);
         intervals.push([ 
             formatDate(currentDate),
@@ -29,4 +34,11 @@ function divideDatesIntoIntervals(startDate, endDate) {
     return intervals;
 }
 
-export { divideDatesIntoIntervals }
+
+/*
+let startDate = '2023-02-05' // today's date
+let endDate  = '2023-02-05' // today's date
+console.log(divideDatesIntoIntervals(startDate,endDate))
+*/
+
+export { divideDatesIntoIntervals, todaysDate }

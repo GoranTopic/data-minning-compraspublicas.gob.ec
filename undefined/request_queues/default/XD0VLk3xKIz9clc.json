@@ -1,0 +1,9 @@
+{
+	"id": "XD0VLk3xKIz9clc",
+	"json": "{\"id\":\"XD0VLk3xKIz9clc\",\"url\":\"https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=YZm9vyvQEkUSc8i9dVMFC2NhVbQoopSyh8LAn2xIuMM,\",\"uniqueKey\":\"https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=YZm9vyvQEkUSc8i9dVMFC2NhVbQoopSyh8LAn2xIuMM,\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"label\":\"compra\"}}",
+	"method": "GET",
+	"orderNo": 1675881787334,
+	"retryCount": 0,
+	"uniqueKey": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=YZm9vyvQEkUSc8i9dVMFC2NhVbQoopSyh8LAn2xIuMM,",
+	"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=YZm9vyvQEkUSc8i9dVMFC2NhVbQoopSyh8LAn2xIuMM,"
+}

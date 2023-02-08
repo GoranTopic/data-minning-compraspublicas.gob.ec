@@ -1,0 +1,152 @@
+{
+	"Descripción": {
+		"Entidad": "GOBIERNO AUTONOMO DESCENTRALIZADO PROVINCIAL DE PASTAZA",
+		"Objeto de Proceso": "ARRENDAMIENTO DE UN BIEN INMUEBLE PARA EL FUNCIONAMIENTO DE LA SEDE ADMINISTRATIVA EL GOBIERNO AUTÓNOMO DESCENTRALIZADO PROVINCIAL DE PASTAZA, PARA EL AÑO FISCAL 2022",
+		"Código": "ARBI-GADPPz-001-2022",
+		"Tipo Compra": "Servicio",
+		"Canon de arrendamiento total sin (IVA) (USD)": "USD 45,600.00",
+		"Tipo de Contratación": "Arrendamiento de Bienes Inmuebles - Entidades contratantes como ARRENDATARIAS",
+		"Forma de Pago": "Anticipo: 0% Saldo: Otra - Revisar términos de referencia 100.00%",
+		"Tipo de Adjudicación": "Total",
+		"Plazo de arrendamiento": "365 dias",
+		"Vigencia de Oferta": "60 dias",
+		"Funcionario encargado del proceso": "cesarcartagena1@hotmail.com",
+		"Estado del Proceso": "Finalizada",
+		"Estado en el cual finalizó el Proceso": "Adjudicada",
+		"Descripción": "ARRENDAMIENTO DE UN BIEN INMUEBLE PARA EL FUNCIONAMIENTO DE LA SEDE ADMINISTRATIVA EL GOBIERNO AUTÓNOMO DESCENTRALIZADO PROVINCIAL DE PASTAZA, PARA EL AÑO FISCAL 2022"
+	},
+	"Fechas": {
+		"Fecha de Publicación": {
+			"fecha": "2022-01-11 17:30:00",
+			"descrition": "Indicar la fecha real en la cual desea publicar el Proceso."
+		},
+		"Fecha límite de Audiencia de Preguntas y Aclaraciones": {
+			"fecha": "2022-01-12 09:00:00",
+			"descrition": "Fecha límite de Audiencia de Preguntas y Aclaraciones"
+		},
+		"Fecha Límite de Propuestas": {
+			"fecha": "2022-01-12 10:00:00",
+			"descrition": "Fecha máxima para la entrega de propuestas."
+		},
+		"Fecha Apertura Ofertas": {
+			"fecha": "2022-01-12 11:00:00",
+			"descrition": "Fecha de apertura de ofertas e inicio de Convalidación de Errores."
+		},
+		"Fecha Estimada de Adjudicación": {
+			"fecha": "2022-01-13 09:00:00",
+			"descrition": "Fecha estimada para la Adjudicación de la compra."
+		}
+	},
+	"Productos": {
+		"productos": [
+			{
+				"Categoría": "721120012",
+				"Bien/Obra/Servicio": "SERVICIOS DE ARRENDAMIENTO DE EDIFICIOSREVISAR TERMINOS DE REFERENCIA",
+				"Cant.": "1",
+				"Unidad Medida": "Metro Cuadrado",
+				"Precio Ref. Unitario": "USD 45,600.00",
+				"SubTotal": "USD 45,600.00"
+			}
+		],
+		"total": "USD 45,600.00"
+	},
+	"Parámetros de Calificación": {
+		"Cumplimiento de las condiciones previstas en el pliego": "Cumplimiento de las condiciones previstas en el pliego",
+		"Valor de canon de arrendamiento": "Valor de canon de arrendamiento"
+	},
+	"Archivos": [
+		{
+			"title": "CONTRATO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=MSx9U2qdt4LXs4yhDcvryFCZZBceq7Z08DF3EB_KXOo,"
+		},
+		{
+			"title": "CERTIFICACIÓN PRESUPUESTARIA",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=yFhCAPj8A6WyvJYr9Zkv4dvf8x_wJZo0njjkD4TPkHA,"
+		},
+		{
+			"title": "CERTIFICACIÓN CATALOGO ELECTRÓNICO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=qMfMxZagR0I1qImxz9UkLjKAcvxMl0pTADsCHI6ZufI,"
+		},
+		{
+			"title": "CERTIFICACIÓN PAC",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=SSnwG1-Y2F-e2lv4KJ5h_MNUc_QzYGuy9zOLjj8ZZn4,"
+		},
+		{
+			"title": "CERTIFICACIÓN POA",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=aXora9BjngvM_MOJxxr-Fqvyn_Cxeb_xR50CS4vkHeo,"
+		},
+		{
+			"title": "FORMULARIO DE REQUERIMIENTO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=xqter2E1vkbUJm11hpEZjS3qhxFPI1T1XIjym6BWdT4,"
+		},
+		{
+			"title": "TDR",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=0gHiRJdoGSuWtYyK6I7GXp5nbA-PmnKIyhn6M4qHh-k,"
+		},
+		{
+			"title": "RESOLUCIÓN DE APROBACIÓN INICIO DE PROCESO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=O7ZW3O-pfT9HSIABclqS-49BzCOdmVQMwsg4cJaWPuM,"
+		},
+		{
+			"title": "CONTRATO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=iQyXjDmWqPP-QNrSqSRFHhPB1HOr-gNBLT9_aPkAVxk,"
+		},
+		{
+			"title": "Registro de contratosDescripción del ArchivoDescargar ArchivoCONTRATO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=lNvOdp8YH8IndUTnLftmK6PXSWMNKgaCjN3ReXR0igE,"
+		},
+		{
+			"title": "CONTRATO",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=Q0AWF7UJfinP53_b6D4BFcXnVGuPD-6P35R7AmcKScA,"
+		},
+		{
+			"title": "INFORME CIERRE CONTRATO ARRENDAMIENTO 2022-signed",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=ixLBdXzkpgZFjeWBZXA8fU0DrXcj6ZiSwBs_QrH6Gm0,"
+		},
+		{
+			"title": "Factura No. 000000014 enero 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=DTfxj_KxeNv6b1zRnnRRwngYm_R725AHDO_W1ukB12c,"
+		},
+		{
+			"title": "Factura No 000000016 febrero 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=YasknR8R26iT9QKNsHOnLwz5zMYB229rJ1t14NiqC5c,"
+		},
+		{
+			"title": "Factura No 000000018 marzo 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=GIeF6HlO9ehaRG99SAAgdkZ6X3XWJh6nkeodm8vFMGg,"
+		},
+		{
+			"title": "Factura No 000000020 abril 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=_J1yhTzGYZ2nT8D9u8n7LWf3oTudsC_LEaqNHYKLU00,"
+		},
+		{
+			"title": "Factura No 000000022 mayo 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=b4L5QWlyu4D3bIkOEkWek-WCyOtTdSvH_g3E65LvmNw,"
+		},
+		{
+			"title": "Factura No 000000024 junio 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=a2GG1mPoZNyrnHsO9CtM9f9zjN0rZWJGzHzjW2LcxzI,"
+		},
+		{
+			"title": "Factura No 000000026 julio 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=kFiemegcn6axLeoxNH6mJU1eBcA6InJZEfkktn64NSw,"
+		},
+		{
+			"title": "Factura No 000000028 agosto 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=PcqiF15BkIbcpyIA-oWD64io407GkjoYzhqgjhc5mmw,"
+		},
+		{
+			"title": "Factura No 000000030 septiembre 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=1moe6tnFSz_bLp80e3FJSp9Z16uAMLB8bPWo8nyRNYU,"
+		},
+		{
+			"title": "Factura No 000000032 octubre 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=sGDDZiP4wguZgHoTotLvooNW7kqjfuxQH7_FwvPIvbE,"
+		},
+		{
+			"title": "Factura No 000000034 noviembre 2022",
+			"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/ProcesoContratacion/../PC/bajarArchivo.cpe?Archivo=pmr2BJOM5KiyH1xyQi3SDe859dQY3-1jRDJmJndcWUk,"
+		}
+	],
+	"url": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/PC/informacionProcesoContratacion2.cpe?idSoliCompra=368C1mTNCwY7WU3MtKuBKfhFbDxKWZiBnOH0ysJ_dEs,"
+}
