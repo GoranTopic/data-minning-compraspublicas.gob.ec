@@ -51,7 +51,7 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest }) => {
         mkdir(filesDir);
         await Promise.all(
             compra['Archivos']
-            .map( async a => {
+            .map( async (a,i) => {
                 let compraDir = filesDir + compra['Descripción']['Código']
                 let filePath = compraDir + a.title
                 mkdir(compraDir)
@@ -64,7 +64,11 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest }) => {
                     page, // page
                     filePath // where to save
                 )
-                if(result) log.info(`Downloaded ${filePath}`)
+                if(result){ 
+                    log.info(`Downloaded ${filePath}`)
+                    // save where we donwloaded the file
+                    compra['Archivos'][i]['local_url'] = filePath;
+                }
                 else log.error(`Could not downloaded ${filePath}`)
             })
         )
