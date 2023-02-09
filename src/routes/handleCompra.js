@@ -50,7 +50,6 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
             compra['Archivos']
             .map( async (a,i) => {
                 let compraDir = filesDir + compra['Descripción']['Código']
-                console.log({compraDir})
                 let filePath = compraDir + '/' + a.title
                 mkdir(compraDir)
                 if(fileExists(filePath)){
