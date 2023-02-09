@@ -4,7 +4,7 @@ process.env["CRAWLEE_STORAGE_DIR"] =  config.storageDir
 import { PlaywrightCrawler, Dataset } from 'crawlee';
 import { router } from './router.js';
 import proxyConfig from './proxies.js'
-import { buscarProcesoRE } from './urls.js'
+import { homePage } from './urls.js'
 // read secret
 import * as dotenv from 'dotenv' 
 dotenv.config()
@@ -21,15 +21,15 @@ crawler_config.sessionPoolOptions = {
     maxPoolSize: 1000,
     sessionOptions:{
         maxAgeSecs: 60,
-        maxUsageCount: 10, // only 
+        maxUsageCount: 1, // change on every request
     },
 }
 // Set to true if you want the crawler to save cookies per session,
 crawler_config.persistCookiesPerSession= true;
 // initiate crawler
 const crawler = new PlaywrightCrawler(crawler_config);
-// set starting url
-const startUrls = [ buscarProcesoRE ]
+// set start at the home page
+const startUrls = [ homePage ];
 // start on search processos page
 await crawler.run(startUrls);
 // create cvs database
