@@ -50,7 +50,8 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
             compra['Archivos']
             .map( async (a,i) => {
                 let compraDir = filesDir + compra['Descripción']['Código']
-                let filePath = compraDir + a.title
+                console.log({compraDir})
+                let filePath = compraDir + '/' + a.title
                 mkdir(compraDir)
                 if(fileExists(filePath)){
                     log.warning(`File ${filePath} already exists`)
@@ -61,7 +62,7 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
                     page, // page
                     filePath // where to save
                 )
-                if(result){ 
+                if(result){
                     log.info(`Downloaded ${filePath}`);
                     log.debug(`Proxy: ${proxyInfo.url}, Session ${proxyInfo.sessionId}`);
                     // save where we donwloaded the file
