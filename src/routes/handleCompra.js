@@ -7,23 +7,20 @@ import download_pdf from '../utils/download_pdf.js';
 import { mkdir, fileExists } from '../utils/files.js'
 import { comprasBaseUrl, tabBaseUrl } from '../urls.js'
 
-
 // creat a set do that we don't forget which compras we have already scrapped
 let scraped = new DiskSet('scraped_codes', null, 
     process.cwd() + '/' + config.storageDir 
     + '/datasets/' + config.defaultDatasetId
 )
 
-const handleCompraPage = async ({ request, page, log, enqueueRequest }) => {
+const handleCompraPage = async ({ request, page, log, enqueueRequest, session, proxyInfo }) => {
     // get options 
     let { downloadFiles, storageDir, defaultDatasetId } = config;
     // get request defined data
     let { Código, idSoliCompra } = request.userData
     log.info(`Scrapping Compra ${Código} at ${request.url}`)
+    log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
     // wait for page to load
-    // check if we have not scrap that compras code before
-    if(scraped.checkValue(Código))
-        return log.warning(`${Código} already scrapped`)
     await page.waitForLoadState('networkidle'); 
     // empty obj to store scraped data
     let compra = {}
@@ -65,7 +62,8 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest }) => {
                     filePath // where to save
                 )
                 if(result){ 
-                    log.info(`Downloaded ${filePath}`)
+                    log.info(`Downloaded ${filePath}`);
+                    log.debug(`Proxy: ${proxyInfo.url}, Session ${proxyInfo.sessionId}`);
                     // save where we donwloaded the file
                     compra['Archivos'][i]['local_url'] = filePath;
                 }

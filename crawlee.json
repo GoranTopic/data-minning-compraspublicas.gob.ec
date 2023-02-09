@@ -3,6 +3,7 @@
     "logLevel": "DEBUG",
     "downloadFiles": true,
     "proxyMode": true,
+    "memoryMbytes": 7000,
     "defaultDatasetId": "compras_publicas",
     "storageDir": "./storage",
     "sleepOnEnd": true,
@@ -16,6 +17,6 @@
     "comment3": "if scrapToday is enabled, it will ignore dates",
     "scrapToday": false, 
     "scrapThisMonth": false, 
-    "startDate": "2022-01-1",
-    "endDate": "2022-01-15"
+    "startDate": "2012-12-1",
+    "endDate": "2023-02-8"
 }
