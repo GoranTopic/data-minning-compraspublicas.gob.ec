@@ -1,5 +1,5 @@
 import { createPlaywrightRouter } from 'crawlee';
-import handleSeachPage from './routes/handleSeach.js'
+import handleSeachPage from './routes/handleSearchPage.js'
 import handleCompraPage from './routes/handleCompra.js'
 import handleDatesDivision from './routes/handleDatesDivision.js'
 
@@ -11,7 +11,7 @@ router.addDefaultHandler(handleDatesDivision);
 
 // make a query in the search page 
 // and handle the results
-router.addHandler(handleSeachPage);
+router.addHandler('seach_page', handleSeachPage);
 
 // scrap the actual compras
 // and every tab with every document

@@ -9,20 +9,19 @@ let scraped = new DiskSet('scraped_codes', null,
     + '/datasets/' + config.defaultDatasetId
 )
 
-const handleSeachPage = async ({ page, crawler, log, proxyInfo }) => {
+const handleSeachPage = async ({ request, page, crawler, log, proxyInfo }) => {
     /* this is the code that is used to handle the compra seach page */
-    log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
-
-    // wait until page loads
-    await page.waitForLoadState('networkidle'); 
     // date to start and end
     let { startDate, endDate } = request.userData
+    // wait until page loads
+    await page.waitForLoadState('networkidle'); 
     // send search request of the date interval
     let { count } = await page.evaluate(
         queryProcessesCount, 
         { ...config, startDate, endDate }
     );
     log.info(`Between ${startDate} and ${endDate} found ${ count } compras`)
+    log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
     // for every 20 pagination of the page
     for(let p = 0; p < count/20; p++){
         // query the next page 

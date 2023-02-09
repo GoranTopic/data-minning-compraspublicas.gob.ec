@@ -6,7 +6,7 @@ import config from '../../crawlee.json' assert { type: "json" };
  * the reason for thie function is not only to divided the logic,
  * but so that we can enqueue an Request so that we can use
  * other proxies. */
-const handleDateDivision = async ({ page, crawler, log, proxyInfo }) => {
+const handleDateDivision = async ({ crawler, page, log, proxyInfo }) => {
     // get dates from config file
     let { scrapThisMonth, scrapToday, 
         startDate, endDate } = config;
@@ -23,6 +23,7 @@ const handleDateDivision = async ({ page, crawler, log, proxyInfo }) => {
             startDate, endDate
         );
     log.info(`Made ${date_batches.length} date batches of 6 months each between the dates of ${startDate} to ${endDate}`);
+    log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
     // for every date range we call the 
     for( let dates of date_batches ){
         await crawler
