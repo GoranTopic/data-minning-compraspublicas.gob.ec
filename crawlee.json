@@ -3,7 +3,7 @@
     "logLevel": "DEBUG",
     "downloadFiles": true,
     "proxyMode": true,
-    "memoryMbytes": 5000,
+    "memoryMbytes": 6000,
     "defaultDatasetId": "compras_publicas",
     "storageDir": "./storage",
     "sleepOnEnd": true,

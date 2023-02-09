@@ -20,8 +20,8 @@ crawler_config.useSessionPool =true;
 crawler_config.sessionPoolOptions = {
     maxPoolSize: 1000,
     sessionOptions:{
-        maxAgeSecs: 120,
-        maxUsageCount: 20, // only 
+        maxAgeSecs: 60,
+        maxUsageCount: 10, // only 
     },
 }
 // Set to true if you want the crawler to save cookies per session,
