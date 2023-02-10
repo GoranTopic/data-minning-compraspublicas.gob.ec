@@ -18,7 +18,7 @@ crawler_config.requestHandler = router;
 crawler_config.useSessionPool =true;
 // Overrides default Session pool configuration
 crawler_config.sessionPoolOptions = {
-    maxPoolSize: 1000,
+    maxPoolSize: 1,
     sessionOptions:{
         maxAgeSecs: 60,
         maxUsageCount: 1, // change on every request
