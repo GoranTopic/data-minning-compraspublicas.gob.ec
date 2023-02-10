@@ -8,24 +8,30 @@ import { homePage } from './urls.js'
 // read secret
 import * as dotenv from 'dotenv' 
 dotenv.config()
+
+// total number of compras per date range
+global.TOTAL_COMPRAS_COUNT   = 0; 
+global.TOTAL_COMPRAS_SCRAPED = 0;
 // set sotrage dir as an eviromental variable
 // make configuration file fro crawler
 let crawler_config = {}
 // get proxies
-if(config.proxyMode) crawler_config.proxyConfiguration = proxyConfig;
+if(config.proxyMode) 
+    crawler_config.proxyConfiguration = proxyConfig;
 // add router
 crawler_config.requestHandler = router;
-crawler_config.useSessionPool =true;
+crawler_config.useSessionPool = true;
 // Overrides default Session pool configuration
 crawler_config.sessionPoolOptions = {
-    maxPoolSize: 1,
-    sessionOptions:{
-        maxAgeSecs: 60,
-        maxUsageCount: 1, // change on every request
-    },
+    maxPoolSize: config.maxPoolSize,
+    sessionOptions: config.sessionOptions,
 }
 // Set to true if you want the crawler to save cookies per session,
 crawler_config.persistCookiesPerSession= true;
+// se the maximum allowed conrurent requests
+crawler_config.maxConcurrency = config.maxConcurrency
+// limit the ammount of reques tper minute
+crawler_config.maxRequestsPerMinute = config.maxRequestsPerMinute
 // initiate crawler
 const crawler = new PlaywrightCrawler(crawler_config);
 // set start at the home page

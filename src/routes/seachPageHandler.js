@@ -2,20 +2,13 @@ import { queryComprasPage, queryProcessesCount, decode } from '../reverse_engine
 import { comprasBaseUrl } from '../urls.js'
 import DiskSet from '../utils/DiskSet.js'
 import config from '../../crawlee.json' assert { type: "json" };
-import Checklist from '../utils/Checklist.js'
-
-// make a check list for the dates
-let dateChecklist = new Checklist(
-    'dates_checklist', null,
-    process.cwd() + '/' + config.storageDir
-    + '/datasets/' + config.defaultDatasetId
-)
 
 // creat a set do that we don't forget which compras we have already scrapped
 let scraped = new DiskSet('scraped_codes', null, 
     process.cwd() + '/' + config.storageDir 
     + '/datasets/' + config.defaultDatasetId
 )
+
 
 const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session }) => {
     /* this is the code that is used to handle the compra seach page */
@@ -27,17 +20,13 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
     await page.waitForLoadState('networkidle'); 
     // send search request of the date interval
     let { count } = await page.evaluate(
-        queryProcessesCount, 
-        { ...config, startDate, endDate }
+        queryProcessesCount, { ...config, startDate, endDate }
     );
-    // add them to the global count
-    TOTAL_COMPRAS_COUNT += parseInt(count);
-    // log information
-    log.info(`Between ${startDate} and ${endDate} found ${ count } compras`);
-    log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
     // for every 20 pagination of the page
-    for(let p = 0; p < count/20; p++){
-        // query the next page
+    for(let p = 0; p < count; p+=20){
+        // NOTE: this pagination is very weird.
+        // It counts every 20 entries, so page 1 and 20
+        // are the same page, and 21 is th next page.
         let result =
             await page.evaluate(
                 queryComprasPage,
@@ -51,30 +40,19 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
     }
 
     // process every compra that we found
-    let valid_compras = compras
+    let new_compras = compras
         .map(c =>
             // decode the keys
             decode(c)
-        ).map( c => ({
+        ).map( c => ({ 
+            // it is not provided by the back end request
             // create proper url
-            link: comprasBaseUrl
+            url: comprasBaseUrl
             + `informacionProcesoContratacion${c.api_version}.cpe?`
             + `idSoliCompra=${c['idSoliCompra']}`,
             ...c,
-        }))
-
-    let codes = new Set(valid_compras.map(c => c['Código']))
-    console.log(codes)
-
-    /*
- .filter( (c, i, a) =>
-            // check for unique compras based on codigo
-            a.map(c => ).indexOf(c['Código']) === i
-        )
-        */
-    /*
-     * .filter( c => {
-         // check if we have not scrap that compras code before
+        })).filter( c => {
+            // check if we have not scrap that compras code before
             if(scraped.hasValue(c['Código'])){
                 //log.warning(`${c['Código']} already scrapped`)
                 return false
@@ -83,38 +61,38 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
                 return true
             }
         })
-        */
+    // add them to the global count
+    TOTAL_COMPRAS_COUNT += parseInt(count);
+    // count the one we have already scrapped
+    TOTAL_COMPRAS_SCRAPED  += compras.length - new_compras.length;
 
+    // log information
+    log.info(`Between ${startDate} and ${endDate} found ${ new_compras.length } new compras. Tota; ${TOTAL_COMPRAS_COUNT}`);
+    log.info(`tota compras to scrap ${TOTAL_COMPRAS_COUNT}`);
+    log.debug(`Proxy: ${proxyInfo.url}, ${proxyInfo.sessionId}`);
     log.debug(`
     Between ${startDate} and ${endDate} we got:
-    ${ count } from server
-    valid_compras: ${valid_compras.length},
-    compras ${compras.length} 
-    TOTAL_COMPRAS_COUNT: ${TOTAL_COMPRAS_COUNT}`);
+    ${ compras.length } found compras
+    new_compras: ${ new_compras.length },
+    server send: ${ count },
+    TOTAL_COMPRAS_COUNT: ${TOTAL_COMPRAS_COUNT}
+    TOTAL_COMPRAS_SCRAPED:  ${TOTAL_COMPRAS_SCRAPED}
+    `);
 
-    /*
-    if(compras.length === 0){
-        log.info(`Compras between ${startDate} and ${endDate} checkedoff`)
-        log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
-        dateChecklist.check([startDate, endDate])
-    }
-
-// for every compra make add to the request queue to scrap
-        await Promise.all(
-            compras.map( async c =>
-                await crawler
-                .requestQueue
-                .addRequest({
-                    method: 'GET',
-                    url: c.link,
-                    uniqueKey: c['Código'],
-                    label: 'compra',
-                    userData: c
-                })
-            )
+    // for every compra make add to the request queue to scrap
+    await Promise.all(
+        new_compras.map( async c =>
+            await crawler
+            .requestQueue
+            .addRequest({
+                method: 'GET',
+                url: c.url,
+                uniqueKey: c['Código'],
+                label: 'compra',
+                userData: c
+            })
         )
-    }
-    */
+    )
 }
 
 export default handleSeachPage

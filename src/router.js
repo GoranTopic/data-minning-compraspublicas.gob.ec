@@ -1,7 +1,7 @@
 import { createPlaywrightRouter } from 'crawlee';
-import handleSeachPage from './routes/handleSearchPage.js'
-import handleCompraPage from './routes/handleCompra.js'
-import handleDatesDivision from './routes/handleDatesDivision.js'
+import handleDatesDivision from './routes/datesDivisionHandler.js'
+import handleSeachPage from './routes/seachPageHandler.js'
+import handleCompraPage from './routes/compraHandler.js'
 
 // make a router
 export const router = createPlaywrightRouter();
