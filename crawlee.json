@@ -4,14 +4,14 @@
     "downloadFiles": true,
     "proxyMode": true,
     "c1": "session pool options",
-    "maxPoolSize" : 10,
+    "maxPoolSize" : 1000,
     "sessionOptions":{
         "maxAgeSecs": 180,
         "maxUsageCount": 1
     },
     "c2": "crawleer option",
-    "maxConcurrency": 30,
-    "maxRequestsPerMinute": 2500,
+    "maxConcurrency": 50,
+    "maxRequestsPerMinute": 5500,
     "c3": "the memory Crawlee uses on ram",
     "memoryMbytes": 6000,
     "defaultDatasetId": "compras_publicas",
@@ -28,7 +28,7 @@
     "c7": "if a date is divied by a number greater than 6 months, the server mya reject the query",
     "scrapToday": false, 
     "scrapThisMonth": false, 
-    "startDate": "2003-05-06",
+    "startDate": "2000-1-1",
     "endDate": "2023-02-10",
     "divideDatesInMonths": 1
 }
