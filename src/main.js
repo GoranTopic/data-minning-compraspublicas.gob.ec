@@ -5,15 +5,11 @@ import { PlaywrightCrawler, Dataset } from 'crawlee';
 import { router } from './router.js';
 import proxyConfig from './proxies.js'
 import { homePage } from './urls.js'
-// read secret
-import * as dotenv from 'dotenv' 
-dotenv.config()
 
 // total number of compras per date range
-global.TOTAL_COMPRAS_COUNT   = 0; 
-global.TOTAL_COMPRAS_SCRAPED = 0;
-// set sotrage dir as an eviromental variable
-// make configuration file fro crawler
+global.TOTAL_COMPRAS_TO_SCRAP = 0; 
+global.TOTAL_COMPRAS_SCRAPED  = 0;
+// make configuration file for crawler
 let crawler_config = {}
 // get proxies
 if(config.proxyMode) 

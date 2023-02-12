@@ -1,5 +1,6 @@
-import { Dataset } from 'crawlee';
+import datasets from '../datasets.js'
 import DiskSet from '../utils/DiskSet.js'
+import checklist from '../utils/Checklist.js'
 import { query_tab } from '../reverse_engineering/XMLHttpRequest.js'
 import tabParser from '../parsers/tabParser.js'
 import config from '../../crawlee.json' assert { type: "json" };
@@ -16,8 +17,8 @@ let scraped = new DiskSet('scraped_codes', null,
 const handleCompraPage = async ({ request, page, log, enqueueRequest, session, proxyInfo }) => {
     // get options 
     let { downloadFiles, storageDir, defaultDatasetId } = config;
-    // get request defined data
-    let { Código, idSoliCompra } = request.userData
+    // get request defined data about the compra
+    let { Código, idSoliCompra, typeofProcess } = request.userData
     log.info(`Scrapping Compra ${Código} at ${request.url}`)
     log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
     // wait for page to load
@@ -27,7 +28,9 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
     // start to scrap tabs...
     let tab_count = 7;
     let tab_order = [ '', 'Descripción', 'Fechas', 'Productos', 'Parámetros de Calificación', '', 'Archivos' ] 
-    // for every tab
+    // for every tab we query the tab, 
+    // parse it and save it in the compra obj
+    // to wri tot he dataset
     for( let tab = 1; tab < tab_count; tab++)
         if(tab_order[tab]){
             let url = tabBaseUrl
@@ -39,43 +42,52 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
                 res.srcElement.responseText
             )
         }
+    // get the datasetid and the path of the datase
+    let { datasetId, proceso } = typeofProcess;
     // add url 
     compra['url'] = request.url;
+    // add type of porcess
+    compra['typo de proceso'] = proceso;
+    // get the data set
+    let dataset = datasets[datasetId];
+    debugger;
     // download files in enabled 
     if(downloadFiles){
-        let filesDir = process.cwd()+'/'+storageDir 
-            + '/datasets/' + defaultDatasetId + '/files/'
-        mkdir(filesDir);
+        let dataSetPath = storageDir + '/datasets/' + datasetId + '/files/'
+        let abosluteDir = process.cwd() + '/' + dataSetPath;
+        let relativeDir = './' + dataSetPath;
+        mkdir(abosluteDir);
         await Promise.all(
             compra['Archivos']
             .map( async (a,i) => {
-                let compraDir = filesDir + compra['Descripción']['Código']
-                let filePath = compraDir + '/' + a.title
-                mkdir(compraDir)
-                if(fileExists(filePath)){
-                    log.warning(`File ${filePath} already exists`)
+                let compraCode = compra['Descripción']['Código']
+                let aboslutePath = abosluteDir + compraCode + '/' + a.title;
+                let relativePath = relativeDir + compraCode + '/' + a.title;
+                mkdir(abosluteDir + compraCode);
+                if(fileExists(aboslutePath)){
+                    log.warning(`File ${aboslutePath}.pdf already exists`)
                     return false
                 }
                 let result = await download_pdf(
                     a.url, // pdf src
                     page, // page
-                    filePath // where to save
+                    aboslutePath // where to save
                 )
                 if(result){
-                    log.info(`Downloaded ${filePath}`);
+                    log.info(`Downloaded ${relativePath}.pdf`);
                     log.debug(`Proxy: ${proxyInfo.url}, Session ${proxyInfo.sessionId}`);
                     // save where we donwloaded the file
-                    compra['Archivos'][i]['local_url'] = filePath + '.pdf';
+                    compra['Archivos'][i]['local_url'] = relativePath + '.pdf';
                 }
-                else log.error(`Could not downloaded ${filePath}`)
+                else log.error(`Could not downloaded ${aboslutePath}.pdf`)
             })
         )
     }
     // count the scrapped file
     TOTAL_COMPRAS_SCRAPED += 1
-    log.info(`Compra ${compra['Descripción']['Código']} scraped. ${TOTAL_COMPRAS_SCRAPED}/${TOTAL_COMPRAS_COUNT}`);
+    log.info(`Compra ${compra['Descripción']['Código']} scraped. ${TOTAL_COMPRAS_SCRAPED}/${TOTAL_COMPRAS_TO_SCRAP}`);
     //save data
-    await Dataset.pushData(compra);
+    await dataset.pushData(compra);
     // add to list of already scraped codes
     scraped.add(Código);
 }

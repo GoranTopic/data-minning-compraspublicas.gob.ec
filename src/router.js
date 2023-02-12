@@ -1,5 +1,5 @@
 import { createPlaywrightRouter } from 'crawlee';
-import handleDatesDivision from './routes/datesDivisionHandler.js'
+import handleInitiation from './routes/initHandler.js'
 import handleSeachPage from './routes/seachPageHandler.js'
 import handleCompraPage from './routes/compraHandler.js'
 
@@ -7,7 +7,7 @@ import handleCompraPage from './routes/compraHandler.js'
 export const router = createPlaywrightRouter();
 
 // let divide into dates batches
-router.addDefaultHandler(handleDatesDivision);
+router.addDefaultHandler(handleInitiation);
 
 // make a query in the search page 
 // and handle the results

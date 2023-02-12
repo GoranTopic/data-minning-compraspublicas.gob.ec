@@ -1,3 +1,7 @@
+/* the following is the function the website ses to make call the server. 
+ * I collected the source code of the function, along with the paramters and the output of the function
+ * for three difrent cases */
+
 function ajax_call(data, clazz, action, callbackFunct) {
     var url = HOST + 'interfazWeb.php';
     var obj = {

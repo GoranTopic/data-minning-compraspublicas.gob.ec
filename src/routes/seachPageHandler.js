@@ -9,18 +9,23 @@ let scraped = new DiskSet('scraped_codes', null,
     + '/datasets/' + config.defaultDatasetId
 )
 
-
 const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session }) => {
     /* this is the code that is used to handle the compra seach page */
     // where we are going to store all the compras of the page
     let compras = [];
     // date to start and end
-    let { startDate, endDate } = request.userData
+    let { dates: [ startDate, endDate ], typeofProcess } = request.userData;
+    // get the code of the type of process to query the backend
+    let { txtTiposContratacion } = typeofProcess;
     // wait until page loads
     await page.waitForLoadState('networkidle'); 
-    // send search request of the date interval
+    // query the webstie of the count of the proceses 
+    // between the date intevals
     let { count } = await page.evaluate(
-        queryProcessesCount, { ...config, startDate, endDate }
+        queryProcessesCount, { 
+            ...config, txtTiposContratacion,
+            startDate, endDate, 
+        }
     );
     // for every 20 pagination of the page
     for(let p = 0; p < count; p+=20){
@@ -33,12 +38,13 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
                 { ...config,
                     count,
                     pagination: p,
-                    startDate,
-                    endDate }
+                    startDate, endDate,
+                    txtTiposContratacion,
+                }
             );
+        //  add results to the compras count
         compras = compras.concat(result)
     }
-
     // process every compra that we found
     let new_compras = compras
         .map(c =>
@@ -50,32 +56,27 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
             url: comprasBaseUrl
             + `informacionProcesoContratacion${c.api_version}.cpe?`
             + `idSoliCompra=${c['idSoliCompra']}`,
+            typeofProcess,
             ...c,
-        })).filter( c => {
+        })).filter( c => 
             // check if we have not scrap that compras code before
-            if(scraped.hasValue(c['Código'])){
-                //log.warning(`${c['Código']} already scrapped`)
-                return false
-            } else{
-                //log.debug(`${c['Código']} has not been scraped scrapped`)
-                return true
-            }
-        })
+            ! scraped.hasValue( c['Código'] )
+        );
     // add them to the global count
-    TOTAL_COMPRAS_COUNT += parseInt(count);
+    TOTAL_COMPRAS_TO_SCRAP += parseInt(count);
     // count the one we have already scrapped
     TOTAL_COMPRAS_SCRAPED  += compras.length - new_compras.length;
-
     // log information
-    log.info(`Between ${startDate} and ${endDate} found ${ new_compras.length } new compras. Tota; ${TOTAL_COMPRAS_COUNT}`);
-    log.info(`tota compras to scrap ${TOTAL_COMPRAS_COUNT}`);
+    log.info(`Between ${startDate} and ${endDate} found ${ new_compras.length } new compras. Tota; ${TOTAL_COMPRAS_TO_SCRAP}`);
+    log.info(`Tota compras to scrap ${TOTAL_COMPRAS_TO_SCRAP}`);
     log.debug(`Proxy: ${proxyInfo.url}, ${proxyInfo.sessionId}`);
     log.debug(`
+    In ${typeofProcess.proceso} 
     Between ${startDate} and ${endDate} we got:
     ${ compras.length } found compras
     new_compras: ${ new_compras.length },
     server send: ${ count },
-    TOTAL_COMPRAS_COUNT: ${TOTAL_COMPRAS_COUNT}
+    TOTAL_COMPRAS_TO_SCRAP: ${TOTAL_COMPRAS_TO_SCRAP}
     TOTAL_COMPRAS_SCRAPED:  ${TOTAL_COMPRAS_SCRAPED}
     `);
 
@@ -89,7 +90,7 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
                 url: c.url,
                 uniqueKey: c['Código'],
                 label: 'compra',
-                userData: c
+                userData: c,
             })
         )
     )

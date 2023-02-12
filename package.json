@@ -7,7 +7,8 @@
         "crawlee": "^3.0.0",
         "dotenv": "^16.0.3",
         "node-html-parser": "^6.1.4",
-        "playwright": "*"
+        "playwright": "*",
+        "tesseract.js": "^2.1.1"
     },
     "scripts": {
         "start": "node src/main.js",

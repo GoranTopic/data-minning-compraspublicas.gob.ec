@@ -7,6 +7,7 @@ const queryProcessesCount = async ({
     tipoDeContratacion,
     tipoDeCompra,
     codigoDelProceso,
+    txtTiposContratacion,
 }) => await new Promise( (resolve, reject) => {
     // get count of compras
     var url = HOST + 'interfazWeb.php';
@@ -23,7 +24,7 @@ const queryProcessesCount = async ({
         + "&" +`Entidadbuscar=`
         + "&" +`txtEntidadContratante=${entidadContratante}`
         + "&" +`cmbEntidad=`
-        + "&" +`txtTiposContratacion=219`
+        + "&" +`txtTiposContratacion=${txtTiposContratacion}`
         + "&" +`txtCodigoTipoCompra=${tipoDeCompra}`
         + "&" +`txtCodigoProceso=${codigoDelProceso}`
         + "&" +`f_inicio=${startDate}`
@@ -48,6 +49,7 @@ const queryComprasPage = ({
     tipoDeContratacion,
     tipoDeCompra,
     codigoDelProceso,
+    txtTiposContratacion,
 }) => new Promise( (resolve, reject) => {
     // get count of compras
     var url = HOST + 'interfazWeb.php';
@@ -64,7 +66,7 @@ const queryComprasPage = ({
         + "&" +`Entidadbuscar=`
         + "&" +`txtEntidadContratante=${entidadContratante}`
         + "&" +`cmbEntidad=`
-        + "&" +`txtTiposContratacion=219`
+        + "&" +`txtTiposContratacion=${txtTiposContratacion}`
         + "&" +`txtCodigoTipoCompra=${tipoDeCompra}`
         + "&" +`txtCodigoProceso=${codigoDelProceso}`
         + "&" +`f_inicio=${startDate}`
