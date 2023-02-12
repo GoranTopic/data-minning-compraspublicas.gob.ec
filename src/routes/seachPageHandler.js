@@ -63,9 +63,13 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
             ! scraped.hasValue( c['Código'] )
         );
     // add them to the global count
-    TOTAL_COMPRAS_TO_SCRAP += parseInt(count);
+    count = parseInt(count);
+    TOTAL_COMPRAS_TO_SCRAP += count
+    typeofProcess.stats.compras_to_scrap += count
     // count the one we have already scrapped
-    TOTAL_COMPRAS_SCRAPED  += compras.length - new_compras.length;
+    let alreadyScraped = compras.length - new_compras.length;
+    TOTAL_COMPRAS_SCRAPED += alreadyScraped
+    typeofProcess.stats.compras_to_scrap += alreadyScraped
     // log information
     log.info(`Between ${startDate} and ${endDate} found ${ new_compras.length } new compras. Tota; ${TOTAL_COMPRAS_TO_SCRAP}`);
     log.info(`Tota compras to scrap ${TOTAL_COMPRAS_TO_SCRAP}`);

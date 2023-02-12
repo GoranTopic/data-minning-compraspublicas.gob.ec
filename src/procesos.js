@@ -24,16 +24,32 @@ export default [{
     // apperently procesos de contratacion 
     // does not have a code
     // txtTiposContratacion:,
+    // stadistic to keep track of
+    stats: {
+        compras_to_scrap: 0,
+        compras_scraped: 0,
+        pdfs_downloaded: 0,
+    }
 }, {
     proceso: 'procesosDeRegimenEspeciales',
     datasetId: 'procesosDeRegimenEspeciales',
     seachPageUrl: buscarProcesoRégimenEspecial,
     isEnabled: procesoRégimenEspecial,
     txtTiposContratacion: 186,
+    stats: {
+        compras_to_scrap: 0,
+        compras_scraped: 0,
+        pdfs_downloaded: 0,
+    }
 }, {
     proceso: 'procedimientosEspeciales', 
     datasetId: 'procedimientosEspeciales',
     seachPageUrl: buscarProcesoProcedimientosEspeciales,
     isEnabled: procedimientosEspeciales,
     txtTiposContratacion: 219, 
+    stats: {
+        compras_to_scrap: 0,
+        compras_scraped: 0,
+        pdfs_downloaded: 0,
+    }
 }]

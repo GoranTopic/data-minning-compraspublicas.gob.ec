@@ -1,4 +1,5 @@
 import config from '../crawlee.json' assert { type: "json" };
+import procesos from './procesos.js'
 process.env["CRAWLEE_STORAGE_DIR"] =  config.storageDir
 // For more information, see https://crawlee.dev/
 import { PlaywrightCrawler, Dataset } from 'crawlee';
@@ -9,6 +10,8 @@ import { homePage } from './urls.js'
 // total number of compras per date range
 global.TOTAL_COMPRAS_TO_SCRAP = 0; 
 global.TOTAL_COMPRAS_SCRAPED  = 0;
+global.TOTAL_FILES_DOWNLOADED = 0;
+global.TOTAL_ERRORS  = 0; // find a way to get the errors
 // make configuration file for crawler
 let crawler_config = {}
 // get proxies
@@ -16,14 +19,15 @@ if(config.proxyMode)
     crawler_config.proxyConfiguration = proxyConfig;
 // add router
 crawler_config.requestHandler = router;
-crawler_config.useSessionPool = true;
+// add th eoption to add session pool
+crawler_config.useSessionPool = config.useSessionPool;
 // Overrides default Session pool configuration
 crawler_config.sessionPoolOptions = {
     maxPoolSize: config.maxPoolSize,
     sessionOptions: config.sessionOptions,
 }
 // Set to true if you want the crawler to save cookies per session,
-crawler_config.persistCookiesPerSession= true;
+crawler_config.persistCookiesPerSession= config.persistCookiesPerSession;
 // se the maximum allowed conrurent requests
 crawler_config.maxConcurrency = config.maxConcurrency
 // limit the ammount of reques tper minute
@@ -34,6 +38,21 @@ const crawler = new PlaywrightCrawler(crawler_config);
 const startUrls = [ homePage ];
 // start on search processos page
 await crawler.run(startUrls);
+
+// print stas summery
+// print stats for every type of proceso
+procesos
+    .filter(p=>p.isEnabled) 
+    .forEach( p => {
+        console.log(`For ${p.proceso}: `)
+        console.log(p.stats)
+    })
+console.log({ 
+    TOTAL_COMPRAS_TO_SCRAP,
+    TOTAL_COMPRAS_SCRAPED,
+    TOTAL_FILES_DOWNLOADED,
+})
+console.log('crawlee stats: ',crawler.stats.state)
 // create cvs database
 // check if database has undefined entries
 //if( 

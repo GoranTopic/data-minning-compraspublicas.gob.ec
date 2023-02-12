@@ -3,6 +3,7 @@
 // accept it unless it is hard coded
 import { ProxyConfiguration } from 'crawlee';
 
+
 let proxies = [ 
 'http://154.22.47.41:3128',
 'http://209.127.149.149:3128',
@@ -1003,7 +1004,8 @@ let proxies = [
 'http://192.3.172.155:3128',
 'http://209.127.48.64:3128',
 'http://23.236.197.215:3128',
-'http://144.168.194.153:3128'
+'http://144.168.194.153:3128',
+'http://144.168.194.153:3128' 
 ]
 
 let proxyconfig =

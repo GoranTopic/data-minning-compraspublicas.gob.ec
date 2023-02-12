@@ -78,13 +78,17 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
                     log.debug(`Proxy: ${proxyInfo.url}, Session ${proxyInfo.sessionId}`);
                     // save where we donwloaded the file
                     compra['Archivos'][i]['local_url'] = relativePath + '.pdf';
+                    // add to stats downloaded pdf
+                    TOTAL_FILES_DOWNLOADED++;
+                    typeofProcess.stats.pdfs_downloaded++;
                 }
                 else log.error(`Could not downloaded ${aboslutePath}.pdf`)
             })
         )
     }
     // count the scrapped file
-    TOTAL_COMPRAS_SCRAPED += 1
+    TOTAL_COMPRAS_SCRAPED++;
+    typeofProcess.stats.compras_scraped++;
     log.info(`Compra ${compra['Descripción']['Código']} scraped. ${TOTAL_COMPRAS_SCRAPED}/${TOTAL_COMPRAS_TO_SCRAP}`);
     //save data
     await dataset.pushData(compra);

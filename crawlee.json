@@ -8,6 +8,8 @@
     "downloadFiles": true,
     "proxyMode": true,
     "c2": "session pool options",
+    "useSessionPool": true, 
+    "persistCookiesPerSession": true,
     "maxPoolSize" : 1000,
     "sessionOptions":{
         "maxAgeSecs": 180,
