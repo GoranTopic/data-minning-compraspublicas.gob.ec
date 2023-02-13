@@ -4,9 +4,8 @@ import DiskSet from '../utils/DiskSet.js'
 import config from '../../crawlee.json' assert { type: "json" };
 
 // creat a set do that we don't forget which compras we have already scrapped
-let scraped = new DiskSet('scraped_codes', null, 
-    process.cwd() + '/' + config.storageDir 
-    + '/datasets/' + config.defaultDatasetId
+let scraped = new DiskSet('scraped_codes', null,
+    config.storageDir + '/datasets/' + config.defaultDatasetId
 )
 
 const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session }) => {

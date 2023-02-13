@@ -9,9 +9,8 @@ import { mkdir, fileExists } from '../utils/files.js'
 import { comprasBaseUrl, tabBaseUrl } from '../urls.js'
 
 // creat a set do that we don't forget which compras we have already scrapped
-let scraped = new DiskSet('scraped_codes', null, 
-    process.cwd() + '/' + config.storageDir 
-    + '/datasets/' + config.defaultDatasetId
+let scraped = new DiskSet('scraped_codes', null,
+    config.storageDir + '/datasets/' + config.defaultDatasetId
 )
 
 const handleCompraPage = async ({ request, page, log, enqueueRequest, session, proxyInfo }) => {
@@ -53,9 +52,8 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
     debugger;
     // download files in enabled 
     if(downloadFiles){
-        let dataSetPath = storageDir + '/datasets/' + datasetId + '/files/'
-        let abosluteDir = process.cwd() + '/' + dataSetPath;
-        let relativeDir = './' + dataSetPath;
+        let abosluteDir = storageDir + '/datasets/' + datasetId + '/files/'
+        let relativeDir = './datasets/' + datasetId + '/files/'
         mkdir(abosluteDir);
         await Promise.all(
             compra['Archivos']

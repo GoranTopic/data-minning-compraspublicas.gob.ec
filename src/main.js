@@ -52,7 +52,7 @@ console.log({
     TOTAL_COMPRAS_SCRAPED,
     TOTAL_FILES_DOWNLOADED,
 })
-console.log('crawlee stats: ',crawler.stats.state)
+console.log('crawlee stats: ', crawler.stats.state)
 // create cvs database
 // check if database has undefined entries
 //if( 

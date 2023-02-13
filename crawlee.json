@@ -8,7 +8,7 @@
     "downloadFiles": true,
     "proxyMode": true,
     "c2": "session pool options",
-    "useSessionPool": true, 
+    "useSessionPool": true,
     "persistCookiesPerSession": true,
     "maxPoolSize" : 1000,
     "sessionOptions":{
@@ -21,7 +21,7 @@
     "c4": "the memory Crawlee uses on ram",
     "memoryMbytes": 6000,
     "defaultDatasetId": "compras_publicas",
-    "storageDir": "./storage",
+    "storageDir": "/media/telix/data-stash/compras_publicas",
     "sleepOnEnd": true,
     "c5": "these are the search parametes",
     "palabrasClaves": "",
@@ -32,9 +32,9 @@
     "c6": "The date most be in the format year-month-day ex 2012-03-12",
     "c7": "if scrapToday is enabled, it will ignore dates",
     "c8": "if a date is divied by a number greater than 6 months, the server mya reject the query",
-    "scrapToday": false, 
-    "scrapThisMonth": false, 
-    "startDate": "2023-1-13",
+    "scrapToday": false,
+    "scrapThisMonth": false,
+    "startDate": "2000-1-1",
     "endDate": "2023-02-12",
-    "divideDatesInMonths": 1
+    "divideDatesInMonths": 2
 }

@@ -39,31 +39,30 @@ const handleInititation = async ({ crawler, page, log, proxyInfo }) => {
     // print to console
     log.info(`Made ${date_batches.length} date batches of ${divideDatesInMonths} months each between the dates of ${startDate} to ${endDate}`);
     log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
-    // for every enabled process       
-    await Promise.all(
-        procesos
-        .filter( p => p.isEnabled)
-        .map( async p => {
-            // for every date range we call the 
-            for( let dates of date_batches ){
-                // if it is not checked off already
-                let [ startDate, endDate ] = dates;
-                await crawler
-                    .requestQueue
-                    .addRequest({
-                        method: 'GET',
-                        url: p.seachPageUrl,
-                        label: 'seach_page',
-                        userData: { 
-                            dates: [startDate, endDate],
-                            typeofProcess: p,
-                        },
-                    },{
-                        forefront: true, // process first
-                    })
-            }
-        })
-    );
+
+    let requests = [];
+    // for every enabled process
+    for(let p of procesos.filter( p => p.isEnabled)){
+        // for every date range we call the
+        for( let [ startDate, endDate ] of date_batches ){
+            // add to our request list
+            requests.push({
+                method: 'GET',
+                url: p.seachPageUrl,
+                label: 'seach_page',
+                uniqueKey: startDate + endDate,
+                userData: {
+                    dates: [startDate, endDate],
+                    typeofProcess: p,
+                },
+            })
+        }
+    }
+
+    console.log(requests.map(r=>r.userData))
+
+    // add the requests
+    await crawler.addRequests( requests )
 }
 
-export default handleInititation 
+export default handleInititation
