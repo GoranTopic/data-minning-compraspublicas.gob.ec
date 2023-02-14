@@ -1,6 +1,6 @@
 import datasets from '../datasets.js'
 import DiskSet from '../utils/DiskSet.js'
-import checklist from '../utils/Checklist.js'
+import Checklist from '../utils/Checklist.js'
 import { query_tab } from '../reverse_engineering/XMLHttpRequest.js'
 import tabParser from '../parsers/tabParser.js'
 import processes from '../procesos.js';
@@ -55,36 +55,48 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
         let abosluteDir = storageDir + '/datasets/' + datasetId + '/files/'
         let relativeDir = './datasets/' + datasetId + '/files/'
         mkdir(abosluteDir);
-        //let fileChecklist = new Checklist()
+        let compraCode = compra['Descripción']['Código']
+        let fileChecklist = new Checklist(
+            compraCode + '_file_checklist', 
+            compra['Archivos'],
+            abosluteDir
+        ) 
         await Promise.all(
             compra['Archivos']
             .map( async (a,i) => {
-                let compraCode = compra['Descripción']['Código']
-                let aboslutePath = abosluteDir + compraCode + '/' + a.title;
-                let relativePath = relativeDir + compraCode + '/' + a.title;
-                mkdir(abosluteDir + compraCode);
-                if(fileExists(aboslutePath)){
-                    log.warning(`File ${aboslutePath}.pdf already exists`)
-                    return false
+                // if it is not checked off
+                if(!fileChecklist.isCheckedOff(a)){
+                    let aboslutePath = abosluteDir + compraCode + '/' + a.title;
+                    let relativePath = relativeDir + compraCode + '/' + a.title;
+                    mkdir(abosluteDir + compraCode);
+                    if(fileExists(aboslutePath)){
+                        log.warning(`File ${aboslutePath}.pdf already exists`)
+                        return false
+                    }
+                    let result = await download_pdf(
+                        a.url, // pdf src
+                        page, // page
+                        aboslutePath // where to save
+                    )
+                    if(result){
+                        log.info(`Downloaded ${relativePath}.pdf`);
+                        log.debug(`Proxy: ${proxyInfo.url}, Session ${proxyInfo.sessionId}`);
+                        // save where we donwloaded the file
+                        compra['Archivos'][i]['local_url'] = relativePath + '.pdf';
+                        // add to stats downloaded pdf
+                        TOTAL_FILES_DOWNLOADED++;
+                        processes[typeofProcess].stats.pdfs_downloaded++;
+                        // checoff
+                        fileChecklist.check(a);
+                    }
+                    else log.error(`Could not downloaded ${aboslutePath}.pdf`)
                 }
-                let result = await download_pdf(
-                    a.url, // pdf src
-                    page, // page
-                    aboslutePath // where to save
-                )
-                if(result){
-                    log.info(`Downloaded ${relativePath}.pdf`);
-                    log.debug(`Proxy: ${proxyInfo.url}, Session ${proxyInfo.sessionId}`);
-                    // save where we donwloaded the file
-                    compra['Archivos'][i]['local_url'] = relativePath + '.pdf';
-                    // add to stats downloaded pdf
-                    TOTAL_FILES_DOWNLOADED++;
-                    processes[typeofProcess].stats.pdfs_downloaded++;
-                }
-                else log.error(`Could not downloaded ${aboslutePath}.pdf`)
             })
         )
+        // if all the files have been downloaded
+        if(fileChecklist.isDone()) fileChecklist.delete()
     }
+
     // count the scrapped file
     TOTAL_COMPRAS_SCRAPED++;
     processes[typeofProcess].stats.compras_scraped++;
