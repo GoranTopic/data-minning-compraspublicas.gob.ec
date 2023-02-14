@@ -21,7 +21,7 @@
     "c4": "the memory Crawlee uses on ram",
     "memoryMbytes": 6000,
     "defaultDatasetId": "compras_publicas",
-    "storageDir": "/media/telix/data-stash/compras_publicas",
+    "storageDir": "./storage",
     "sleepOnEnd": true,
     "c5": "these are the search parametes",
     "palabrasClaves": "",
@@ -34,7 +34,7 @@
     "c8": "if a date is divied by a number greater than 6 months, the server mya reject the query",
     "scrapToday": false,
     "scrapThisMonth": false,
-    "startDate": "2000-1-1",
+    "startDate": "2023-01-11",
     "endDate": "2023-02-12",
     "divideDatesInMonths": 2
 }

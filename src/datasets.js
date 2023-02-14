@@ -6,7 +6,9 @@ import config from '../crawlee.json' assert { type: "json" };
 
 let datasets = {}
 // fill the data sets
-await Promise.all( procesos
+await Promise.all(
+    Object.entries(procesos)
+    .map(p => p[1])
     .filter(p=>p.isEnabled)
     .map( async p => 
         datasets[ p['datasetId'] ] =

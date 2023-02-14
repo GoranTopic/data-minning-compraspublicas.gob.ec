@@ -1,5 +1,6 @@
 import { queryComprasPage, queryProcessesCount, decode } from '../reverse_engineering/custom_ajax_calls.js'
 import { comprasBaseUrl } from '../urls.js'
+import processes from '../procesos.js';
 import DiskSet from '../utils/DiskSet.js'
 import config from '../../crawlee.json' assert { type: "json" };
 
@@ -15,7 +16,7 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
     // date to start and end
     let { dates: [ startDate, endDate ], typeofProcess } = request.userData;
     // get the code of the type of process to query the backend
-    let { txtTiposContratacion } = typeofProcess;
+    let { txtTiposContratacion } = processes[typeofProcess]
     // wait until page loads
     await page.waitForLoadState('networkidle'); 
     // query the webstie of the count of the proceses 
@@ -64,17 +65,17 @@ const handleSeachPage = async ({ request, page, crawler, log, proxyInfo, session
     // add them to the global count
     count = parseInt(count);
     TOTAL_COMPRAS_TO_SCRAP += count
-    typeofProcess.stats.compras_to_scrap += count
+    processes[typeofProcess].stats.compras_to_scrap += count
     // count the one we have already scrapped
     let alreadyScraped = compras.length - new_compras.length;
     TOTAL_COMPRAS_SCRAPED += alreadyScraped
-    typeofProcess.stats.compras_to_scrap += alreadyScraped
+    processes[typeofProcess].stats.compras_scraped += alreadyScraped
     // log information
     log.info(`Between ${startDate} and ${endDate} found ${ new_compras.length } new compras. Tota; ${TOTAL_COMPRAS_TO_SCRAP}`);
     log.info(`Tota compras to scrap ${TOTAL_COMPRAS_TO_SCRAP}`);
     log.debug(`Proxy: ${proxyInfo.url}, ${proxyInfo.sessionId}`);
     log.debug(`
-    In ${typeofProcess.proceso} 
+    In ${typeofProcess} 
     Between ${startDate} and ${endDate} we got:
     ${ compras.length } found compras
     new_compras: ${ new_compras.length },

@@ -1,5 +1,5 @@
 import config from '../../crawlee.json' assert { type: "json" };
-import procesos from '../procesos.js';
+import typesofProcesses from '../procesos.js';
 import { divideDatesIntoIntervals, todaysDate } from '../utils/dates.js';
 import handleLogin from './loginHandler.js';
 
@@ -14,7 +14,7 @@ const handleInititation = async ({ crawler, page, log, proxyInfo }) => {
     let { scrapThisMonth, scrapToday,
         startDate, endDate, divideDatesInMonths } = config;
     // import procesos   
-    let [ procesosDeContratacion ] = procesos;
+    let { procesosDeContratacion } = typesofProcesses;
     // if processos de contratacion are enabled the
     // proceed to login
     if(procesosDeContratacion.isEnabled) {
@@ -41,26 +41,26 @@ const handleInititation = async ({ crawler, page, log, proxyInfo }) => {
     log.debug(`Proxy: ${proxyInfo.url}, session ${proxyInfo.sessionId}`);
 
     let requests = [];
+    let procesos = Object
+        .entries(typesofProcesses)
+        .filter(p => p[1].isEnabled) 
     // for every enabled process
-    for(let p of procesos.filter( p => p.isEnabled)){
+    for(let [type, process] of procesos ){
         // for every date range we call the
         for( let [ startDate, endDate ] of date_batches ){
             // add to our request list
             requests.push({
                 method: 'GET',
-                url: p.seachPageUrl,
+                url: process.seachPageUrl,
                 label: 'seach_page',
-                uniqueKey: startDate + endDate,
+                uniqueKey: startDate + endDate + type,
                 userData: {
                     dates: [startDate, endDate],
-                    typeofProcess: p,
+                    typeofProcess: type,
                 },
             })
         }
     }
-
-    console.log(requests.map(r=>r.userData))
-
     // add the requests
     await crawler.addRequests( requests )
 }

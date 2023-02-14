@@ -41,11 +41,12 @@ await crawler.run(startUrls);
 
 // print stas summery
 // print stats for every type of proceso
-procesos
-    .filter(p=>p.isEnabled) 
-    .forEach( p => {
-        console.log(`For ${p.proceso}: `)
-        console.log(p.stats)
+
+Object.entries(procesos)
+    .filter(p=>p[1].isEnabled) 
+    .forEach( ([t,p]) => {
+        console.log(`For ${t}: `)
+        console.log(p)
     })
 console.log({ 
     TOTAL_COMPRAS_TO_SCRAP,

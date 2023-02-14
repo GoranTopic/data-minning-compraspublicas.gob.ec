@@ -3,6 +3,7 @@ import DiskSet from '../utils/DiskSet.js'
 import checklist from '../utils/Checklist.js'
 import { query_tab } from '../reverse_engineering/XMLHttpRequest.js'
 import tabParser from '../parsers/tabParser.js'
+import processes from '../procesos.js';
 import config from '../../crawlee.json' assert { type: "json" };
 import download_pdf from '../utils/download_pdf.js';
 import { mkdir, fileExists } from '../utils/files.js'
@@ -42,19 +43,19 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
             )
         }
     // get the datasetid and the path of the datase
-    let { datasetId, proceso } = typeofProcess;
+    let { datasetId, proceso } = processes[typeofProcess];
     // add url 
     compra['url'] = request.url;
     // add type of porcess
     compra['typo de proceso'] = proceso;
     // get the data set
     let dataset = datasets[datasetId];
-    debugger;
     // download files in enabled 
     if(downloadFiles){
         let abosluteDir = storageDir + '/datasets/' + datasetId + '/files/'
         let relativeDir = './datasets/' + datasetId + '/files/'
         mkdir(abosluteDir);
+        //let fileChecklist = new Checklist()
         await Promise.all(
             compra['Archivos']
             .map( async (a,i) => {
@@ -78,7 +79,7 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
                     compra['Archivos'][i]['local_url'] = relativePath + '.pdf';
                     // add to stats downloaded pdf
                     TOTAL_FILES_DOWNLOADED++;
-                    typeofProcess.stats.pdfs_downloaded++;
+                    processes[typeofProcess].stats.pdfs_downloaded++;
                 }
                 else log.error(`Could not downloaded ${aboslutePath}.pdf`)
             })
@@ -86,7 +87,7 @@ const handleCompraPage = async ({ request, page, log, enqueueRequest, session, p
     }
     // count the scrapped file
     TOTAL_COMPRAS_SCRAPED++;
-    typeofProcess.stats.compras_scraped++;
+    processes[typeofProcess].stats.compras_scraped++;
     log.info(`Compra ${compra['Descripción']['Código']} scraped. ${TOTAL_COMPRAS_SCRAPED}/${TOTAL_COMPRAS_TO_SCRAP}`);
     //save data
     await dataset.pushData(compra);
