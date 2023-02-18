@@ -21,7 +21,7 @@
     "c4": "the memory Crawlee uses on ram",
     "memoryMbytes": 6000,
     "defaultDatasetId": "compras_publicas",
-    "storageDir": "./storage",
+    "storageDir": "/media/telix/data-stash/compras_publicas",
     "sleepOnEnd": true,
     "c5": "these are the search parametes",
     "palabrasClaves": "",
